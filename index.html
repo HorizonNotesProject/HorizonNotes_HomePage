@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
     <title>HorizonNotes トップページ</title>
 
     <link rel="stylesheet" href="css/style.css"> 
@@ -117,28 +117,6 @@ fetch('/_includes/header.html')
         
         // 【★追加】アニメーション起動の1行
         document.body.classList.add('loaded');
-
-        // --------------------------------------------------
-        // 【★ここからハンバーガーメニュー用のJSを追記】
-        // --------------------------------------------------
-        
-        // header.html 内のハンバーガーボタン（.hamburger-menu）を取得
-        const hamburgerBtn = document.querySelector('.hamburger-menu');
-        // header.html 内のナビゲーションリスト（.nav-list）を取得
-        const navList = document.querySelector('.nav-list');
-
-        if (hamburgerBtn && navList) {
-            // ボタンをクリックした時の処理
-            hamburgerBtn.addEventListener('click', () => {
-                // navList に .is-active クラスを付け外しする
-                navList.classList.toggle('is-active');
-                // ハンバーガーボタン自体にも .is-active を付ける（例：X印アニメーション用）
-                hamburgerBtn.classList.toggle('is-active');
-            });
-        }
-        // --------------------------------------------------
-        // 【★JSの追記ここまで】
-        // --------------------------------------------------
     })
     .catch(error => {
         console.error('ヘッダーの読み込みに失敗しました:', error);
