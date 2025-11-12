@@ -1689,3 +1689,102 @@ p.flavor-quote.horizon-notes {
     max-width: 800px;
     margin: 0 auto;
 }
+
+/* =================================
+  【★ここから追記】
+  レスポンシブ対応 (ハンバーガーメニュー)
+================================= */
+
+/* --- 1. ハンバーガーボタンのスタイル --- */
+.hamburger-menu {
+  display: none; /* ★PCでは非表示 */
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+  /* header右上に配置（headerに position: relative; が無い場合は追加が必要かも） */
+  position: absolute; 
+  top: 18px; /* headerのpaddingや高さに合わせて調整 */
+  right: 20px;
+  z-index: 101; /* ナビリストより手前に */
+}
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff; /* ★ボタンの色（白） */
+  margin-bottom: 6px;
+  transition: all 0.3s;
+}
+.hamburger-menu span:last-child {
+  margin-bottom: 0;
+}
+
+/* ハンバーガーボタンが .is-active になった時（X印にするアニメーション） */
+.hamburger-menu.is-active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger-menu.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.is-active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* --- 2. スマホ表示 (768px以下) の設定 --- */
+/* 注：既存のCSSに @media (max-width: 768px) が既にあります。
+  可能であれば、そのブロックの中に以下のルールを「統合」してください。
+  ここでは、独立して記述します。
+*/
+@media (max-width: 768px) {
+
+  /* header h1 を少し小さく（お好みで） */
+  header h1 {
+    font-size: 20px;
+    /* ヘッダーのpaddingを調整（ボタンと被らないように） */
+    padding: 15px 20px; 
+  }
+
+  /* PC用の横並びナビゲーションを隠す */
+  nav.main-nav ul.nav-list {
+    display: none; /* ★重要：デフォルトでは非表示 */
+    position: fixed; /* 画面全体に広げる */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 画面の高さ100% */
+    /* ヘッダーと同じ背景色 */
+    background-color: rgba(44, 62, 80, 0.98); 
+    z-index: 100;
+    padding-top: 80px; /* ヘッダーの高さ分、上を空ける */
+  }
+
+  /* ★JSで .is-active が付いたら表示（縦並び） */
+  nav.main-nav ul.nav-list.is-active {
+    display: block;
+  }
+  
+  /* PC用では inline-block だったのを縦並び（block）に戻す */
+  nav.main-nav li {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+  }
+  nav.main-nav li a {
+    display: block;
+    padding: 18px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  nav.main-nav li:last-child a {
+    border-bottom: none;
+  }
+
+  /* スマホではハンバーガーボタンを表示 */
+  .hamburger-menu {
+    display: block;
+  }
+}
