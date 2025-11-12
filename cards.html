@@ -1,0 +1,2229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+<main>
+    <h2>カード</h2>
+    <p>『HorizonNotes』には、プレイヤーの分身となる「アルカステラカード」と、<br>
+    戦略の核となる「スペルカード」の2種類が存在します。</p>
+
+    <div class="tab-nav">
+        <button class="tab-btn active" data-target="alcastella">アルカステラカード</button>
+        <button class="tab-btn" data-target="spell">スペルカード</button>
+    </div>
+
+    <div class="tab-content">
+
+<!-- アルカステラ -->
+<section id="alcastella" class="card-category tab-pane active">
+    
+    <button class="accordion-toggle active">
+        フィルター（クリックで開閉）
+    </button> <div class="accordion-panel active">
+        
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label>カード名検索:</label>
+                <input type="search" class="card-search" placeholder="カード名を入力...">
+            </div>
+            <div class="filter-group">
+                <label>クラス:</label>
+                <div class="class-filters">
+                    <button class="class-btn active" data-class="全て">全て</button>
+                    <button class="class-btn" data-class="アウラ・コンポルタ">アウラ・コンポルタ</button>
+                    <button class="class-btn" data-class="ホノリウス">ホノリウス</button>
+                    <button class="class-btn" data-class="セフィル・イェツィラー">セフィル・イェツィラー</button>
+                    <button class="class-btn" data-class="ピカトリクス">ピカトリクス</button>
+                    <button class="class-btn" data-class="グリモワール">グリモワール</button>
+                    <button class="class-btn" data-class="クトノグラフ">クトノグラフ</button>
+                    <button class="class-btn" data-class="HorizonNotes">HorizonNotes</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label>並び替え:</label>
+                <select class="card-sort">
+                    <option value="default" selected>カードID順 (昇順)</option>
+                    <option value="id-desc">カードID順 (降順)</option>
+                    <option value="name-asc">名前順 (昇順)</option>
+                    <option value="name-desc">名前順 (降順)</option>
+                </select>
+            </div>
+        </div> </div> <div class="card-grid">
+        
+        <div class="card-item" data-name="ポラリス" data-class="HorizonNotes" data-id="A001">
+            <a href="AlcaStella/001_polaris.html">
+                <img src="images/alcastella/001_Polaris_Lv1.png" alt="アルカステラ：ポラリス">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="ヘリオス" data-class="アウラ・コンポルタ" data-id="A002">
+            <a href="AlcaStella/002_helios.html">
+                <img src="images/alcastella/002_Helios_Lv1.png" alt="アルカステラ：ヘリオス">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="セレーネ" data-class="ホノリウス" data-id="A003">
+            <a href="AlcaStella/003_Selene.html">
+                <img src="images/alcastella/003_Selene_Lv1.png" alt="アルカステラ：セレーネ">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="マーズ" data-class="セフィル・イェツィラー" data-id="A004">
+            <a href="AlcaStella/004_Mars.html">
+                <img src="images/alcastella/004_Mars_Lv1.png" alt="アルカステラ：マーズ">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="マーキュリー" data-class="ピカトリクス" data-id="A005">
+            <a href="AlcaStella/005_Mercury.html">
+                <img src="images/alcastella/005_Mercury_Lv1.png" alt="アルカステラ：マーキュリー">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="ジュピター" data-class="アウラ・コンポルタ" data-id="A006">
+            <a href="AlcaStella/006_Jupiter.html">
+                <img src="images/alcastella/006_Jupiter_Lv1.png" alt="アルカステラ：ジュピター">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="ヴィーナス" data-class="アウラ・コンポルタ" data-id="A007">
+            <a href="AlcaStella/007_Venus.html">
+                <img src="images/alcastella/007_Venus_Lv1.png" alt="アルカステラ：ヴィーナス">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="クロノス" data-class="グリモワール" data-id="A008">
+            <a href="AlcaStella/008_Kronos.html">
+                <img src="images/alcastella/008_Kronos_Lv1.png" alt="アルカステラ：クロノス">
+            </a>
+        </div>
+
+        <div class="card-item" data-name="プルート" data-class="ピカトリクス" data-id="A008">
+            <a href="AlcaStella/009_Pluto.html">
+                <img src="images/alcastella/009_Pluto_Lv1.png" alt="アルカステラ：プルート">
+            </a>
+        </div>
+        
+    </div>
+    </section>
+
+<!-- スペルカード -->
+    
+<section id="spell" class="card-category tab-pane">
+
+    <button class="accordion-toggle active">
+        フィルター（クリックで開閉）
+    </button> <div class="accordion-panel active">
+        
+        <div class="filter-controls">
+            
+            <div class="filter-group">
+                <label>カード名検索:</label>
+                <input type="search" class="card-search" placeholder="カード名を入力...">
+            </div>
+
+            <div class="filter-group">
+                <label>クラス:</label>
+                <div class="class-filters">
+                    <button class="class-btn active" data-class="全て">全て</button>
+                    <button class="class-btn" data-class="アウラ・コンポルタ">アウラ・コンポルタ</button>
+                    <button class="class-btn" data-class="ホノリウス">ホノリウス</button>
+                    <button class="class-btn" data-class="セフィル・イェツィラー">セフィル・イェツィラー</button>
+                    <button class="class-btn" data-class="ピカトリクス">ピカトリクス</button>
+                    <button class="class-btn" data-class="グリモワール">グリモワール</button>
+                    <button class="class-btn" data-class="クトノグラフ">クトノグラフ</button>
+                    <button class="class-btn" data-class="HorizonNotes">HorizonNotes</button>
+                    <button class="class-btn" data-class="ニュートラル">ニュートラル</button>
+                </div>
+            </div>
+            
+            <div class="filter-grid-2col">
+            <div class="filter-group">
+                <label>コスト:</label>
+                <select class="card-cost-filter">
+                    <option value="全て">全て</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6+">6以上</option> 
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>発動タイミング:</label>
+                <select class="card-timing-filter">
+                    <option value="全て">全て</option>
+                    <option value="自分のターン">自分のターン</option>
+                    <option value="相手のターン">相手のターン</option>
+                    <option value="好きなタイミング">好きなタイミング</option>
+                    <option value="カウンター">カウンター</option>
+                    <option value="エーテルエフェクト">エーテルエフェクト</option>
+                    <option value="フォロワー">フォロワー</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>レアリティ:</label>
+                <select class="card-rarity-filter">
+                    <option value="全て">全て</option>
+                    <option value="コモン">コモン</option>
+                    <option value="レア">レア</option>
+                    <option value="UR">UR</option>
+                    <option value="特殊">特殊</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>並び替え:</label>
+                <select class="card-sort">
+                    <option value="default" selected>カードID順 (昇順)</option>
+                    <option value="id-desc">カードID順 (降順)</option>
+                    <option value="name-asc">名前順 (昇順)</option>
+                    <option value="name-desc">名前順 (降順)</option>
+                    <option value="cost-asc">コスト順 (昇順)</option>
+                    <option value="cost-desc">コスト順 (降順)</option>
+                </select>
+            </div>
+            </div>
+        </div> </div> <div class="card-grid">
+
+        <div class="card-item" 
+             data-name="出発の準備" 
+             data-class="ニュートラル"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S001">
+            
+            <a href="SpellCard/001_PreparingForDeparture.html">
+                <img src="images/cards/card_001.png" alt="スペル：出発の準備">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="見習い防衛術式" 
+             data-class="ニュートラル"
+             data-cost="1"
+             data-timing="相手のターン"
+             data-rarity="コモン"
+             data-id="S002">
+            
+            <a href="SpellCard/002_ApprenticeDefenseTechnique.html">
+                <img src="images/cards/card_002.png" alt="スペル：見習い防衛術式">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="スクラムガード" 
+             data-class="ニュートラル"
+             data-cost="1"
+             data-timing="カウンター"
+             data-rarity="コモン"
+             data-id="S003">
+            
+            <a href="SpellCard/003_ScrumGuard.html">
+                <img src="images/cards/card_003.png" alt="スペル：スクラムガード">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="チル" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="自分のターン"
+             data-rarity="コモン"
+             data-id="S004">
+            
+            <a href="SpellCard/004_Chill.html">
+                <img src="images/cards/card_004.png" alt="スペル：チル">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="リバース" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="カウンター"
+             data-rarity="コモン"
+             data-id="S005">
+            
+            <a href="SpellCard/005_Reverse.html">
+                <img src="images/cards/card_005.png" alt="スペル：リバース">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="対抗魔術" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="カウンター"
+             data-rarity="コモン"
+             data-id="S006">
+            
+            <a href="SpellCard/006_CounterMagic.html">
+                <img src="images/cards/card_006.png" alt="スペル：対抗魔術">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="コラテラル・ダメージ" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="その他"
+             data-rarity="コモン"
+             data-id="S007">
+            
+            <a href="SpellCard/007_CollateralDamage.html">
+                <img src="images/cards/card_007.png" alt="スペル：コラテラル・ダメージ">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="エーテル・リフレッシュ" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="好きなタイミング"
+             data-rarity="コモン"
+             data-id="S008">
+            
+            <a href="SpellCard/008_EtherRefresh.html">
+                <img src="images/cards/card_008.png" alt="スペル：エーテル・リフレッシュ">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="パラダイムシフト" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="相手のターン"
+             data-rarity="コモン"
+             data-id="S009">
+            
+            <a href="SpellCard/009_ParadigmShift.html">
+                <img src="images/cards/card_009.png" alt="スペル：パラダイムシフト">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="ビルドアップ" 
+             data-class="ニュートラル"
+             data-cost="3"
+             data-timing="自分のターン"
+             data-rarity="コモン"
+             data-id="S010">
+            
+            <a href="SpellCard/010_BuildUp.html">
+                <img src="images/cards/card_010.png" alt="スペル：ビルドアップ">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="楽園の女神" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="エーテルエフェクト"
+             data-rarity="コモン"
+             data-id="S011">
+            
+            <a href="SpellCard/011_GoddessOfParadise.html">
+                <img src="images/cards/card_011.png" alt="スペル：楽園の女神">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="ワイルド・ハント" 
+             data-class="ニュートラル"
+             data-cost="3"
+             data-timing="エーテルエフェクト"
+             data-rarity="コモン"
+             data-id="S012">
+            
+            <a href="SpellCard/012_WildHunt.html">
+                <img src="images/cards/card_012.png" alt="スペル：ワイルド・ハント">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="運命の羅針盤" 
+             data-class="ニュートラル"
+             data-cost="4"
+             data-timing="エーテルエフェクト"
+             data-rarity="コモン"
+             data-id="S013">
+            
+            <a href="SpellCard/013_CompassOfDestiny.html">
+                <img src="images/cards/card_013.png" alt="スペル：運命の羅針盤">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="シルバー・バレット" 
+             data-class="ニュートラル"
+             data-cost="1"
+             data-timing="好きなタイミング"
+             data-rarity="レア"
+             data-id="S014">
+            
+            <a href="SpellCard/014_SilverBullet.html">
+                <img src="images/cards/card_014.png" alt="スペル：シルバー・バレット">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="インスタント・ラブ" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="相手のターン"
+             data-rarity="レア"
+             data-id="S015">
+            
+            <a href="SpellCard/015_Instantlove.html">
+                <img src="images/cards/card_015.png" alt="スペル：インスタント・ラブ">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="プライマリー・ゲート" 
+             data-class="ニュートラル"
+             data-cost="2"
+             data-timing="好きなタイミング"
+             data-rarity="レア"
+             data-id="S016">
+            
+            <a href="SpellCard/016_PrimaryGate.html">
+                <img src="images/cards/card_016.png" alt="スペル：プライマリー・ゲート">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="タイニー・ミラクル" 
+             data-class="ニュートラル"
+             data-cost="3"
+             data-timing="自分のターン"
+             data-rarity="レア"
+             data-id="S017">
+            
+            <a href="SpellCard/017_TinyMiracle.html">
+                <img src="images/cards/card_017.png" alt="スペル：タイニー・ミラクル">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="赤き拳" 
+             data-class="ニュートラル"
+             data-cost="5"
+             data-timing="自分のターン"
+             data-rarity="レア"
+             data-id="S018">
+            
+            <a href="SpellCard/018_RedFist.html">
+                <img src="images/cards/card_018.png" alt="スペル：赤き拳">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="アルティメット・セキュア" 
+             data-class="ニュートラル"
+             data-cost="1"
+             data-timing="好きなタイミング カウンター"
+             data-rarity="UR"
+             data-id="S019">
+            
+            <a href="SpellCard/019_UltimateSecure.html">
+                <img src="images/cards/card_019.png" alt="スペル：アルティメット・セキュア">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="ロスト・リゾート" 
+             data-class="ニュートラル"
+             data-cost="5"
+             data-timing="その他"
+             data-rarity="UR"
+             data-id="S020">
+            
+            <a href="SpellCard/020_LostResort.html">
+                <img src="images/cards/card_020.png" alt="スペル：ロスト・リゾート">
+            </a>
+        </div>
+        
+        <!-- アウラ・コンポルタ -->
+        
+        <div class="card-item" 
+             data-name="フェアリーソング" 
+             data-class="アウラ・コンポルタ"
+             data-cost="0" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S021">
+            
+            <a href="SpellCard/021_FairySong.html">
+                <img src="images/cards/card_021.png" alt="スペル：フェアリーソング">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="コンセントレイト" 
+             data-class="アウラ・コンポルタ"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S022">
+            
+            <a href="SpellCard/022_Concentrate.html">
+                <img src="images/cards/card_022.png" alt="スペル：コンセントレイト">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="シャイン・ブレード" 
+             data-class="アウラ・コンポルタ"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S023">
+            
+            <a href="SpellCard/023_ShineBlade.html">
+                <img src="images/cards/card_023.png" alt="スペル：シャイン・ブレード">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="リトル・フラワー" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S024">
+            
+            <a href="SpellCard/024_LittleFlower.html">
+                <img src="images/cards/card_024.png" alt="スペル：リトル・フラワー">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="ブラック・アウト" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S025">
+            
+            <a href="SpellCard/025_BlackOut.html">
+                <img src="images/cards/card_025.png" alt="スペル：ブラック・アウト">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="サンダー・クラップ" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S026">
+            
+            <a href="SpellCard/026_ThunderClap.html">
+                <img src="images/cards/card_026.png" alt="スペル：サンダー・クラップ">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="増幅する盾" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S027">
+            
+            <a href="SpellCard/027_AmplifyingShield.html">
+                <img src="images/cards/card_027.png" alt="スペル：増幅する盾">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="ノーブル・ブラッド" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S028">
+            
+            <a href="SpellCard/028_NobleBlood.html">
+                <img src="images/cards/card_028.png" alt="スペル：ノーブル・ブラッド">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="アーマー・クリエイト" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S029">
+            
+            <a href="SpellCard/029_ArmorCreate.html">
+                <img src="images/cards/card_029.png" alt="スペル：アーマー・クリエイト">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="アウェイクン" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S030">
+            
+            <a href="SpellCard/030_Awaken.html">
+                <img src="images/cards/card_030.png" alt="スペル：アウェイクン">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="熟練のアドバイス" 
+             data-class="アウラ・コンポルタ"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S031">
+            
+            <a href="SpellCard/031_ExpertAdvice.html">
+                <img src="images/cards/card_031.png" alt="スペル：熟練のアドバイス">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="リフレクト・キューブ" 
+             data-class="アウラ・コンポルタ"
+             data-cost="3" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S032">
+            
+            <a href="SpellCard/032_ReflectCube.html">
+                <img src="images/cards/card_032.png" alt="スペル：リフレクト・キューブ">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="フラワー・マジック" 
+             data-class="アウラ・コンポルタ"
+             data-cost="3" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S033">
+            
+            <a href="SpellCard/033_FlowerMagic.html">
+                <img src="images/cards/card_033.png" alt="スペル：フラワー・マジック">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="リベンジ・ソウル" 
+             data-class="アウラ・コンポルタ"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S034">
+            
+            <a href="SpellCard/034_RevengeSoul.html">
+                <img src="images/cards/card_034.png" alt="スペル：リベンジ・ソウル">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="チェーン・ライトニング" 
+             data-class="アウラ・コンポルタ"
+             data-cost="0" 
+             data-timing="カウンター" 
+             data-rarity="レア"
+             data-id="S035">
+            
+            <a href="SpellCard/035_ChainLightning.html">
+                <img src="images/cards/card_035.png" alt="スペル：チェーン・ライトニング">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ジャミング" 
+             data-class="アウラ・コンポルタ"
+             data-cost="1" 
+             data-timing="カウンター 相手のターン" 
+             data-rarity="レア"
+             data-id="S036">
+            
+            <a href="SpellCard/036_Jamming.html">
+                <img src="images/cards/card_036.png" alt="スペル：ジャミング">
+            </a>
+        </div>
+        
+        <div class="card-item" 
+             data-name="ソング・オブ・マナ" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S037">
+            
+            <a href="SpellCard/037_SongOfMana.html">
+                <img src="images/cards/card_037.png" alt="スペル：ソング・オブ・マナ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ブレイン・シェイク" 
+             data-class="アウラ・コンポルタ"
+             data-cost="2" 
+             data-timing="カウンター" 
+             data-rarity="レア"
+             data-id="S038">
+            
+            <a href="SpellCard/038_BrainShake.html">
+                <img src="images/cards/card_038.png" alt="スペル：ブレイン・シェイク">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="アストレイアの秘法" 
+             data-class="アウラ・コンポルタ"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S039">
+            
+            <a href="SpellCard/039_AstraeasSecret.html">
+                <img src="images/cards/card_039.png" alt="スペル：アストレイアの秘法">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="アストラル・ディスロージャー" 
+             data-class="アウラ・コンポルタ"
+             data-cost="10" 
+             data-timing="カウンター" 
+             data-rarity="UR"
+             data-id="S040">
+            
+            <a href="SpellCard/040_AstralDislodger.html">
+                <img src="images/cards/card_040.png" alt="スペル：アストラル・ディスロージャー">
+            </a>
+        </div>
+
+        <!-- ホノリウス -->
+
+        <div class="card-item" 
+             data-name="癒しの書＜アエネウス篇＞" 
+             data-class="ホノリウス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S041">
+            
+            <a href="SpellCard/041_BookOfHealing.html">
+                <img src="images/cards/card_041.png" alt="スペル：癒しの書＜アエネウス篇＞">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="浄化の術式-ピュリファイ-" 
+             data-class="ホノリウス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S042">
+            
+            <a href="SpellCard/042_Purify.html">
+                <img src="images/cards/card_042.png" alt="スペル：浄化の術式-ピュリファイ-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="エーテル・フォージ" 
+             data-class="ホノリウス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S043">
+            
+            <a href="SpellCard/043_Aetherforge.html">
+                <img src="images/cards/card_043.png" alt="スペル：エーテル・フォージ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ピュリファイ・スパイク" 
+             data-class="ホノリウス"
+             data-cost="1" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S044">
+            
+            <a href="SpellCard/044_PurifySpike.html">
+                <img src="images/cards/card_044.png" alt="スペル：ピュリファイ・スパイク">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="契約の印-シジル・オブ・パクト-" 
+             data-class="ホノリウス"
+             data-cost="1" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S045">
+            
+            <a href="SpellCard/045_SigilOfThePact.html">
+                <img src="images/cards/card_045.png" alt="スペル：契約の印-シジル・オブ・パクト-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ゴースト・ハンド" 
+             data-class="ホノリウス"
+             data-cost="2" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S046">
+            
+            <a href="SpellCard/046_GhostHand.html">
+                <img src="images/cards/card_046.png" alt="スペル：ゴースト・ハンド">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="逆転移" 
+             data-class="ホノリウス"
+             data-cost="2" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S047">
+            
+            <a href="SpellCard/047_Countertransference.html">
+                <img src="images/cards/card_047.png" alt="スペル：逆転移">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="聖なる契約-ディヴァイン・コンパクト-" 
+             data-class="ホノリウス"
+             data-cost="2" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S048">
+            
+            <a href="SpellCard/048_DivineCompact.html">
+                <img src="images/cards/card_048.png" alt="スペル：聖なる契約-ディヴァイン・コンパクト-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="シルフ" 
+             data-class="ホノリウス"
+             data-cost="2" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="コモン"
+             data-id="S049">
+            
+            <a href="SpellCard/049_Sylph.html">
+                <img src="images/cards/card_049.png" alt="スペル：シルフ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="セレスティア・ピュリファイ" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S050">
+            
+            <a href="SpellCard/050_CelestiaPurify.html">
+                <img src="images/cards/card_050.png" alt="スペル：セレスティア・ピュリファイ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="光環の輪-ハロー・サークル-" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S051">
+            
+            <a href="SpellCard/051_HelloCircle.html">
+                <img src="images/cards/card_051.png" alt="スペル：光環の輪-ハロー・サークル-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="神秘の探求" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S052">
+            
+            <a href="SpellCard/052_MysteriousQuest.html">
+                <img src="images/cards/card_052.png" alt="スペル：神秘の探求">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="エンジェルス" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="コモン"
+             data-id="S053">
+            
+            <a href="SpellCard/053_Angels.html">
+                <img src="images/cards/card_053.png" alt="スペル：エンジェルス">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="再臨" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S054">
+            
+            <a href="SpellCard/054_SecondComing.html">
+                <img src="images/cards/card_054.png" alt="スペル：再臨">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ラダー・オブ・ヘヴン" 
+             data-class="ホノリウス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S055">
+            
+            <a href="SpellCard/055_LadderOfHeaven.html">
+                <img src="images/cards/card_055.png" alt="スペル：ラダー・オブ・ヘヴン">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="恩寵の鐘-グレイス・ベル-" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="エーテルエフェクト" 
+             data-rarity="レア"
+             data-id="S056">
+            
+            <a href="SpellCard/056_BellOfGrace.html">
+                <img src="images/cards/card_056.png" alt="スペル：恩寵の鐘-グレイス・ベル-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="スルガト" 
+             data-class="ホノリウス"
+             data-cost="3" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="レア"
+             data-id="S057">
+            
+            <a href="SpellCard/057_Surgado.html">
+                <img src="images/cards/card_057.png" alt="スペル：スルガト">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ディヴァイン・リザレクション" 
+             data-class="ホノリウス"
+             data-cost="5" 
+             data-timing="自分のターン" 
+             data-rarity="レア"
+             data-id="S058">
+            
+            <a href="SpellCard/058_DivineResurrection.html">
+                <img src="images/cards/card_058.png" alt="スペル：ディヴァイン・リザレクション">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ドミナティオ・トリケファルス" 
+             data-class="ホノリウス"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S059">
+            
+            <a href="SpellCard/059_DominatioTricephalus.html">
+                <img src="images/cards/card_059.png" alt="スペル：ドミナティオ・トリケファルス">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ベルゼビュート" 
+             data-class="ホノリウス"
+             data-cost="13" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="UR"
+             data-id="S060">
+            
+            <a href="SpellCard/060_Beelzebub.html">
+                <img src="images/cards/card_060.png" alt="スペル：ベルゼビュート">
+            </a>
+        </div>
+
+        <!-- セフィル・イェツィラー -->
+
+        <div class="card-item" 
+             data-name="理性の帳" 
+             data-class="セフィル・イェツィラー"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S061">
+            
+            <a href="SpellCard/061_BookOfReason.html">
+                <img src="images/cards/card_061.png" alt="スペル：理性の帳">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="刃の創造" 
+             data-class="セフィル・イェツィラー"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S062">
+            
+            <a href="SpellCard/062_CreationOfTheBlade.html">
+                <img src="images/cards/card_062.png" alt="スペル：刃の創造">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="エノク式詠唱" 
+             data-class="セフィル・イェツィラー"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S063">
+            
+            <a href="SpellCard/063_EnochianChanting.html">
+                <img src="images/cards/card_063.png" alt="スペル：エノク式詠唱">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="盾の創造" 
+             data-class="セフィル・イェツィラー"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S064">
+            
+            <a href="SpellCard/064_CreationOfShield.html">
+                <img src="images/cards/card_064.png" alt="スペル：盾の創造">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ティファレトの調停" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S065">
+            
+            <a href="SpellCard/065_TipherethsMediation.html">
+                <img src="images/cards/card_065.png" alt="スペル：ティファレトの調停">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="創造式典" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S066">
+            
+            <a href="SpellCard/066_CreationCeremony.html">
+                <img src="images/cards/card_066.png" alt="スペル：創造式典">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="制律の標" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S067">
+            
+            <a href="SpellCard/067_SignOfDiscipline.html">
+                <img src="images/cards/card_067.png" alt="スペル：制律の標">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="力の創造" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S068">
+            
+            <a href="SpellCard/068_CreationOfPower.html">
+                <img src="images/cards/card_068.png" alt="スペル：力の創造">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="知恵の創造" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S069">
+            
+            <a href="SpellCard/069_CreationOfWisdom.html">
+                <img src="images/cards/card_069.png" alt="スペル：知恵の創造">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="コメット" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S070">
+            
+            <a href="SpellCard/070_Comet.html">
+                <img src="images/cards/card_070.png" alt="スペル：コメット">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="バレット・アーチ" 
+             data-class="セフィル・イェツィラー"
+             data-cost="3" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S071">
+            
+            <a href="SpellCard/071_BulletArch.html">
+                <img src="images/cards/card_071.png" alt="スペル：バレット・アーチ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="フェロー・インクルージョン" 
+             data-class="セフィル・イェツィラー"
+             data-cost="3" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S072">
+            
+            <a href="SpellCard/072_FellowInclusion.html">
+                <img src="images/cards/card_072.png" alt="スペル：フェロー・インクルージョン">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="幻影創造-ドッペル・クリエイター-" 
+             data-class="セフィル・イェツィラー"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S073">
+            
+            <a href="SpellCard/073_IllusionCreation.html">
+                <img src="images/cards/card_073.png" alt="スペル：幻影創造-ドッペル・クリエイター-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="茨の創造" 
+             data-class="セフィル・イェツィラー"
+             data-cost="3" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S074">
+            
+            <a href="SpellCard/074_CreationOfThorns.html">
+                <img src="images/cards/card_074.png" alt="スペル：茨の創造">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="アストラル・シフト" 
+             data-class="セフィル・イェツィラー"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="レア"
+             data-id="S075">
+            
+            <a href="SpellCard/075_AstralShift.html">
+                <img src="images/cards/card_075.png" alt="スペル：アストラル・シフト">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="虚空の観測者" 
+             data-class="セフィル・イェツィラー"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S076">
+            
+            <a href="SpellCard/076_VoidObserver.html">
+                <img src="images/cards/card_076.png" alt="スペル：虚空の観測者">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="数理迷宮" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S077">
+            
+            <a href="SpellCard/077_MathematicalLabyrinth.html">
+                <img src="images/cards/card_077.png" alt="スペル：数理迷宮">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="エーテルの筆記" 
+             data-class="セフィル・イェツィラー"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S078">
+            
+            <a href="SpellCard/078_EtherealWriting.html">
+                <img src="images/cards/card_078.png" alt="スペル：エーテルの筆記">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="生命の樹：マルクト（王国）" 
+             data-class="セフィル・イェツィラー"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S079">
+            
+            <a href="SpellCard/079_Malkuth (Kingdom).html">
+                <img src="images/cards/card_079.png" alt="スペル：生命の樹：マルクト（王国）">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="生命の樹：イエソド（基礎）" 
+             data-class="セフィル・イェツィラー"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S080">
+            
+            <a href="SpellCard/080_Yesod(Foundation).html">
+                <img src="images/cards/card_080.png" alt="スペル：生命の樹：イエソド（基礎）">
+            </a>
+        </div>
+
+        <!-- ピカトリクス -->
+         <div class="card-item" 
+             data-name="星界の交信" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S081">
+            
+            <a href="SpellCard/081_AstralCommunication.html">
+                <img src="images/cards/card_081.png" alt="スペル：星界の交信">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="コール・コメット" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S082">
+            
+            <a href="SpellCard/082_CoalComet.html">
+                <img src="images/cards/card_082.png" alt="スペル：コール・コメット">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="スターダスト・レイン" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S083">
+            
+            <a href="SpellCard/083_StardustRain.html">
+                <img src="images/cards/card_083.png" alt="スペル：コール・コメット">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="見えざる一撃" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S084">
+            
+            <a href="SpellCard/084_InvisibleBlow.html">
+                <img src="images/cards/card_084.png" alt="スペル：見えざる一撃">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="リゾナンス・エコー" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S085">
+            
+            <a href="SpellCard/085_ResonanceEcho.html">
+                <img src="images/cards/card_085.png" alt="スペル：リゾナンス・エコー">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="シンクロ・ガード" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S086">
+            
+            <a href="SpellCard/086_SynchroGuard.html">
+                <img src="images/cards/card_086.png" alt="スペル：シンクロ・ガード">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="星詠みの加護" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S087">
+            
+            <a href="SpellCard/087_AstrologicalProtection.html">
+                <img src="images/cards/card_087.png" alt="スペル：星詠みの加護">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="クロノス・クライシス" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S088">
+            
+            <a href="SpellCard/088_ChronosCrisis.html">
+                <img src="images/cards/card_088.png" alt="スペル：クロノス・クライシス">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="透明な一撃" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S089">
+            
+            <a href="SpellCard/089_TransparentBlow.html">
+                <img src="images/cards/card_089.png" alt="スペル：透明な一撃">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="流星雨" 
+             data-class="ピカトリクス"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S090">
+            
+            <a href="SpellCard/090_MeteorShower.html">
+                <img src="images/cards/card_090.png" alt="スペル：流星雨">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="星の運動" 
+             data-class="ピカトリクス"
+             data-cost="2" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S091">
+            
+            <a href="SpellCard/091_MovementOfStars.html">
+                <img src="images/cards/card_091.png" alt="スペル：星の運動">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="エメラルド・ヒール" 
+             data-class="ピカトリクス"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S092">
+            
+            <a href="SpellCard/092_EmeraldHeel.html">
+                <img src="images/cards/card_092.png" alt="スペル：星の運動">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="サイレント" 
+             data-class="ピカトリクス"
+             data-cost="2" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S093">
+            
+            <a href="SpellCard/093_Silent.html">
+                <img src="images/cards/card_093.png" alt="スペル：サイレント">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="豊穣の星" 
+             data-class="ピカトリクス"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S094">
+            
+            <a href="SpellCard/094_StarOfAbundance.html">
+                <img src="images/cards/card_094.png" alt="スペル：豊穣の星">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="クリティカル・エッジ" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="レア"
+             data-id="S095">
+            
+            <a href="SpellCard/095_CriticalEdge.html">
+                <img src="images/cards/card_095.png" alt="スペル：クリティカル・エッジ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ミラージュ・エフェクト" 
+             data-class="ピカトリクス"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S096">
+            
+            <a href="SpellCard/096_MirageEffect.html">
+                <img src="images/cards/card_096.png" alt="スペル：ミラージュ・エフェクト">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="天津風" 
+             data-class="ピカトリクス"
+             data-cost="3" 
+             data-timing="カウンター" 
+             data-rarity="レア"
+             data-id="S097">
+            
+            <a href="SpellCard/097_TianjinStyle.html">
+                <img src="images/cards/card_097.png" alt="スペル：天津風">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="アメイジング・メテオ" 
+             data-class="ピカトリクス"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S098">
+            
+            <a href="SpellCard/098_AmazingMeteor.html">
+                <img src="images/cards/card_098.png" alt="スペル：アメイジング・メテオ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="アスタリスク・クロック" 
+             data-class="ピカトリクス"
+             data-cost="2" 
+             data-timing="カウンター" 
+             data-rarity="UR"
+             data-id="S099">
+            
+            <a href="SpellCard/099_AsteriskClock.html">
+                <img src="images/cards/card_099.png" alt="スペル：アスタリスク・クロック">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ファイナル・ウェポン" 
+             data-class="ピカトリクス"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S100">
+            
+            <a href="SpellCard/100_FinalWeapon.html">
+                <img src="images/cards/card_100.png" alt="スペル：ファイナル・ウェポン">
+            </a>
+        </div>
+
+        <!-- グリモワール -->
+         <div class="card-item" 
+             data-name="魔道の研鑽" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S101">
+            
+            <a href="SpellCard/101_MagicalTraining.html">
+                <img src="images/cards/card_101.png" alt="スペル：魔道の研鑽">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="バース・シフト" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S102">
+            
+            <a href="SpellCard/102_BirthShift.html">
+                <img src="images/cards/card_102.png" alt="スペル：バース・シフト">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="古い魔導書" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S103">
+            
+            <a href="SpellCard/103_OldSpellbook.html">
+                <img src="images/cards/card_103.png" alt="スペル：古い魔導書">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ガンド" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S104">
+            
+            <a href="SpellCard/104_Gund.html">
+                <img src="images/cards/card_104.png" alt="スペル：ガンド">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="反転術式" 
+             data-class="グリモワール"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S105">
+            
+            <a href="SpellCard/105_ReversalTechnique.html">
+                <img src="images/cards/card_105.png" alt="スペル：反転術式">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ウェポン・ディストラクション" 
+             data-class="グリモワール"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S106">
+            
+            <a href="SpellCard/106_WeaponDestruction.html">
+                <img src="images/cards/card_106.png" alt="スペル：ウェポン・ディストラクション">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="肉体の保護" 
+             data-class="グリモワール"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S107">
+            
+            <a href="SpellCard/107_ProtectionOfTheBody.html">
+                <img src="images/cards/card_107.png" alt="スペル：肉体の保護">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="連続魔術" 
+             data-class="グリモワール"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S108">
+            
+            <a href="SpellCard/108_ContinuousMagic.html">
+                <img src="images/cards/card_108.png" alt="スペル：連続魔術">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="インタラプト・アーク" 
+             data-class="グリモワール"
+             data-cost="3" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S109">
+            
+            <a href="SpellCard/109_InterruptArc.html">
+                <img src="images/cards/card_109.png" alt="スペル：インタラプト・アーク">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="知識の共鳴" 
+             data-class="グリモワール"
+             data-cost="3" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S110">
+            
+            <a href="SpellCard/110_ResonanceOfKnowledge.html">
+                <img src="images/cards/card_110.png" alt="スペル：知識の共鳴">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="記述の複製" 
+             data-class="グリモワール"
+             data-cost="4" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S111">
+            
+            <a href="SpellCard/111_DuplicateDescription.html">
+                <img src="images/cards/card_111.png" alt="スペル：記述の複製">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="記述の複製" 
+             data-class="グリモワール"
+             data-cost="4" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S112">
+            
+            <a href="SpellCard/112_TheTruthBehindTheEnvelope.html">
+                <img src="images/cards/card_112.png" alt="スペル：記述の複製">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ルーンバースト" 
+             data-class="グリモワール"
+             data-cost="5" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S113">
+            
+            <a href="SpellCard/113_RuneBurst.html">
+                <img src="images/cards/card_113.png" alt="スペル：ルーンバースト">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="禁断の知識" 
+             data-class="グリモワール"
+             data-cost="5" 
+             data-timing="エーテルエフェクト" 
+             data-rarity="コモン"
+             data-id="S114">
+            
+            <a href="SpellCard/114_ForbiddenKnowledge.html">
+                <img src="images/cards/card_114.png" alt="スペル：禁断の知識">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="イグニス・スクロール" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="自分のターン" 
+             data-rarity="レア"
+             data-id="S115">
+            
+            <a href="SpellCard/115_IgnisScroll.html">
+                <img src="images/cards/card_115.png" alt="スペル：イグニス・スクロール">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="グリフ・デリート" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S116">
+            
+            <a href="SpellCard/116_GlyphDelete.html">
+                <img src="images/cards/card_116.png" alt="スペル：グリフ・デリート">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="予言の断章" 
+             data-class="グリモワール"
+             data-cost="4" 
+             data-timing="エーテルエフェクト" 
+             data-rarity="レア"
+             data-id="S117">
+            
+            <a href="SpellCard/117_FragmentOfProphecy.html">
+                <img src="images/cards/card_117.png" alt="スペル：予言の断章">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="プロローグ・アポカリプス" 
+             data-class="グリモワール"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S118">
+            
+            <a href="SpellCard/118_PrologueApocalypse.html">
+                <img src="images/cards/card_118.png" alt="スペル：プロローグ・アポカリプス">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="終律のルクス・ディアーナ" 
+             data-class="グリモワール"
+             data-cost="1" 
+             data-timing="カウンター" 
+             data-rarity="UR"
+             data-id="S119">
+            
+            <a href="SpellCard/119_LuxDianaOfTheFinalLaw.html">
+                <img src="images/cards/card_119.png" alt="スペル：終律のルクス・ディアーナ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="エンドロール" 
+             data-class="グリモワール"
+             data-cost="13" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S120">
+            
+            <a href="SpellCard/120_EndCredits.html">
+                <img src="images/cards/card_120.png" alt="スペル：エンドロール">
+            </a>
+        </div>
+
+        <!-- クトノグラフ -->
+         <div class="card-item" 
+             data-name="悪夢のはじまり" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S121">
+            
+            <a href="SpellCard/121_TheBeginningOfNightmare.html">
+                <img src="images/cards/card_121.png" alt="スペル：悪夢のはじまり">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="夢境への道しるべ" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S122">
+            
+            <a href="SpellCard/122_GuideToTheDreamWorld.html">
+                <img src="images/cards/card_122.png" alt="スペル：夢境への道しるべ">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="マインド・トレスパス" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="カウンター" 
+             data-rarity="コモン"
+             data-id="S123">
+            
+            <a href="SpellCard/123_MindTrespass.html">
+                <img src="images/cards/card_123.png" alt="スペル：マインド・トレスパス">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="グール" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="コモン"
+             data-id="S124">
+            
+            <a href="SpellCard/124_Ghoul.html">
+                <img src="images/cards/card_124.png" alt="スペル：グール">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="悪夢の夜-ナイト・ゴーント-" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="コモン"
+             data-id="S125">
+            
+            <a href="SpellCard/125_NightGaunt.html">
+                <img src="images/cards/card_125.png" alt="スペル：悪夢の夜-ナイト・ゴーント-">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="イオノクラフト" 
+             data-class="クトノグラフ"
+             data-cost="2" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S126">
+            
+            <a href="SpellCard/126_IonoCraft.html">
+                <img src="images/cards/card_126.png" alt="スペル：イオノクラフト">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="記録喪失の霧" 
+             data-class="クトノグラフ"
+             data-cost="2" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S127">
+            
+            <a href="SpellCard/127_TheFogOfLostRecords.html">
+                <img src="images/cards/card_127.png" alt="スペル：記録喪失の霧">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="反転灯（アンチ＝ラテルン）" 
+             data-class="クトノグラフ"
+             data-cost="2" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S128">
+            
+            <a href="SpellCard/128_AntiLaterne.html">
+                <img src="images/cards/card_128.png" alt="スペル：反転灯（アンチ＝ラテルン）">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="星辰が満ちる。" 
+             data-class="クトノグラフ"
+             data-cost="3" 
+             data-timing="自分のターン" 
+             data-rarity="コモン"
+             data-id="S129">
+            
+            <a href="SpellCard/129_TheStarsAreFull.html">
+                <img src="images/cards/card_129.png" alt="スペル：星辰が満ちる。">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="精魂の呪縛" 
+             data-class="クトノグラフ"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S130">
+            
+            <a href="SpellCard/130_SoulCurse.html">
+                <img src="images/cards/card_130.png" alt="スペル：精魂の呪縛">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="偽書『レフ＝ズリグ』" 
+             data-class="クトノグラフ"
+             data-cost="3" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S131">
+            
+            <a href="SpellCard/131_TheForgedBook_LevZurig.html">
+                <img src="images/cards/card_131.png" alt="スペル：偽書『レフ＝ズリグ』">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="深淵を覗く瞳" 
+             data-class="クトノグラフ"
+             data-cost="3" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S132">
+            
+            <a href="SpellCard/132_EyesPeeringIntoTheAbyss.html">
+                <img src="images/cards/card_132.png" alt="スペル：深淵を覗く瞳">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="『正常』なる意思の力" 
+             data-class="クトノグラフ"
+             data-cost="4" 
+             data-timing="相手のターン" 
+             data-rarity="コモン"
+             data-id="S133">
+            
+            <a href="SpellCard/133_ThePowerOfNormalWill.html">
+                <img src="images/cards/card_133.png" alt="スペル：『正常』なる意思の力">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ライブラリ・オブ・ヴォイド" 
+             data-class="クトノグラフ"
+             data-cost="4" 
+             data-timing="好きなタイミング" 
+             data-rarity="コモン"
+             data-id="S134">
+            
+            <a href="SpellCard/134_LibraryOfTheVoid.html">
+                <img src="images/cards/card_134.png" alt="スペル：ライブラリ・オブ・ヴォイド">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ビアーキー" 
+             data-class="クトノグラフ"
+             data-cost="4" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="コモン"
+             data-id="S135">
+            
+            <a href="SpellCard/135_BeerKey.html">
+                <img src="images/cards/card_135.png" alt="スペル：ビアーキー">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="夜の探検" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="好きなタイミング" 
+             data-rarity="レア"
+             data-id="S136">
+            
+            <a href="SpellCard/136_NightExploration.html">
+                <img src="images/cards/card_136.png" alt="スペル：夜の探検">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="最後の救命灯(ラスト・シグナル)" 
+             data-class="クトノグラフ"
+             data-cost="1" 
+             data-timing="カウンター" 
+             data-rarity="レア"
+             data-id="S137">
+            
+            <a href="SpellCard/137_LastSignal.html">
+                <img src="images/cards/card_137.png" alt="スペル：最後の救命灯(ラスト・シグナル)">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ティンダロスの猟犬" 
+             data-class="クトノグラフ"
+             data-cost="3" 
+             data-timing="好きなタイミング フォロワー" 
+             data-rarity="レア"
+             data-id="S138">
+            
+            <a href="SpellCard/138_HoundOfTindalos.html">
+                <img src="images/cards/card_138.png" alt="スペル：ティンダロスの猟犬">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="ネクロノミコン" 
+             data-class="クトノグラフ"
+             data-cost="5" 
+             data-timing="好きなタイミング" 
+             data-rarity="UR"
+             data-id="S139">
+            
+            <a href="SpellCard/139_Necronomicon.html">
+                <img src="images/cards/card_139.png" alt="スペル：ネクロノミコン">
+            </a>
+        </div>
+
+        <div class="card-item" 
+             data-name="暗黒の男" 
+             data-class="クトノグラフ"
+             data-cost="5" 
+             data-timing="自分のターン フォロワー" 
+             data-rarity="UR"
+             data-id="S140">
+            
+            <a href="SpellCard/140_DarkMan.html">
+                <img src="images/cards/card_140.png" alt="スペル：暗黒の男">
+            </a>
+        </div>
+
+
+    </div> </section>
+        
+
+    </div>
+</main>
+        <div id="footer-placeholder"></div>
+
+
+<script>
+    (function() {
+        // --- 1. タブ切り替え機能 ---
+        const tabs = document.querySelectorAll('.tab-btn');
+        const panes = document.querySelectorAll('.tab-pane');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.getAttribute('data-target');
+                tabs.forEach(t => t.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(targetId).classList.add('active');
+                
+                // タブ切り替え時にフィルターもリセット（または再適用）
+                applyFiltersAndSort();
+            });
+        });
+
+        // --- 2. フィルター、検索、ソート機能 ---
+        
+        // すべてのコントロールを取得 (入力系)
+        const allSearchInputs = document.querySelectorAll('.card-search');
+        const allSortSelects = document.querySelectorAll('.card-sort');
+        const allClassButtons = document.querySelectorAll('.class-btn');
+        
+        const allCostFilters = document.querySelectorAll('.card-cost-filter');
+        const allTimingFilters = document.querySelectorAll('.card-timing-filter');
+        const allRarityFilters = document.querySelectorAll('.card-rarity-filter');
+        
+        // --- イベントリスナーの登録 ---
+        allSearchInputs.forEach(input => input.addEventListener('input', applyFiltersAndSort));
+        allSortSelects.forEach(select => select.addEventListener('change', applyFiltersAndSort));
+        
+        allCostFilters.forEach(select => select.addEventListener('change', applyFiltersAndSort));
+        allTimingFilters.forEach(select => select.addEventListener('change', applyFiltersAndSort));
+        allRarityFilters.forEach(select => select.addEventListener('change', applyFiltersAndSort));
+        
+        allClassButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const filterGroup = e.target.closest('.class-filters');
+                filterGroup.querySelectorAll('.class-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                applyFiltersAndSort();
+            });
+        });
+
+        // --- 3. フィルターとソートを適用するメイン関数 ---
+        function applyFiltersAndSort() {
+            const activePane = document.querySelector('.tab-pane.active');
+            if (!activePane) return;
+
+            // 2. アクティブなタブ内のコントロールの値を取得
+            const searchTerm = activePane.querySelector('.card-search').value.toLowerCase();
+            const activeClassBtn = activePane.querySelector('.class-btn.active');
+            const selectedClass = activeClassBtn ? activeClassBtn.dataset.class : '全て';
+            const sortOrder = activePane.querySelector('.card-sort').value;
+
+            // (スペルカード専用フィルター)
+            const costSelect = activePane.querySelector('.card-cost-filter');
+            const timingSelect = activePane.querySelector('.card-timing-filter');
+            const raritySelect = activePane.querySelector('.card-rarity-filter');
+            
+            const selectedCost = costSelect ? costSelect.value : '全て';
+            const selectedTiming = timingSelect ? timingSelect.value : '全て';
+            const selectedRarity = raritySelect ? raritySelect.value : '全て';
+
+            // 3. アクティブなタブ内の全カードを取得
+            const grid = activePane.querySelector('.card-grid');
+            const allCards = Array.from(grid.querySelectorAll('.card-item'));
+            let visibleCards = []; 
+
+            // 4. フィルター処理（表示/非表示）
+            allCards.forEach(card => {
+                const cardName = card.dataset.name.toLowerCase();
+                const cardClass = card.dataset.class;
+                
+                // (スペルカード専用データ)
+                const cardCost = card.dataset.cost; 
+                const cardTimingString = card.dataset.timing || '';
+                const cardTimingArray = cardTimingString.split(' ');
+                const cardRarity = card.dataset.rarity;
+
+                // --- 判定 ---
+                const nameMatch = cardName.includes(searchTerm);
+                const classMatch = (selectedClass === '全て' || cardClass === selectedClass);
+                const costMatch = (selectedCost === '全て' || cardCost === selectedCost);
+                const timingMatch = (selectedTiming === '全て' || cardTimingArray.includes(selectedTiming));
+                const rarityMatch = (selectedRarity === '全て' || cardRarity === selectedRarity);
+
+                // 全ての条件を満たせば表示
+                if (nameMatch && classMatch && costMatch && timingMatch && rarityMatch) {
+                    visibleCards.push(card);
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // 5. ソート処理（並び替え）
+            visibleCards.sort((a, b) => {
+            // IDを 'A001', 'S001' のように文字列として比較
+                // (idがない場合もエラーにならないよう || '' を追加)
+                const idA = a.dataset.id || '';
+                const idB = b.dataset.id || '';
+                
+                switch (sortOrder) {
+                    case 'id-desc':
+                        return idB.localeCompare(idA, 'ja');
+                    case 'name-asc':
+                        return a.dataset.name.localeCompare(b.dataset.name, 'ja');
+                    case 'name-desc':
+                        return b.dataset.name.localeCompare(a.dataset.name, 'ja');
+                    case 'cost-asc':
+                        return (parseCost(a.dataset.cost) - parseCost(b.dataset.cost));
+                    case 'cost-desc':
+                        return (parseCost(b.dataset.cost) - parseCost(a.dataset.cost));
+                    case 'default':
+                    default:
+                        // デフォルトは ID 昇順
+                        return idA.localeCompare(idB, 'ja'); 
+                }
+            });
+            
+            // 6. グリッドに再配置
+            visibleCards.forEach(card => {
+                grid.appendChild(card);
+            });
+        }
+        
+        // (おまけ) コストの "7+" などを数値の 7 として扱うための補助関数
+        function parseCost(costString) {
+            if (!costString) return 0; 
+            return parseInt(costString.replace('+', '').replace('以上', ''), 10) || 0;
+        }
+
+        // ▼▼▼ ここからアコーディオン機能を追加 ▼▼▼
+        // --- 5. アコーディオン機能 ---
+        const accordions = document.querySelectorAll('.accordion-toggle');
+
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', () => {
+                // 1. クリックされたボタンに .active をトグル (付け外し)
+                accordion.classList.toggle('active');
+                
+                // 2. ボタンの「次の要素」(.accordion-panel) を取得し、.active をトグル
+                const panel = accordion.nextElementSibling;
+                panel.classList.toggle('active');
+            });
+        });
+        // ▲▲▲ アコーディオン機能ここまで ▲▲▲
+
+        // --- 6. 初期読み込み ---
+        // ページが読み込まれた時に、フィルターとソートを一度実行する
+        applyFiltersAndSort();
+
+    })();
+</script>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

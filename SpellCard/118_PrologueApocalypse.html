@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロローグ・アポカリプス - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>118_プロローグ・アポカリプス</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_118.png" alt="プロローグ・アポカリプス カード">
+                <p class="rarity-text">レアリティ: レア (R)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">プロローグ・アポカリプス</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> グリモワール</div>
+                    <div class="skill-prop"><strong>コスト:</strong>5</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">研鑽<span class="tooltip-text">研鑽：最大100まで蓄積可能。<br>
+                            スペルカード使用時に「選択効果」を累積させることができ、研鑽値100到達で使用可能になります。</span></span>:20】<br>
+                        <br>
+                        《選択:》<br>
+                        ◦相手のリーダーのアルカステラに10点のダメージを与える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        「夜」を終わらせよう。<br>
+                        人類がまた、「再会」できるように。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

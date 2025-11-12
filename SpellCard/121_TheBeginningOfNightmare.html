@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悪夢のはじまり - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>121_悪夢のはじまり</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_121.png" alt="悪夢のはじまり カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">悪夢のはじまり</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> クトノグラフ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">狂気<span class="tooltip-text">狂気：この値が《発狂》の閾値を超えると、発狂効果（デメリット）が誘発します。</span></span>:2】
+                        カードを2枚ドローする。<br>
+                        その後、山札の上からカードを1枚セメタリーに送る。<br>
+                        <br>
+                        《発狂:10》<br>
+                        発動者のHPを5点減らす。<br>
+
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        「ついに、我らの祈りは聞き届けられた。<br>
+                        ……ああ、聞き届けられてしまった。」
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

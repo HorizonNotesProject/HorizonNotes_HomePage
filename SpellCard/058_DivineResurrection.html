@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ディヴァイン・リザレクション - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>058_ディヴァイン・リザレクション</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_058.png" alt="ディヴァイン・リザレクション カード">
+                <p class="rarity-text">レアリティ: レア (R)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ディヴァイン・リザレクション</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ホノリウス</div>
+                    <div class="skill-prop"><strong>コスト:</strong>5</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>自分のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        あなたは以下の効果から一つを選択し、適用する。<br>
+                        ・あなたの戦闘脱落したアルカステラ1体を選択し、HPを20にして戦線復帰させる。<br>
+                        ・手札のすべての【残照】カードを元のフォロワーカードに変換する。<br>
+                        そのカードのコストをこのターン中のみ-2する。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>「さあ、目を覚まして。もう一度、わたくしと共に。」
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

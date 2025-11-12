@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>理性の帳 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>061_理性の帳</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_061.png" alt="理性の帳 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">理性の帳</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> セフィル・イェツィラー</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>自分のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        《<span class="glossary-tooltip">セフィロト・コード<span class="tooltip-text">セフィロト・コード : 装備によりステータス上昇やパッシブ効果を得ます。<br>
+                            攻撃スキルを受けると破損判定が発生し、破壊されるリスクを伴います。</span></span>》<br>
+                        ATK : 2 DEF : -2<br>
+                        [破損耐性ナンバー]1,2※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                        装備者の攻撃スキル使用時、セメタリーに存在するコスト1のスペルカードを1枚エーテル変換する。<br>
+                        <br>
+                        《破損時効果》<br>
+                        あなたは1点のエーテルを得る。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>彼女が広げるのは、まばゆい「理性の帳」。 <br>
+                        感情の喧騒を遠ざけ、世界のすべてを静かなる「知識」へと昇華させる。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

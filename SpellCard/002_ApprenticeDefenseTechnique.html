@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>見習い防衛術式 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>002_見習い防衛術式</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_002.png" alt="見習い防衛術式 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">見習い防衛術式</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ニュートラル</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>相手のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        アルカステラ1体に【<span class="glossary-tooltip">装甲<span class="tooltip-text">ダメージを受ける時、タップ状態に関わらずそのダメージを軽減します。<br>
+            また、この軽減はスペルカードや支援スキルによるダメージにも適用されます。<br>
+            軽減した場合、軽減した値分だけxの値が減少します。（例：3ダメージ軽減した場合、xが3減少）</span></span>:3】を与える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>知の探求者が古の書を紐解き、星の精霊が静かに応える。<br>
+                    二人の力が重なる時、小さな魔法陣は強固な盾となる。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

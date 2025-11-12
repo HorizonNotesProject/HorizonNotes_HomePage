@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ティンダロスの猟犬 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>138_ティンダロスの猟犬</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_138.png" alt="ティンダロスの猟犬 カード">
+                <p class="rarity-text">レアリティ: レア (R)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ティンダロスの猟犬</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> クトノグラフ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>3</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング&フォロワー</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">フォロワー<span class="tooltip-text">フォロワー : アルカステラと同じくステータスとスキルを持つユニットです。<br>
+                            フォロワーは、発動したプレイヤーのターン開始時に<br>
+                            そのカードのコストを再度支払う必要があります。<br>
+                            コストを支払えない場合、そのフォロワーはセメタリーに送られます。</span></span>】<br>
+                        HP：10 / ATK：3/ DEF：6<br>
+                        <br>
+                        支援スキル : エーテル・ドレイン<br>
+                        コスト : 1<br>
+                        タイミング : 好きなタイミング<br>
+                        対象に《ATK》ダメージ。<br>
+                        相手のエーテルを5点減らす。<br>
+                        あなたのエーテルを5点増やす。<br>
+                        <br>
+                        《残照》このカードが戦闘脱落した時、<br>
+                        このカードは【<span class="glossary-tooltip">残照<span class="tooltip-text">残照 : セメタリーに送られ、特定のカード効果の対象となるなど、フォロワーを失った後の展開に関わります。<br>
+                            <br>【カード情報】<br>
+                            コスト: 1<br>
+                            クラス: ニュートラル<br>
+                            効果: なし<br>
+                            復元: 「残照から元のカードに復元する効果」を発動しないと、元のフォロワーカードには戻せません。<br></span></span>】カードに変化する。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>「時の流れに干渉しようなどと、愚かな。<br>
+                        それは、この宇宙で最も飢えた猟犬を、自らの時間軸に解き放つに等しい行為だ。」
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

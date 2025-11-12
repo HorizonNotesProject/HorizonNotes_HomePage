@@ -1,0 +1,57 @@
+/* ------------------------------------- */
+/* 概要ページ専用CSS（他のファイルに影響なし） */
+/* ------------------------------------- */
+
+/* A. 【重要】フェードイン設定を無効化し、ページを即時表示 */
+/* bodyにopacity: 0がどこかで残っていても、ここで100%表示に強制します。 */
+body {
+    opacity: 1 !important; /* 最重要: ページを即座に表示させる */
+    transition: none !important; /* ページ遷移時のアニメーションを無効化 */
+    /* 背景色（フッターなどと合わせる） */
+    background-color: #333;
+}
+
+/* B. 概要ページ専用の背景設定（既存の設定） */
+main {
+    min-height: 80vh;
+    background-image: url('/images/background/002.png'); /* 適切な画像パスに修正 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+    /* padding-topを調整し、ナビゲーションとの重なりを防ぐ */
+    padding-top: 80px; 
+}
+
+/* 【新規追加】コンテンツを格納する半透明ボックス */
+.content-box {
+    max-width: 750px; /* ボックスの幅を制限 */
+    margin: 0 0 50px 50px; /* 左上に寄せて配置 */
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* 透明度70%の黒い背景 */
+    border-radius: 8px;
+}
+
+/* 【新規追加】文字を見やすくするスタイル */
+.content-box h2 {
+    color: #ffffff; /* 文字色を白に */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 軽い影 */
+    margin-top: 0;
+    border-bottom: 2px solid #555; /* セクション区切り */
+    padding-bottom: 10px;
+}
+
+.content-box p {
+    color: #f0f0f0; /* 少し薄い白 */
+    line-height: 1.8; /* 行間を広げて読みやすく */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+/* リンクテキスト（太字）も白くする */
+.content-box strong {
+    color: #a0d8ff; /* 明るい青で強調 */
+}
+
+

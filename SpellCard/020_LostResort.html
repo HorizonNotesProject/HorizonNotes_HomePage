@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロスト・リゾート - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>020_ロスト・リゾート</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_020.png" alt="ロスト・リゾート カード">
+                <p class="rarity-text">レアリティ: アルティメットレア(UR)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ロスト・リゾート</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ニュートラル</div>
+                    <div class="skill-prop"><strong>コスト:</strong>5</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>ターン開始時</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        このターン、相手はエーテル変換を行うことが出来ない。
+                        </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>星図にさえ記されぬ、失われた聖域。 <br>
+                    天を巡る「七つの星」が道を示した者だけが、 その安息の地に辿り着けるという。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

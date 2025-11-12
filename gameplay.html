@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    <h2>ルール (RULE)</h2>
+    <p>HorizonNotesの遊び方を紹介します。</p>
+
+<nav class="global-nav">
+    <ul>
+         <li><a href="rule.html">概要</a></li>
+         <li><a href="classes.html">7つのクラス</a></li> 
+         <li><a href="cards_alcastera.html">カードとアルカステラ</a></li>
+         <li><a href="field.html">フィールド</a></li>
+         <li><a href="gameplay.html" class="active">ターンの流れ</a></li>
+         <li><a href="glossary.html">用語集</a></li>
+     </ul>
+</nav>
+<section id="game-start">
+    <h3>5. ターンの流れ（ゲームプレイ）</h3>
+    <p>
+        ゲーム開始時の準備と、各ターンで繰り返される5つのフェイズの進行順を解説します。
+    </p>
+
+    <h4 class="rule-subhead">ゲーム開始時の準備 (1度だけ)</h4>
+    <p>最初のターンに入る前に、以下の手順で盤面の準備を行います。</p>
+    <ol>
+        <li>ターンプレイヤーを決定します。</li>
+        <li>お互いに盤面にデッキ（山札）とアルカステラ（3体）を展開します。</li>
+        <li>お互いにデッキからカードを5枚ドローします。</li>
+        <li>後攻のプレイヤーは、<strong>エーテルを2点</strong>獲得します。</li>
+    </ol>
+    
+    <h4 class="rule-subhead" style="margin-top: 40px;">フェイズ一覧</h4>
+    <p>ゲームは以下の5つのフェイズを、ターンプレイヤーが順番に処理することで進行します。</p>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>1. スタートフェイズ</h4>
+                <p>ターン開始時の処理を行う、ターンの始まりとなるフェイズです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li><strong>ターン開始時効果:</strong> ターン開始時をタイミングとするスペルカードやスキル効果（リーダースキルを含む）を発動します。</li>
+                <li><strong>継続効果の処理:</strong> 【<span class="glossary-tooltip">継続<span class="tooltip-text"><strong>継続</strong>：ターンを跨いで回数制限付きで持続する効果。</span></span>】の効果が発動中である場合、ここで効果の処理を行います。</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>2. ドローフェイズ</h4>
+                <p>手札を補充するフェイズです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>ターンプレイヤーは手札が<strong>5枚になるように</strong>カードをデッキからドローします。</p>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>3. チャージフェイズ (<span class="glossary-tooltip">エーテル変換<span class="tooltip-text"><strong>エーテル変換</strong>：手札をエーテルエリアに送りコストを獲得する行動。</span></span>)</h4>
+                <p>エーテル（コスト）を準備するフェイズです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>
+                ターンプレイヤーからお互いに手札のスペルカードを1枚、任意で順番に<strong>エーテル変換</strong>していきます。
+                この処理は、<strong>お互いが続けてパスを宣言するまで、何度でも繰り返されます。</strong>
+            </p>
+            <ul>
+                <li><strong>エーテル変換:</strong> スペルカードをエーテルエリアに送り、そのコスト分のエーテル（マナ）を獲得します。</li>
+                <li><strong>≪<span class="glossary-tooltip">エーテルエフェクト<span class="tooltip-text"><strong>エーテルエフェクト</strong>：エーテル変換時にチャージフェイズでのみ発動する効果。</span></span>≫:</strong> エーテル変換することで発動する効果は、<strong>このタイミングでのみ発動可能</strong>です。（発動はターンに1度だけ）</li>
+            </ul>
+        </div>
+    </details>
+
+<details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>4. メインフェイズ</h4>
+                <p>アルカステラのスキル発動やスペルカードの使用など、主となる行動を行うフェイズです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            
+            <h5 style="font-family: 'Shippori Mincho', serif;">アクションの優先権（行動フロー）</h5>
+            <p>ターンプレイヤーから順番に行動を決定していきます。可能な行動は、発動タイミングによって異なります。</p>
+            <ul>
+                <li><strong>ターンプレイヤーの行動:</strong> [自分のターン]、[好きなタイミング]のスペルカード/スキル発動・起動。</li>
+                <li><strong>被ターンプレイヤーの行動:</strong> [相手のターン]、[好きなタイミング]のスペルカード/スキル発動・起動。</li>
+            </ul>
+            
+            <h5 style="font-family: 'Shippori Mincho', serif; margin-top: 25px;">アクションの種類</h5>
+            <p>ターンプレイヤーは以下の行動を、ターン中何度でも任意の順序で実行できます。</p>
+            <ul>
+                <li><strong>スペルカードの発動:</strong> 手札からスペルカードを<strong>コスト（エーテル）</strong>を支払って発動します。（※この行動自体ではアルカステラはタップされません）
+                <li><strong>攻撃スキル/<strong>アストラルコード</strong><span class="glossary-tooltip"><span class="tooltip-text"><strong>アストラルコード</strong>：デッキ再構築で得た使用権で発動する必殺技。</span></span>の発動: コスト（エーテル）を支払って発動</strong>。<br>
+                発動後、そのアルカステラは<strong>タップ</strong>されます。</li>
+                <li><strong>支援スキルの発動:コスト（エーテル）を支払って発動</strong>。<br>
+                 発動してもタップされませんが、<strong>各アルカステラにつき1ターンに1回しか発動できません</strong>。</li>
+                <li><strong>待機 (パス):</strong> 何も行動せず、相手に優先権を渡します。</li>
+            </ul>
+
+            <h5 style="font-family: 'Shippori Mincho', serif; margin-top: 25px;">戦闘時の[<span class="glossary-tooltip">ブロック<span class="tooltip-text"><strong>ブロック</strong>：攻撃スキルに対してアンタップ状態のアルカステラがダメージを肩代わりするアクション。</span></span>]</h5>
+            <p>
+                <strong>攻撃スキル</strong>または<strong>アストラルコード</strong>の対象となったアルカステラが存在する場合、他の<strong>アンタップ状態</strong>のアルカステラは[ブロック]を宣言できます。
+            </p>
+            <ul>
+                <li><strong>効果と処理:</strong> ブロックしたアルカステラがダメージを肩代わりし<strong>タップ</strong>されますが、DEFはアンタップ時同様（全額）適用されます。</li>
+            </ul>
+            
+            <p style="margin-top: 20px; font-weight: bold;">
+                【重要】スペルカードを発動する際は、必ず「どのアルカステラが発動するか」を宣言する必要があります。
+            </p>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>5. エンドフェイズ</h4>
+                <p>ターンの終了処理を行うフェイズです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li><strong>≪<span class="glossary-tooltip">共鳴値<span class="tooltip-text"><strong>共鳴値</strong>：アウラ・コンポルタのリソース。エンドフェイズにリセットされる。</span></span>≫リセット:</strong> アウラ・コンポルタが持つ≪共鳴値≫をリセットします。</li>
+                <li><strong>終了時処理:</strong> ターン終了時に起動する処理（状態異常やカード効果など）を行います。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>ダメージ処理のフロー</h4>
+                <p>アルカステラやフォロワーがダメージを受けた際の基本的な処理順序です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            
+            <h5 style="font-family: 'Shippori Mincho', serif;">ダメージ計算の基本</h5>
+            <ul>
+                <li><strong>固定ダメージ:</strong> 数値がそのままダメージとなります。</li>
+                <li><strong>ダイスダメージ (Xd6):</strong> 「Xd6」と表記された場合、X個の6面ダイスを振り、出た目の合計値がダメージとなります。</li>
+            </ul>
+
+            <h5 style="font-family: 'Shippori Mincho', serif; color: #cc3333; border-bottom: 1px solid #cc3333; padding-bottom: 5px; margin-top: 25px;">
+                【重要】DEF（防御力）の適用ルール
+            </h5>
+            <p>防御力(DEF)によるダメージ軽減が適用されるのは、<strong>攻撃スキル</strong>または<strong>アストラルコード</strong>によるダメージのみです。</p>
+            <p style="font-weight: bold;">
+                スペルカードや支援スキルによるダメージは、タップ状態に関わらずDEFの影響を受けず、そのままダメージを与えます。
+            </p>
+
+            <table style="width: 100%; margin-top: 15px; border-collapse: collapse; text-align: center;">
+                <caption style="caption-side: top; font-weight: bold; margin-bottom: 5px;">DEF適用時のダメージ計算式</caption>
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="border: 1px solid #ddd; padding: 8px;">アルカステラの状態</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">計算式</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">軽減率</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">アンタップ状態</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">ダメージ - DEF = 受けるダメージ</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">DEF全額軽減</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">タップ状態</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">ダメージ - (DEF ÷ 2) = 受けるダメージ</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">DEF半減軽減 (切り捨て)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h5 style="font-family: 'Shippori Mincho', serif; margin-top: 25px;">戦闘・ダメージ発生時のステップ</h5>
+            <ol>
+                <li><strong>ダメージ発生:</strong> スペルやスキルによりダメージが確定します。<br>
+                （[ブロック]が宣言された場合、処理対象がブロックしたアルカステラに変更されます）</li>
+                <li><strong>セフィロト・コード破損判定:</strong> ダメージを受けたアルカステラが<span class="glossary-tooltip">セフィロト・コード<span class="tooltip-text"><strong>セフィロト・コード</strong>：装備カード。攻撃スキルを受けると破損判定あり。</span></span>を装備している場合、<br>
+                破損判定（1d6ダイス）を行います。</li>
+                <li><strong>ダメージ軽減・無効化:</strong> 上記のDEF適用ルール、およびダメージ軽減や無効化効果を適用します。</li>
+                <li><strong>体力減少:</strong> 軽減後の最終ダメージ値分、対象の体力（HP）を減少させます。</li>
+                <li><strong>戦闘脱落判定:</strong> 体力が0になった場合、そのユニットは以下の処理を行います。
+                    <ul>
+                        <li>
+                            <strong>アルカステラ:</strong> 盤面に<strong>残り続けます</strong>が、
+                            「戦闘脱落状態」となります。（※リーダーのHPが0の場合は敗北）
+                        </li>
+                        <li>
+                            <strong>フォロワー:</strong> 「残照カード」に変換され、セメタリーに送られます。（※詳細はクラスルール参照）
+                        </li>
+                <li><strong>脱落時効果:</strong> 戦闘脱落時をタイミングとする効果が発動します。</li>
+            </ol>
+        </div>
+    </details>
+
+</section>
+
+</main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

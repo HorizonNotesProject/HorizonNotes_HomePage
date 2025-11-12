@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes 概要</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+    <main>
+    <div class="content-box">
+        
+        <h2>HorizonNotesの世界へようこそ！</h2>
+        
+        <p>HorizonNotesとは、プレイヤーが<strong>「アルカステラ」</strong>と呼ばれる星の精霊を導き、<br>
+        対戦型カードゲームRPGです。<br></p>
+        
+        <p>プレイヤーは3体のアルカステラカードと30枚のスペルカードからなるデッキを構築し、<br>
+        アルカステラ同士が激突する<strong>「ステラバトル」</strong>に挑みます。<br>
+        ステラバトルに勝利すると、スペルカードのパックの購入に使えるゲーム内通貨<strong>「ルクス」</strong>を<br>獲得できるほか、
+        アルカステラと絆を深めることが出来ます。</p>
+        
+        <p><strong>キミの相棒</strong>との絆が深まれば秘められた新しいスキルの開放や、<br>
+        そのアルカステラの<strong>「新しい姿（進化）」</strong>を手に入れられるかもしれません。<br>
+        夢と冒険、そしてキミだけのアルカステラとの出会い──あなただけの思い出の記録（ノート）が、今、開かれようとしています！<br></p>
+
+    </div>
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

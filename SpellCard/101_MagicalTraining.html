@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔道の研鑽 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>101_魔道の研鑽</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_101.png" alt="魔道の研鑽 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">魔道の研鑽</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> グリモワール</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">研鑽<span class="tooltip-text">研鑽：最大100まで蓄積可能。<br>
+                            スペルカード使用時に「選択効果」を累積させることができ、研鑽値100到達で使用可能になります。</span></span>:8】<br>
+                        あなたは2点のエーテルを得る。<br>
+                        その後、カードを1枚ドローする。<br>
+                        <br>
+                        《<span class="glossary-tooltip">選択<span class="tooltip-text">選択：あなたは以下の効果から一つ選び、大魔法＜グランド・アルカナ＞にストックする。</span></span>:》<br>
+                        ◦選択したアルカステラ、フォロワーに1のダメージを与える。<br>
+                        ◦選択したアルカステラ、フォロワーのHPを1点【回復】する。<br>
+                        ◦カードを1枚ドローする(1/2)
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>『星々の運行が理を示すように、魔力もまた理に従う。<br>
+                        汝、その理を解き明かさんと欲するならば、一字一句たりとも疎かにするべからず。』<br>
+                        ―魔導原論 序章より
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

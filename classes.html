@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    <h2>ルール (RULE)</h2>
+    <p>HorizonNotesの遊び方を紹介します。</p>
+
+<nav class="global-nav">
+    <ul>
+         <li><a href="rule.html">概要</a></li>
+         <li><a href="classes.html" class="active">7つのクラス</a></li> 
+         <li><a href="cards_alcastera.html">カードとアルカステラ</a></li>
+         <li><a href="field.html">フィールド</a></li>
+         <li><a href="gameplay.html">ターンの流れ</a></li>
+         <li><a href="glossary.html">用語集</a></li>
+     </ul>
+</nav>
+
+    <section id="overview">
+    <h3>2. 7つのクラス</h3>
+    <p>
+        このゲームには、それぞれが独自の戦術と固有のルールを持つ7つのクラスが存在します。
+        あなたのプレイスタイルに合ったクラスを見つけましょう。
+    </p>
+
+    <div class="rule-highlight" style="background: #f0f8ff; border: 1px solid #cce5ff; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+        
+        <h4 style="font-family: 'Shippori Mincho', serif; margin-top: 0;">
+            ★ クラスの基本ルール (重要)
+        </h4>
+        <p>
+            スペルカードを発動するには、まず「どのアルカステラが発動するか」を宣言します。
+        </p>
+        <ul>
+            <li>
+                <strong>クラス一致の原則:</strong><br>
+                スペルカードの「クラス」と、発動を宣言した「アルカステラ」のクラスが一致していないと、そのスペルは発動できません。
+            </li>
+            <li>
+                <strong>例外 (ニュートラル):</strong><br>
+                どのクラスにも属さない「ニュートラル」のスペルカードは、どのクラスのアルカステラでも発動可能です。
+            </li>
+        </ul>
+    </div>
+
+<div class="class-grid-container">
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_Aura.png" class="class-summary-img" alt="アウラ・コンポルタ">
+        
+        <div class="class-summary-text">
+            <h4>アウラ・コンポルタ (共鳴)</h4>
+            <p>スペルの使用で溜まる≪共鳴値≫で効果を強化。ターン内の連続行動が鍵。</p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+
+    <div class="class-details-body">
+    
+    <p><strong>戦術: スペルを連打し、≪共鳴値≫を高めて強力な追加効果を狙うテクニカルなクラス。</strong></p>
+    <p>
+        アウラ・コンポルタは「<span class="glossary-tooltip">共鳴値<span class="tooltip-text"><strong>共鳴値</strong>：アウラ・コンポルタがスペル使用で溜める、<br>エンドフェイズにリセットされるターン限定のリソース。</span></span>」という専用のリソースを扱います。<br>
+        スペルを発動するたびに共鳴値が溜まり、その値が一定に達するとカードが真の力を発揮します。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. ≪共鳴値≫の獲得</h4>
+    <p>
+        アウラ・コンポルタクラスのアルカステラがスペルカードを発動するたびに、≪共鳴値≫が増加します。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. ≪共鳴効果≫の発動</h4>
+    <p>
+        このクラスのカードは「<span class="glossary-tooltip">共鳴効果<span class="tooltip-text"><strong>共鳴効果</strong>：共鳴値が条件を満たした時に、通常効果に加えて発動する追加効果。</span></span>」を持つことがあります。
+    </p>
+    <ul>
+        <li>
+            <strong>条件達成で強化:</strong><br>
+            カードに ≪共鳴:5≫ と書かれていた場合、現在の共鳴値が5以上なら<br>
+            通常効果に加えて強力な「共鳴効果」が発動します。
+        </li>
+        <li>
+            <strong>複数の効果:</strong><br>
+            カードによっては、≪共鳴:3≫ と ≪共鳴:7≫ のように<br>
+            複数の共鳴効果を持つものもあります。
+        </li>
+    </ul>
+    
+    <h4 style="font-family: 'Shippori Mincho', serif;">3. 注意点</h4>
+    <ul>
+        <li><strong>ターン終了時リセット:</strong><br>
+        獲得した≪共鳴値≫は、ターン終了時にリセットされます。<br>
+        1ターン中にどれだけスペルを繋げられるかが鍵となります。
+        </li>
+    </ul>
+</details>
+
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_Hono.png" class="class-summary-img" alt="ホノリウス">
+        
+        <div class="class-summary-text">
+            <h4>ホノリウス (フォロワー)</h4>
+            <p>フォロワーを展開し物量で圧殺。<br>
+            ただし毎ターン維持コストが必要。
+</p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+
+    <div class="class-details-body">
+    
+    <p><strong>戦術: 「フォロワー」と呼ばれるユニットを場に展開し、数で圧倒する物量クラス。</strong></p>
+    <p>
+        ホノリウスは、アルカステラ（3体）とは別に、多くの「フォロワー」を召喚して戦います。<br>
+        フォロワーはアルカステラと同様にステータスやスキルを持ちますが、Lvは持ちません。
+    </p>
+    
+    <p>
+    <strong>フォロワーエリアの定員は【各プレイヤー3枠】</strong>です。この枠を超えてフォロワーを場に出すことはできません。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. フォロワーの維持コスト</h4>
+    <p>
+        ホノリウスの最大の特徴は「維持コスト」です。<br>
+        あなたのターン開始時、場にフォロワーが存在する場合、<br>
+        そのフォロワーの<strong>コスト（<span class="glossary-tooltip">エーテル<span class="tooltip-text"><strong>エーテル</strong>：アルカステラの力の源。<br>スキル発動のコスト。</span></span>）を再度支払う</strong>必要があります。
+    </p>
+    <ul>
+        <li>
+            <strong>支払えない場合:</strong><br>
+            コストを支払わない、または支払えないことを選んだフォロワーは<br>
+            フォロワーエリアから<span class="glossary-tooltip">セメタリー<span class="tooltip-text"><strong>セメタリー</strong>：使用済みカードのエリア。<br>デッキ再構築の源。</span></span>に送られます。
+        </li>
+    </ul>
+    
+    <li>
+        <strong>エーテル変換不可:</strong><br>
+        フォロワーカードは、チャージフェイズまたはメインフェイズで<br>
+        「エーテル変換」の素材として使用することはできません。
+    </li>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. ≪残照カード≫への変換</h4>
+    <p>
+        フォロワーは基本的に、戦闘などで倒される（戦闘脱落する）と<br>
+        ≪<span class="glossary-tooltip">残照カード<span class="tooltip-text">残照カード：フォロワーが戦闘脱落した際に変換されるカード。<br>
+        <strong>コスト:</strong> 1<br>
+        <strong>クラス:</strong> ニュートラル<br>
+        <strong>効果:</strong> なし<br>
+        「残照から元のカードに復元する効果」を発動しないと、元のフォロワーカードには戻せません。</span></span>≫という別のカードに変換され、セメタリーに送られます。
+    </p>
+
+</details>
+
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_Sef.png" class="class-summary-img" alt="セフィル・イェツィラー (セフィロト・コード)">
+        
+        <div class="class-summary-text">
+            <h4>セフィル・イェツィラー (セフィロト・コード)</h4>
+            <p>アルカステラを強化する装備カードを展開。<br>
+            攻撃スキルを受けると破損判定（1d6）が発生し、<br>
+            破壊時効果が発動するリスクとリターン。</p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+
+    <div class="class-details-body">
+    
+    <p><strong>戦術: アルカステラを「セフィロト・コード」で強化し、ダイスロールで運命を切り開く装備クラス。</strong></p>
+    <p>
+        「セフィロト・コード」は、アルカステラに装備できる特別なスペルカードです。<br>
+        装備すると、ステータスが上がったり、常に発動し続けるパッシブ効果を得られます。<br>
+        <strong>装備できる枠は【各アルカステラにつき3枠】</strong>です。
+    </p>
+    <div style="border-left: 4px solid #e67e22; padding-left: 15px; background: #fff8f5; padding: 10px; margin-top: 15px;">
+            <p style="margin-top: 0; font-weight: bold;">
+                【上書き破損ルール】<br>
+                1体のアルカステラが既に3枠装備している状態で、4枚目のセフィロト・コードを発動した場合、<br>
+                <strong>最も古く装備していたセフィロト・コードが「破損（セメタリーへ送る）」されます。</strong><br>
+                このとき、破損された装備の「破損時効果」が即座に発動します。
+            </p>
+        </div>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. 破損判定 (1d6ダイス)</h4>
+    <p>
+        このクラスの最大の特徴が「<span class="glossary-tooltip">破損判定<span class="tooltip-text"><strong>破損判定</strong>：セフィロト・コードの防御処理。1d6ダイスを振り、失敗で破壊。</span></span>」です。<br>
+        セフィロト・コードを装備したアルカステラが「攻撃スキル」を受けるたび、<br>
+        この判定が発生します。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. 破損耐性ナンバー</h4>
+    <p>
+        各セフィロト・コードカードには、「破損耐性ナンバー」として<br>
+        1～6までの数字が複数書かれています。<br>
+        これは、その装備が[生存できる出目（ナンバー）]です。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">3. 判定の処理</h4>
+    <p>
+        破損判定では、1d6（6面ダイスを1個）を振ります。
+    </p>
+    <ul>
+        <li>
+            <strong>判定に失敗 (破壊):</strong><br>
+            ダイスの出目が、その装備の<strong>「破損耐性ナンバー」に書かれていなかった場合</strong><br>
+            その装備は<span class="glossary-tooltip">セメタリー<span class="tooltip-text"><strong>セメタリー</strong>：使用済みカードのエリア。<br>デッキ再構築の源。</span></span>に送られます。
+        </li>
+        <li>
+            <strong>判定に成功 (生存):</strong><br>
+            出目が「破損耐性ナンバー」に書かれている数字と一致した場合、その装備は場に残ります。
+        </li>
+        <li>
+            <strong>破損時効果:</strong><br>
+            この判定によってセメタリーに送られた（破損した）カードが「<span class="glossary-tooltip">破損時効果<span class="tooltip-text"><strong>破損時効果</strong>：装備が破壊された時に即座に発動する効果。</span></span>」を持つ場合、その効果が即座に発動します。
+        </li>
+    </ul>
+
+</details>
+
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_Pika.png" class="class-summary-img" alt="ピカトリクス（座標）">
+        
+        <div class="class-summary-text">
+            <h4>ピカトリクス（座標）</h4>
+            <p>ターン開始時に座標（1-6）を宣言。<br>
+            宣言とスペルの条件が合致すれば<br>
+            強力な≪座標効果≫が発動する戦略型。 
+            </p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+
+    <div class="class-details-body">
+    
+    <p><strong>戦術: 毎ターン「<span class="glossary-tooltip">座標<span class="tooltip-text"><strong>座標</strong>：ピカトリクスクラスがターン開始時に宣言する1〜6の数字。</span></span>」を宣言し、その数字とカード効果を合致させて戦況をコントロールする予測クラス。</strong></p>
+    <p>
+        ピカトリクスは、ターン開始時に「座標（1～6までの数字）」を1つ宣言するという、ユニークな能力を持ちます。<br>
+        （※ピカトリクスクラスのアルカステラが場にいる場合のみ）
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">≪座標効果≫の発動</h4>
+    <p>
+        ピカトリクスクラスのスペルカードは、≪<span class="glossary-tooltip">座標効果<span class="tooltip-text"><strong>座標効果</strong>：宣言した座標と一致した時に、通常効果の代わりに発動する強力な効果。</span></span>≫を持つことがあります。
+    </p>
+    <ul>
+        <li>
+            <strong>座標の一致:</strong><br>
+            カードに書かれた「座標効果」の数字と、あなたがそのターンに宣言した「座標」の数字が一致している。
+        </li>
+    </ul>
+    <p>
+        上記条件を満たした状態でそのスペルカードを発動すると<br>
+        カードに書かれた通常効果の代わりに、より強力（または特殊）な≪座標効果≫が発動します。
+    </p>
+    <p>
+        <strong>例：</strong>ターン開始時に「3」を宣言。手札の「座標効果: 3」を持つカードを発動すると、通常効果ではなく≪座標効果≫が起動します。
+    </p>
+
+</details>
+
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_Guri.png" class="class-summary-img" alt="グリモワール（研鑽）">
+        
+        <div class="class-summary-text">
+            <h4>グリモワール（研鑽）</h4>
+            <p>スペル使用で≪研鑽値≫を蓄積し、<br>
+            ≪選択効果≫を累積。<br>
+            研鑽値100で累積した≪選択効果≫をすべて発動する<br>
+            必殺の「グランドアルカナ」を放つ長期戦略型。
+            </p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+
+    <div class="class-details-body">
+    
+    <p><strong>戦術: スペルを使う度「選択効果」を積み上げ、≪研鑽値≫を100にして必殺技≪グランドアルカナ≫で全てを解放する、大器晩成型クラス。</strong></p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. ≪研鑽値≫と≪選択効果≫</h4>
+    <p>
+        グリモワールのスペルカードは「<span class="glossary-tooltip">研鑽値<span class="tooltip-text"><strong>研鑽値</strong>：グリモワールクラスのリソース。<br>スペル使用で溜まるポイントで、最大100でグランドアルカナ発動。</span></span>」と「<span class="glossary-tooltip">選択効果<span class="tooltip-text"><strong>選択効果</strong>：グリモワールスペル使用時に選び、グランドアルカナに累積する効果。</span></span>」を持ちます。
+    </p>
+    <ul>
+        <li>
+            <strong>≪研鑽値≫:</strong><br>
+            スペル使用で貯まっていくポイントです（最大100）。<br>
+            これが100に達すると、必殺技が使用可能になります。
+        </li>
+        <li>
+            <strong>≪選択効果≫:</strong><br>
+            カードに記された複数の効果から、好きなものを1つ選びます。<br>
+            選んだ効果は、後述の「<span class="glossary-tooltip">グランドアルカナ<span class="tooltip-text"><strong>グランドアルカナ</strong>：研鑽値100で発動。累積した選択効果を全て解放する必殺技。</span></span>」の効果として「累積（ストック）」されていきます。
+        </li>
+    </ul>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. 必殺技 ≪グランドアルカナ≫</h4>
+    <p>
+        研鑽値が100に達すると、必殺技≪グランドアルカナ≫を宣言できます。
+    </p>
+    <ul>
+        <li>
+            <strong>効果:</strong><br>
+            あなたがそれまでに「累積」させてきた全ての≪選択効果≫が、一斉に発動します。
+        </li>
+        <li>
+            <strong>リセット:</strong><br>
+            発動後、研鑽値と累積した選択効果はすべてリセット（0に）されます。
+        </li>
+    </ul>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">3. 注意点</h4>
+    <ul>
+        <li>
+            <strong>累積ストップ:</strong><br>
+            研鑽値が100に達すると（必殺技の準備が整うと）、それ以上、選択効果を累積させることはできません。
+        </li>
+    </ul>
+</details>
+
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_Ctono.png" class="class-summary-img" alt="クトノグラフ（狂気）">
+        
+        <div class="class-summary-text">
+            <h4>クトノグラフ（狂気）</h4>
+            <p>スペル使用で≪狂気値≫が上昇。<br>
+            強力な効果を持つが、 <br>
+            ≪狂気値≫の閾値を超えると「発狂効果（デメリット）」が発生する<br>
+            ハイリスク・ハイリターン。
+            </p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+    
+    <div class="class-details-body">
+    <p><strong>戦術: 自ら「狂気値」を溜め、強力なスペルの代償として「発狂効果」というデメリットを受け入れる、ハイリスク・ハイリターンなクラス。</strong></p>
+    <p>
+        クトノグラフのカードは、プレイヤー自身に「狂気値」を蓄積させます。<br>
+        この狂気値が一定ラインを超えると、強力な効果の代わりに、危険な「発狂効果」がプレイヤーを襲います。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. ≪狂気値≫の蓄積</h4>
+    <p>
+        クトノグラフのスペルカードには「狂気値」が記されています。<br>
+        そのカードを使用すると、記された数値分、あなたの≪<span class="glossary-tooltip">狂気値<span class="tooltip-text"><strong>狂気値</strong>：クトノグラフが蓄積するリスクのリソース。閾値を超えるとペナルティ。</span></span>≫が加算（蓄積）されていきます。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. ≪発狂効果≫ (デメリット)</h4>
+    <p>
+        一部のスペルカードは「発狂効果」を持っています。<br>
+        この効果は、あなたの現在の≪狂気値≫が、カードに設定された「閾値（しきいち）」を超えている場合に発動します。
+    </p>
+    <ul>
+        <li>
+            <strong>デメリット効果:</strong><br>
+            「<span class="glossary-tooltip">発狂効果<span class="tooltip-text"><strong>発狂効果</strong>：狂気値が閾値を超えた時に誘発する、プレイヤーへのデメリット効果。</span></span>」は、多くの場合プレイヤーにとって不利になる<strong>デメリット効果</strong>として起動します。
+        </li>
+        <li>
+            <strong>発動条件:</strong><br>
+            例：あなたの狂気値が50の時、「閾値: 40」のカードを使うと、発狂効果が発動してしまいます。
+        </li>
+    </ul>
+    <p>
+        （狂気値をいかに管理し、デメリットを回避しながら戦うかが問われます）
+    </p>
+</details>
+
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        
+        <img src="images/common/Crass_HorizonNotes.png" class="class-summary-img" alt="HorizonNotes（世界記憶）">
+        
+        <div class="class-summary-text">
+            <h4>HorizonNotes（世界記憶）</h4>
+            <p>ターン数に応じてコストや効果が3段階に変化。<br>
+            長期戦になるほど強力になる大器晩成型。
+            </p>
+        </div>
+        
+        <span class="accordion-icon">+</span>
+
+    </summary>
+
+    <div class="class-details-body">
+    <p><strong>戦術: 時間（ターン）の経過と共にスペルカードが変容する、長期戦を見据えて戦う大局的なクラス。</strong></p>
+    <p>
+        ゲームタイトルを冠するこのクラスは、「<span class="glossary-tooltip">世界記憶<span class="tooltip-text"><strong>世界記憶</strong>：HorizonNotesクラスの固有ルール。ターン数の経過に応じてカードの性能が3段階に自動変化する。</span></span>」という固有のルールを持ちます。<br>
+        このクラスのスペルカードは、現在のターン数に応じて、その性能が自動的に変化します。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">≪世界記憶≫ (3段階変容)</h4>
+    <p>
+        多くのカードが、現在のターン数によって「3段階」にコストや効果が切り替わります。
+    </p>
+    
+    <p><strong>（例）とあるスペルカードの場合:</strong></p>
+    <ol style="border-left: 3px solid #ccc; padding-left: 20px; list-style: none;">
+        <li style="margin-bottom: 10px;">
+            <strong>段階1 (例: 1～5ターン)</strong><br>
+            コスト3, 効果: 1ドロー
+        </li>
+        <li style="margin-bottom: 10px;">
+            <strong>段階2 (例: 6～7ターン)</strong><br>
+            コスト1, 効果: 回復
+        </li>
+        <li>
+            <strong>段階3 (例: 8ターン以降)</strong><br>
+            コスト5, 効果: 強力なダメージ
+        </li>
+    </ol>
+    
+    <p>
+        序盤は平凡だが終盤に強力になるカード、逆に序盤がピークのカードなどゲームの「今」を意識した戦略が求められます。
+    </p>
+</details>
+</div>
+
+</main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

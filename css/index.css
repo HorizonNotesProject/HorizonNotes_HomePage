@@ -1,0 +1,67 @@
+/* ------------------------------------- */
+/* トップページ専用CSS（他のファイルに影響なし） */
+/* ------------------------------------- */
+
+/* ページ全体のフェードイン開始 */
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    /* フォント設定は共通CSSか個別に維持 */
+    font-family: 'M PLUS Rounded 1c', "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    /* 背景色設定もここに残します */
+    background-color: #333; 
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* 個別要素のフェードインアニメーションのルール */
+.fade-in-item {
+    opacity: 0;
+    transition: opacity 0.8s ease-out; /* 煙のような演出 */
+}
+body.loaded .fade-in-item {
+    opacity: 1;
+}
+.delay-1 { transition-delay: 0.5s; }
+.delay-2 { transition-delay: 1.0s; }
+.delay-3 { transition-delay: 1.5s; }
+
+/* 背景画像とレイアウト */
+main {
+    min-height: 80vh; 
+    background-image: url('/images/background/001.png'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center; 
+    position: relative;
+    z-index: 1; 
+}
+
+/* 文字スタイルと見やすさ */
+main h2 {
+    font-size: 2.2em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.catchphrase {
+    font-family: 'HanaMin B', serif; 
+    font-size: 1.8em; 
+    font-weight: normal; 
+}
+main p:not(.catchphrase) {
+    font-size: 1.05em;
+}
+
+/* キャッチコピーの固有スタイル (HanaMin Bとサイズ) */
+.catchphrase {
+    font-family: 'HanaMin B', serif; 
+    font-size: 1.8em; 
+    font-weight: normal; 
+}
+
+/* お知らせ部分のサイズ */
+main p:not(.catchphrase) {
+    font-size: 1.05em;
+}
+

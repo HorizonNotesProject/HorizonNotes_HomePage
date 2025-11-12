@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イグニス・スクロール - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>115_イグニス・スクロール</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_115.png" alt="イグニス・スクロール カード">
+                <p class="rarity-text">レアリティ: レア (R)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">イグニス・スクロール</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> グリモワール</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>自分のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">研鑽<span class="tooltip-text">研鑽：最大100まで蓄積可能。<br>
+                            スペルカード使用時に「選択効果」を累積させることができ、研鑽値100到達で使用可能になります。</span></span>:5】<br>
+                        相手のアルカステラを1体選択する。<br>
+                        そのアルカステラに状態異常【<span class="glossary-tooltip">炎上<span class="tooltip-text">炎上:x：ターン終了時（エンドフェイズ）、この状態のアルカステラに対してx分のダメージを与えます。<br>
+                        ダメージ処理後、xの値は1減少します。<br>
+                        値が0になった時、この状態異常は失われます。</span></span>:2】を付与する。<br>
+                        その後、あなたは2点のエーテルを得る。<br>
+                        <br>
+                        《<span class="glossary-tooltip">選択<span class="tooltip-text">選択：あなたは以下の効果から一つ選び、大魔法＜グランド・アルカナ＞にストックする。</span></span>:》<br>
+                        ◦ランダムな相手のアルカステラ１体に3点のダメージを与える。<br>
+                        ◦あなたはエーテルを1点獲得する。(2/2)<br>
+                        ◦相手のすべてのアルカステラに【炎上:1】を付与する。(1/2)
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        獣の荒々しさと、炎の破壊力。 <br>
+                        彼女の術式は、戦場そのものを焼き消すほどの 凄まじい熱量を解き放つ。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

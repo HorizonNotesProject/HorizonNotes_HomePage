@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【奏者（ソニエール）】一覧 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        /* カード一覧コンテナ */
+        .card-list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* カードリストのアイテム */
+        .card-list-item {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-list-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-list-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* 詳細表示の切り替え */
+        #card-list-view, #card-detail-view {
+            display: none;
+        }
+
+        .active-view {
+            display: block !important;
+        }
+
+        /* カード詳細ビューの調整 */
+        .card-detail-main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 詳細ページで使用されているクラス */
+        .spell-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* 画像と情報の2列レイアウト */
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .spell-layout-grid {
+                grid-template-columns: 1fr; /* スマホでは縦並び */
+            }
+        }
+        
+        /* 必須項目の調整（元のHTML構造に合わせる） */
+        .skill-box h4 { margin-top: 0; }
+        .skill-prop { margin-bottom: 5px; }
+        .skill-effect { 
+            border: 1px dashed #ddd; 
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /* グロッサリーツールチップの簡易スタイル (元のCSSがない場合を想定) */
+        .glossary-tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dotted #000;
+        }
+        .tooltip-text {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+            width: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 120%;
+            white-space: normal;
+        }
+        .glossary-tooltip:hover .tooltip-text {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div id="card-list-view" class="active-view">
+            <h2>【奏者（ソニエール）】一覧 (12枚)</h2>
+            <hr>
+            <div id="card-list" class="card-list-container">
+                </div>
+        </div>
+
+        <div id="card-detail-view" class="card-detail-main">
+            <h2 id="detail-card-title"></h2>
+
+            <div class="spell-layout-grid">
+                
+                <div class="spell-card-image">
+                    <img id="detail-card-image" src="" alt="カード画像">
+                    <p id="detail-rarity-text" class="rarity-text"></p>
+                </div>
+
+                <div class="spell-info-box">
+                    <div class="skill-box">
+                        <h4 id="detail-skill-name"></h4>
+                        <div class="skill-prop"><strong>クラス:</strong> <span id="detail-class"></span></div>
+                        <div class="skill-prop"><strong>コスト:</strong> <span id="detail-cost"></span></div>
+                        <div class="skill-prop"><strong>タイミング:</strong> <span id="detail-timing"></span></div>
+                        <div class="skill-effect">
+                            <strong>効果:</strong><br>
+                            <div id="detail-effect"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flavor-text-box" style="grid-column: 1 / -1;">
+                    <hr>
+                    <p id="detail-flavor-text"></p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="back-button-wrapper">
+                <button id="back-to-list-button" class="back-button">← カード一覧へ戻る</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // --- カードデータ (13枚) ---
+        // カードデータは、元のHTMLの構造に合わせて、必要な情報を抽出しています。
+        const CARD_DATA = [
+            {
+                id: '001',
+                name: '奏者・バイオリン',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_001.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    相手の場の全てのアルカステラに1点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                        その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を与える。
+                `,
+                flavor: `<i>静寂を切り裂く最初の音は、氷のように冷たい。<br>
+                    だが、その音色に込められた情熱は、やがて聴く者の心臓を熱く焦がす炎となる。</i>`
+            },
+            {
+                id: '002',
+                name: '奏者・ヴィオラ',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_002.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                【演奏】<br>
+                    相手の場の全てのアルカステラに1点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                    その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を与える。
+                `,
+                flavor: `<i>舞台は彼女にとって最高の遊び場。<br>
+                    無邪気な一振りが、光の音符となり会場を跳ね回る。<br>
+                    それは、聴く者全てに贈られる、至上の祝福のワルツ。</i>`
+            },
+            {
+                id: '003',
+                name: '奏者・チェロ',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_003.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    相手の場の全てのアルカステラに1点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                    その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を与える。
+                `,
+                flavor: `<i>彼女の弓が弦を擦る瞬間、劇場の床は震え重く深い低音が聴衆の魂の底を直接揺さぶる。<br>
+                    それは、隠し続けた怒りか、抑えきれない情念か。</i>`
+            },
+            {
+                id: '004',
+                name: '奏者・コントラバス',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_004.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    相手の場の全てのアルカステラに1点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                    その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を与える。
+                `,
+                flavor: `<i>音が生み出すのは、気の遠くなるような悠久の時間。<br>
+                    そのリズムは、古代から続く命の鼓動。<br>
+                    彼女の演奏は、刹那の美しさではなく永遠の記憶を刻む。</i>`
+            },
+            {
+                id: '005',
+                name: '奏者・フルート',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_005.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたの全てのアルカステラは1点HPを回復する。
+                `,
+                flavor: `<i>魂を吹き込むたび、銀色の管から湧き出る生命の息吹。<br>
+                    それは、聴く者の心に遠い春の日のような瑞々しさと、<br>
+                    新しい勇気を与え続ける。</i>`
+            },
+            {
+                id: '006',
+                name: '奏者・オーボエ',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_006.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたの全てのアルカステラは1点HPを回復する。
+                `,
+                flavor: `<i>他の楽器に溶け込むことを拒む、鼻にかかったような独特の音色。<br>
+                    その哀愁は、彼女が背負う孤独な使命の証。群れの中に立ち、しかし常に孤高。</i>`
+            },
+            {
+                id: '007',
+                name: '奏者・クラリネット',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_007.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたの全てのアルカステラは1点HPを回復する。
+                `,
+                flavor: `<i>語り手は、一人の少女。<br>
+                    哀しみも喜びも、秘密の囁きも、全てをその澄んだ音色に託す。<br>
+                    今、語られるのは、あなただけの、特別な物語。</i>`
+            },
+            {
+                id: '008',
+                name: '奏者・ファゴット',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_008.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたの全てのアルカステラは1点HPを回復する。
+                `,
+                flavor: `<i>二枚の薄い木片に、全霊の息吹を集中させる。<br>
+                    その振動が、荘厳にして柔らかな響きを生み出す。<br>
+                    それは、木管楽器の深い森の奥底から届く、穏やかな声。</i>`
+            },
+            {
+                id: '009',
+                name: '奏者・トランペット',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_009.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたは山札の上からカードを1枚セメタリーに送る。
+                `,
+                flavor: `<i>黄金のラッパから放たれた光は、劇場の天井を突き破り勝利のファンファーレとなって空へと響き渡る。<br>
+                    全ての栄光と喝采は、この一音のために集約される。</i>`
+            },
+            {
+                id: '010',
+                name: '奏者・ホルン',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_010.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたは2点のエーテルを得る。
+                `,
+                flavor: `<i>遠い山脈にこだまする、神話時代の記憶。<br>
+                    荘厳にしてロマンティックな響きは、全てを冒険譚へと変える。<br>
+                    奏者自身も、物語の深奥に微笑みかける。</i>`
+            },
+            {
+                id: '011',
+                name: '奏者・トロンボーン',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_011.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたの全てのアルカステラに2点の【装甲】を与える。
+                `,
+                flavor: `<i>神々しいほどの咆哮が、劇場の全てを覆い尽くす。<br>
+                    彼女のスライドが一歩進むたび、音の壁は重厚さを増し誰も逆らえない絶対的な力となる。</i>`
+            },
+            {
+                id: '012',
+                name: '奏者・ティンパニ',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a004_card_012.png',
+                class: '奏者（ソニエール）',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    【演奏】<br>
+                    あなたは《共鳴:1》を得る。
+                `,
+                flavor: `<i>一打が世界を変える。<br>
+                    喜びの頂点から絶望の淵まで、彼女のバチが叩き出す低音は<br>
+                    楽団全ての感情の起伏を決定づけ、聴衆の心臓を直接鳴動させる。</i>`
+            },
+            
+        ];
+
+
+        // --- DOM要素の取得 ---
+        const cardListView = document.getElementById('card-list-view');
+        const cardDetailView = document.getElementById('card-detail-view');
+        const cardListContainer = document.getElementById('card-list');
+        const backToListButton = document.getElementById('back-to-list-button');
+
+        // --- 詳細表示用の要素 ---
+        const detailCardTitle = document.getElementById('detail-card-title');
+        const detailCardImage = document.getElementById('detail-card-image');
+        const detailRarityText = document.getElementById('detail-rarity-text');
+        const detailSkillName = document.getElementById('detail-skill-name');
+        const detailClass = document.getElementById('detail-class');
+        const detailCost = document.getElementById('detail-cost');
+        const detailTiming = document.getElementById('detail-timing');
+        const detailEffect = document.getElementById('detail-effect');
+        const detailFlavorText = document.getElementById('detail-flavor-text');
+
+
+        /**
+         * カード一覧を生成してHTMLに挿入する
+         */
+        function renderCardList() {
+            CARD_DATA.forEach(card => {
+                const listItem = document.createElement('div');
+                listItem.className = 'card-list-item';
+                listItem.dataset.cardId = card.id;
+                
+                // カード名と画像を表示
+                listItem.innerHTML = `
+                    <img src="${card.image}" alt="${card.name} カード" loading="lazy">
+                    <p>No.${card.id} ${card.name}</p>
+                    <p class="rarity-text">${card.rarity}</p>
+                `;
+
+                // クリックイベントを設定
+                listItem.addEventListener('click', () => {
+                    displayCardDetail(card.id);
+                });
+
+                cardListContainer.appendChild(listItem);
+            });
+        }
+
+        /**
+         * 指定されたカードIDの詳細を表示する
+         * @param {string} cardId - 表示するカードのID
+         */
+        function displayCardDetail(cardId) {
+            const card = CARD_DATA.find(c => c.id === cardId);
+            if (!card) return;
+
+            // データを詳細表示エリアに反映
+            detailCardTitle.textContent = `No.${card.id}_${card.name}`;
+            detailCardImage.src = card.image;
+            detailCardImage.alt = `${card.name} カード`;
+            detailRarityText.textContent = `レアリティ: ${card.rarity}`;
+            detailSkillName.innerHTML = `<span class="sk-attack">${card.name}</span>`; // sk-attackクラスを付与
+            detailClass.textContent = card.class;
+            detailCost.textContent = card.cost;
+            detailTiming.textContent = card.timing;
+            detailEffect.innerHTML = card.effect; // 効果はHTMLを含むためinnerHTML
+            detailFlavorText.innerHTML = card.flavor; // フレーバーテキストもHTMLを含む
+
+            // ビューの切り替え
+            cardListView.classList.remove('active-view');
+            cardDetailView.classList.add('active-view');
+            window.scrollTo(0, 0); // ページトップへ移動
+        }
+
+        /**
+         * カード一覧表示に戻る
+         */
+        function backToList() {
+            cardDetailView.classList.remove('active-view');
+            cardListView.classList.add('active-view');
+            window.scrollTo(0, 0);
+        }
+
+        // --- イベントリスナー ---
+        backToListButton.addEventListener('click', backToList);
+
+        // --- 初期化処理 ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCardList();
+            
+            // --- ヘッダー・フッターを読み込む処理 ---
+            // 既存のヘッダー・フッター読み込みスクリプトをそのまま残す
+            fetch('/_includes/header.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('ヘッダーの読み込みに失敗しました:', error);
+                });
+
+            fetch('/_includes/footer.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('フッターの読み込みに失敗しました:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>

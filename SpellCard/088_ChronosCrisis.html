@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クロノス・クライシス - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>088_クロノス・クライシス</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_088.png" alt="クロノス・クライシス カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">クロノス・クライシス</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ピカトリクス</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        手札を１枚エーテル変換する。<br>
+                        <br>
+                        《座標 : 5》<br>
+                        あなたは追加で一つ、座標を選択する。<br>
+                        その後、カードを2枚ドローする。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>砂時計は砕け、記されてきた歴史のページは宙を舞う。<br>
+                        黄金の車輪が廻るとき、絶対なる「時」の理（ことわり）が崩壊する。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

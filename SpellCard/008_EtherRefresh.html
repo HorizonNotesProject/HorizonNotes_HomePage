@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エーテル・リフレッシュ - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>008_エーテル・リフレッシュ</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_008.png" alt="エーテル・リフレッシュ カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">エーテル・リフレッシュ</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ニュートラル</div>
+                    <div class="skill-prop"><strong>コスト:</strong>2</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        あなたのエーテルゾーンのカードを1枚選択する。<br>
+                        そのカードと手札のカード1枚を入れ替える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>湖畔に座り込み、ゆっくりと息を整える。 <br>
+                    水面に映る空が入れ替わるように、彼女の覚悟もまた新たになっていく。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

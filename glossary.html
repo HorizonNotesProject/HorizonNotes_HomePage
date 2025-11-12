@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    <h2>ルール (RULE)</h2>
+    <p>HorizonNotesの遊び方を紹介します。</p>
+
+<nav class="global-nav">
+    <ul>
+         <li><a href="rule.html">概要</a></li>
+         <li><a href="classes.html">7つのクラス</a></li> 
+         <li><a href="cards_alcastera.html">カードとアルカステラ</a></li>
+         <li><a href="field.html">フィールド</a></li>
+         <li><a href="gameplay.html">ターンの流れ</a></li>
+         <li><a href="glossary.html" class="active">用語集</a></li>
+     </ul>
+</nav>
+<section id="glossary">
+    <h3>6. 用語集（GLOSSARY）</h3>
+    <p>HorizonNotesのルール解説やカードテキストで使われる、専門用語を解説します。項目は「アクション」「状態・効果」「基本情報」の3種類に分類されています。</p>
+    
+    <!-- A. アクション・キーワード（プレイヤーの行動） -->
+    <details class="class-accordion parent-accordion">
+    <summary class="class-summary-card">
+        <h4 style="margin: 0;">A. アクション・キーワード（プレイヤーの行動）</h4>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body parent-body">
+      <div class="glossary-term-grid">
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>エーテル変換（Aether Conversion）</h4>
+                <p>チャージフェイズにて、手札のスペルカードをエーテルエリアに送る行動です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>この行動により、スペルカードのコスト分のエーテルを獲得します。エーテル変換は、お互いがパスするまで交互に何度でも繰り返せます。</p>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[ブロック]（Block）</h4>
+                <p>攻撃スキルやアストラルコードのダメージを肩代わりするために宣言できるアクションです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>アンタップ状態のアルカステラが宣言できます。ブロックしたアルカステラはタップされますが、DEFはアンタップ時と同様に全額適用されます。</p>
+        </div>
+        </div>
+    </details>
+    
+    </div> </details>
+    
+    <!-- B. 状態・ルール効果（ゲーム処理） -->
+    <details class="class-accordion parent-accordion">
+        <summary class="class-summary-card">
+            <h4 style="margin: 0;">B. 状態・ルール効果（ゲーム処理）</h4>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body parent-body">
+        <div class="glossary-term-grid">
+        
+        <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[戦闘脱落]（Defeated）</h4>
+                <p>アルカステラのHP0で移行する状態です。盤面に残りますが、行動はできません。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>アルカステラは盤面に残り続けますが、スキルを使用するなど、行動を起こすことはできません。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪残照カード≫（Afterglow Card）</h4>
+                <p>フォロワーが戦闘脱落した際に、セメタリーに送られるカードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>セメタリーに送られ、特定のカード効果の対象となるなど、フォロワーを失った後の展開に関わります。</p>
+            <p style="margin-top: 15px;"><strong>【カード情報】</strong></p>
+            <ul>
+                <li><strong>コスト:</strong> 1</li>
+                <li><strong>クラス:</strong> ニュートラル</li>
+                <li><strong>効果:</strong> なし</li>
+                <li><strong>復元:</strong> 「残照から元のカードに復元する効果」を発動しないと、元のフォロワーカードには戻せません。</li>
+            </ul>
+        </div>
+    </details>
+
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪アストラル・コード≫（Astral Code）</h4>
+                <p>カードの種別を定義するキーワード。デッキ再構築で得た「使用権」を消費して発動します。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>このキーワードを持つ効果は、アストラル・コードとして発動します。<br>
+            発動には、デッキ再構築時に獲得する「使用権」を消費する必要があります。</p>
+            <p>攻撃スキルと同様に扱われ、発動後はアルカステラがタップ状態になります。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪エーテルエフェクト≫（Aether Effect）</h4>
+                <p>スペルカードをエーテル変換した際に、チャージフェイズで発動する効果です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>発動できるのは、ターンに一度だけです。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪加重≫（Weight）</h4>
+                <p>同名カードの連発にペナルティを課す、コスト調整のキーワード能力です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>同ターンに同名カードを発動する度に、そのコストがxの値分増加します。</li>
+                <li>このコスト増加の値は、ターン終了時（エンドフェイズ）にリセットされます。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪継続≫（Continuous）</h4>
+                <p>ターンを跨いで効果が持続し、<strong>回数制限</strong>を持つキーワードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>効果は【継続:x】と表記され、スタートフェイズにて処理が行われるたびに<br>
+            <strong>xの値が1減少</strong>します。<br>
+            <strong>値が0になった時、その継続効果は失われます。</strong></p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪乗算≫（Multiply）</h4>
+                <p>コストの支払いと効果の規模を、任意で調整できるキーワード能力です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>効果は【乗算:x】と表記され、<strong>xの倍数</strong>でコストを支払うことが出来ます。</li>
+                <li>支払ったコストに応じて、その効果は強力になります。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪消失ダメージ≫（Vanish Damage）</h4>
+                <p>防御系の効果を無視して適用される、貫通性の高いダメージ処理です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>【消失ダメージ】と書かれたダメージは、アルカステラの<strong>DEF</strong>や、その他の<strong>【装甲】</strong>といったダメージ軽減効果を一切受けずに適用されます。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>《消滅≫（Vanish）</h4>
+                <p>カードが、ボイドエリアにすら送られず、ゲームから完全に除外される処理です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>このキーワードを持つカードは、<br>
+            発動後<strong>ボイドエリアにもセメタリーにも置かれず</strong>、ゲームから物理的にもルール上も完全に除外されます。<br>
+            いかなる効果によっても再利用・参照はできません。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪制限≫（Limited）</h4>
+                <p>その効果や能力の発動回数に上限を設けるキーワードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>効果は【制限:x】と表記され、このキーワードが付与された効果は、<strong>1ターンにxの値だけ発動できます</strong>。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪絶対効果≫（Absolute Effect）</h4>
+                <p>「無効化」の影響を受けない効果を持つキーワードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>この能力を持つスキルやスペルは、≪無効≫の効果を無視して適用されます。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪装甲:x≫（Armor:x）</h4>
+                <p>ダメージを軽減するための耐久値を持つ防御系キーワードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>ダメージを受ける時、<strong>タップ状態に関わらず</strong>そのダメージを軽減します。<br>
+            また、この軽減は<strong>スペルカードや支援スキル</strong>によるダメージにも適用されます。</p>
+            <p>軽減した場合、軽減した値分だけ<strong>xの値が減少</strong>します。（例：3ダメージ軽減した場合、xが3減少）</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪ボイド送り≫（Sent to Void）</h4>
+                <p>カードの使用後の最終的な配置エリアを指定するキーワードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>このキーワードを持つカードは、<br>
+            効果処理後<strong>セメタリーを経由せず</strong>ボイドエリアに送られます。<br>
+            ボイドからの再利用は、特定のアルカステラ能力を除き、<strong>極めて困難</strong>です。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪無効≫（Negate）</h4>
+                <p>特定の行動に対して、その効果を無効化する処理です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>主に【カウンター:x】という発動タイミングを持つカードやスキルで使用され、対抗する効果を打ち消します。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>《リーダー≫（Leader）</h4>
+                <p>発動者のアルカステラがリーダーであるかを条件とするキーワードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>このキーワードが付与されたスキルや効果は、<br>
+            発動を宣言したアルカステラがそのプレイヤーの<strong>リーダーである場合にのみ</strong>使用できます。</p>
+        </div>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+     <summary class="class-summary-card">
+         <div class="class-summary-text">
+             <h4>≪累積: X≫（Cumulative）</h4>
+             <p>この能力を持つカードは、発動する度にコストがX増えます。</p>
+         </div>
+         <span class="accordion-icon">+</span>
+     </summary>
+     <div class="class-details-body">
+         <p>増えたコストはこのバトル中継続します。</p>
+     </div>
+ </details>
+    
+    </div> </details>
+    
+    <!-- C. 状態異常（ステータス・ペナルティ） -->
+    <details class="class-accordion parent-accordion">
+        <summary class="class-summary-card">
+            <h4 style="margin: 0;">C. 状態異常（ステータス・ペナルティ）</h4>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body parent-body">
+        <div class="glossary-term-grid">
+        
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[炎上:x]（Burn:x）</h4>
+                <p>ターン終了時に継続的なダメージを与える、ダメージ系の状態異常です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>ターン終了時（エンドフェイズ）、この状態のアルカステラに対して<strong>x分のダメージを与えます。</strong></li>
+                <li>ダメージ処理後、<strong>xの値は1減少</strong>します。値が0になった時、この状態異常は失われます。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[大炎上:x]（Inferno:x）</h4>
+                <p>ターン終了時に悪化し続ける、指数関数的な継続ダメージの状態異常です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>ターン終了時（エンドフェイズ）、この状態のアルカステラに対して<strong>x分のダメージを与えます。</strong></li>
+                <li>ダメージ処理後、<strong>xの値は5増加</strong>します。<br>
+                値が0になることはなく、放置するとダメージが累積・増大します。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[健康]（Healthy）</h4>
+                <p>ユニットを強化し、防御的な役割を持つ特殊な状態異常です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>スキルの発動コストを<strong>-1</strong>します。</li>
+                <li>ターン開始時（スタートフェイズ）に<strong>HPを3点回復</strong>させます。</li>
+                <li>この状態異常は、<strong>他の状態異常が付与された場合、即座に消滅</strong>します。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[凍結:x]（Freeze:x）</h4>
+                <p>アルカステラにコストペナルティを課し、ターン経過で解除される状態異常です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>この状態のアルカステラが攻撃スキルを発動する場合、<strong>[凍結]の数値分コストが加算</strong>されます。</li>
+                <li>毎ターン終了時（エンドフェイズ）、<strong>[凍結]の値は1減少<strong>します。<br>
+                値が0になった時、この状態異常は失われます。</li>
+            </ul>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>[永久凍結:x]（Permafrost:x）</h4>
+                <p>アルカステラに重度の行動制限を課す、強力な状態異常です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <ul>
+                <li>この状態のアルカステラは、<strong>強制的にタップ状態</strong>となり、<strong>スペルカードの発動を行うことができません</strong>。</li>
+                <li>ターン終了時（エンドフェイズ）、<strong>[永久凍結]のカウントを1減少</strong>します。値が0になった時、この状態異常は失われます。</li>
+            </ul>
+        </div>
+        </div>
+    </details>
+    </div>
+    </details>
+    
+    </div> </details>
+    
+    <!-- D. 基本情報・エリア -->
+    <details class="class-accordion parent-accordion">
+        <summary class="class-summary-card">
+            <h4 style="margin: 0;">D. 基本情報・エリア</h4>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body parent-body">
+        <div class="glossary-term-grid">
+    
+    <h4 class="rule-subhead" style="margin-top: 40px;">D. 基本情報・エリア</h4>
+
+    <details class="class-accordion">
+    <summary class="class-summary-card">
+        <div class="class-summary-text">
+            <h4>アルカステラ（Alcastera）</h4>
+            <p>プレイヤーの分身となるユニット。リーダーと3体のサブで構成されます。</p>
+        </div>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body">
+        <p>プレイヤーの魂を宿す存在。<br>
+        戦闘脱落状態になっても盤面に残り続けます。（※リーダーが倒れると敗北）</p>
+    </div>
+    </details>
+
+    <details class="class-accordion">
+    <summary class="class-summary-card">
+        <div class="class-summary-text">
+            <h4>フォロワー（Follower）</h4>
+            <p>アルカステラと同じくステータスとスキルを持つユニットです。</p>
+        </div>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body">
+        <p>戦闘脱落時には「残照カード」に変換され、セメタリーに送られます。フォロワーエリアに展開され、プレイヤーごとに3枠の制限があります。</p>
+        
+        <p style="margin-top: 15px; font-weight: bold; color: #cc3333;">【重要な特徴：維持コスト】</p>
+        <p>
+            フォロワーは、発動したプレイヤーのターン開始時に、そのカードのコストを再度支払う必要があります。
+            コストを支払えない場合、そのフォロワーはセメタリーに送られます。
+        </p>
+    </div>
+    </details>
+
+    <details class="class-accordion">
+    <summary class="class-summary-card">
+        <div class="class-summary-text">
+            <h4>エーテル（Aether / コスト）</h4>
+            <p>スペルカードやスキルを発動するために必要なリソース（資源）です。</p>
+        </div>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body">
+        <p>チャージフェイズにて手札のスペルカードをエーテル変換することで獲得します。残量は変換したカードが個別に保持するユニークな仕組みです。</p>
+    </div>
+    </details>
+
+    <details class="class-accordion">
+    <summary class="class-summary-card">
+        <div class="class-summary-text">
+            <h4>セメタリー（Cemetery / 墓地）</h4>
+            <p>使用済み、または戦闘脱落したカードを置くエリアです。</p>
+        </div>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body">
+        <p>デッキ再構築の際に山札に戻されます。ゲームからの完全除外エリアであるボイドとは異なります。</p>
+    </div>
+    </details>
+
+  <details class="class-accordion">
+    <summary class="class-summary-card">
+        <div class="class-summary-text">
+            <h4>ボイド（Void）</h4>
+            <p>ゲームから完全に除外されたカードを置くエリアです。</p>
+        </div>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body">
+        <p>【ボイド送り】キーワードを持つカードが送られます。特定のアルカステラ能力を除き、ボイドからの再利用は極めて困難です。</p>
+    </div>
+    </div>
+  </details>
+  
+  </div>
+    </details>
+  
+      </div> </details>
+    
+    <!-- E. クラス固有リソース -->
+  <details class="class-accordion parent-accordion">
+        <summary class="class-summary-card">
+            <h4 style="margin: 0;">E. クラス固有リソース</h4>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body parent-body">
+        <div class="glossary-term-grid">
+        
+    <p>特定のクラスのみが使用し、戦術の核となる専用のカウンターやカードです。</p>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪共鳴値≫（Resonance Value）</h4>
+                <p>「アウラ・コンポルタ」クラスがスペル使用で溜める、ターン限定のリソースです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>アウラ・コンポルタのアルカステラがスペルカードを発動するたびに増加し、<br>
+            対応するカードの共鳴効果を誘発します。<br>
+            エンドフェイズに値がリセットされます。</p>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪座標≫（Coordinate）</h4>
+                <p>「ピカトリクス」クラスが、ターン開始時に宣言する1～6の数字です。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>ピカトリクススペルカードの「座標効果」の数字と一致した場合に、通常効果の代わりに強力な効果が発動します。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪研鑽値≫（Diligence Value）</h4>
+                <p>「グリモワール」クラスが、必殺技≪グランドアルカナ≫を準備するために蓄積するリソースです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>最大100まで蓄積可能。<br>
+            スペルカード使用時に「選択効果」を累積させることができ、研鑽値100到達で使用可能になります。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪狂気値≫（Madness Value）</h4>
+                <p>「クトノグラフ」クラスが、スペル使用で蓄積するリスクのリソースです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>この値が閾値を超えると、発狂効果（デメリット）が誘発します。</p>
+        </div>
+    </details>
+    
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>セフィロト・コード（Sephiroth Code）</h4>
+                <p>「セフィル・イェツィラー」クラスがアルカステラに装備できる特殊なスペルカードです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>装備によりステータス上昇やパッシブ効果を得ます。<br>
+            攻撃スキルを受けると破損判定が発生し、破壊されるリスクを伴います。</p>
+        </div>
+    </details>
+
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <div class="class-summary-text">
+                <h4>≪世界記憶≫（World Memory）</h4>
+                <p>「HorizonNotes」クラスのカードに作用する、ターン数依存のルールです。</p>
+            </div>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>ターン数の経過に応じて、対応するスペルカードのコストや効果が自動的に3段階に変化します。</p>
+        </div>
+        </div>
+    </details>
+    
+    </div>
+    </details>
+        </div>
+    </details>
+</section>
+
+</main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

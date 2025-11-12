@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ノーブル・ブラッド - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>028_ノーブル・ブラッド</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_028.png" alt="ノーブル・ブラッド カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ノーブル・ブラッド</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> アウラ・コンポルタ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>2</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>自分のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        自身にHPに6点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                        その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を与える。<br><br>
+                        《共鳴:2》アルカステラ１体を選択し、<br>
+                        このターン対象が与えるダメージに+2d6の加算を与える。<br>
+                        《共鳴:7》さらに+1d6の加算を与える。<br>
+                        その後、自身はエーテルを2点獲得する。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>ノブレスオブリージュ。<br>
+                    高貴なる血（ノーブル・ブラッド）とは、<br>
+                    自らを犠牲にしてでも仲間を勝利に導く、その覚悟のことを言う。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

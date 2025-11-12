@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes お問い合わせ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /*
+         * お問い合わせページの基本スタイル
+         */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            border-bottom: 3px double #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        .contact-section {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .contact-section h3 {
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* 連絡先リストのスタイル */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-list li {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        .contact-list strong {
+            display: inline-block;
+            width: 100px; /* 見出しの幅を揃えて見やすくする */
+            color: #555;
+        }
+        .contact-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="contact-container">
+            <h2>お問い合わせ・連絡先</h2>
+
+            <div class="contact-section">
+                <h3>📝 ご意見・ご要望フォーム</h3>
+                <p>ゲームに関するご質問、ご意見、バグ報告などは、以下の専用フォームよりお願いいたします。</p>
+                <p style="text-align: center; margin-top: 25px;">
+                    <a href="https://forms.gle/Xj15SiwqTzx5VE5o6" target="_blank" style="
+                        display: inline-block;
+                        padding: 10px 25px;
+                        background-color: #007bff;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        font-weight: bold;
+                    ">お問い合わせフォームを開く</a>
+                </p>
+                <p style="font-size: 0.9em; margin-top: 20px; color: #777;">
+                    ※外部サービス（Googleフォーム）を利用しています。
+                </p>
+            </div>
+            
+            <div class="contact-section">
+                <h3>📡 その他の連絡先・SNS</h3>
+                <p>直接的なコンタクトや、最新情報はこちらをご確認ください。</p>
+                <ul class="contact-list">
+                    <li>
+                        <strong>メール</strong>: 
+                        <a href="horizonnotesproject@gmail.com">horizonnotesproject@gmail.com</a>
+                        <p style="font-size: 0.9em; color: #999; margin: 5px 0 0 100px;">（連絡返せなかったらごめんなさい）</p>
+                    </li>
+                    <li>
+                        <strong>X (旧Twitter)</strong>: 
+                        <a href="https://x.com/HorizonNotes_PR" target="_blank">まる。@HorizonNotes_PR
+</a>
+                    </li>
+                </ul>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; color: #777;">
+                いただいたご意見は、今後の開発の参考にさせていただきます！
+            </p>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // --- ヘッダーを読み込む処理 ---
+        fetch('/_includes/header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('ヘッダーの読み込みに失敗しました:', error);
+            });
+
+        // --- フッターを読み込む処理 ---
+        fetch('/_includes/footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('フッターの読み込みに失敗しました:', error);
+            });
+    </script>
+
+</body>
+</html>

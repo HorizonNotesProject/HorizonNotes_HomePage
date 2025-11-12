@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リベンジ・ソウル - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>034_リベンジ・ソウル</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_034.png" alt="リベンジ・ソウル カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">リベンジ・ソウル</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> アウラ・コンポルタ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>3+</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">加重<span class="tooltip-text">加重：
+                        同ターンに同名カードを発動する度に、そのコストがxの値分増加します。<br>
+                        このコスト増加の値は、ターン終了時（エンドフェイズ）にリセットされます。</span></span>】<br>
+                        場のアルカステラを1体選択する。<br>
+                        このターン、ATK,DEFに+5点、加算する。<br><br>
+                        《共鳴:4》さらに+2点、加算する。<br>
+                        《共鳴:8》カードを2枚ドローする。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>復讐を誓う魂は安息を知らない。<br> 
+                        その燃え盛る怒りが天に届く時、星空を裂いて再び顕現する。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+            <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

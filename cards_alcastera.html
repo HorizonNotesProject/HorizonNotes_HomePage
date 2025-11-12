@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+    <main>
+    <h2>ルール (RULE)</h2>
+    <p>HorizonNotesの遊び方を紹介します。</p>
+
+<nav class="global-nav">
+    <ul>
+         <li><a href="rule.html">概要</a></li>
+         <li><a href="classes.html">7つのクラス</a></li> 
+         <li><a href="cards_alcastera.html" class="active">カードとアルカステラ</a></li>
+         <li><a href="field.html">フィールド</a></li>
+         <li><a href="gameplay.html">ターンの流れ</a></li>
+         <li><a href="glossary.html">用語集</a></li>
+     </ul>
+</nav>
+
+<section id="alcastera-base">
+    <h3>3. カードとアルカステラの基本</h3>
+    <p>
+        HorizonNotesを構成する「アルカステラ（ユニット）」と「スペルカード」の基礎能力と、ゲーム内での役割を解説します。
+    </p>
+    
+<h4 class="rule-subhead">共通ルール（コストと発動タイミング）</h4>
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        <div class="class-summary-text">
+            <h4>共通ルール：コストと発動タイミング</h4>
+            <p>全てのスキルとスペルカードに共通する、発動のための前提条件です。</p>
+        </div>
+        <span class="accordion-icon">+</span>
+    </summary>
+    <div class="class-details-body">
+        
+        <p>全てのスキルとスペルカードには、アクションを起こすために必要な<strong>コスト（消費エーテル数）</strong>と、発動できる<strong>タイミング</strong>が記載されています。</p>
+
+        <h4 style="font-family: 'Shippori Mincho', serif;">発動タイミングの種類</h4>
+        <p>記載された条件に合致している時のみ、そのカードを行使できます。</p>
+        <ul>
+            <li><strong>好きなタイミング:</strong> 自分のターン、相手のターンを問わず、いつでも発動可能。</li>
+            <li><strong>自分のターン:</strong> 自分のターンの特定のフェイズ、または自分のアクション中に発動可能。</li>
+            <li><strong>相手のターン:</strong> 相手のターンの特定のフェイズ、または相手のアクション中に発動可能。</li>
+            <li>
+                <strong>カウンター: [アクション名]:</strong><br>
+                記載された「[アクション名]」が<strong>直前</strong>に行われた時、その効果が解決される前に<strong>割り込んで</strong>発動します。<br>
+                （例: ≪カウンター: スペルカード≫の場合、相手のスペル発動に反応して割り込みます）
+            </li>
+        </ul>
+    </div>
+</details>
+
+    
+    <h4 class="rule-subhead">アルカステラについて</h4>
+    <div class="alcastera-subhead-grid">
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <img src="images/common/Card_Status.png" class="class-summary-img" alt="アルカステラのステータスアイコン">
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            
+            <h4 style="font-family: 'Shippori Mincho', serif;">レベル (Lv) と能力値</h4>
+            <ul>
+                <li>
+                    <strong>Lv (レベル):</strong> 戦闘開始時はLv1で始まり、戦闘中のレベルアップ条件を満たすことで<br>
+                    最大Lv3まで上昇します。<br>
+                    Lvアップでスキルの開放や能力値が上昇します。
+                </li>
+                <li>
+                    <strong>HP (体力):</strong> 0になるとそのアルカステラは<span class="glossary-tooltip">戦闘脱落状態<span class="tooltip-text"><strong>戦闘脱落状態</strong>：HP0で移行。盤面に残り行動不能。</span></span>となります。
+                </li>
+                <li>
+                    <strong>ATK (基礎攻撃力):</strong> 攻撃スキルのダメージに加算されます。
+                </li>
+                <li>
+                    <strong>DEF (基礎防御力):</strong> ダメージ軽減値。<span class="glossary-tooltip">アンタップ状態<span class="tooltip-text"><strong>アンタップ状態</strong>：待機中を示す状態。スキル使用やブロックが可能。</span></span>でそのまま、<strong><span class="glossary-tooltip">タップ状態<span class="tooltip-text"><strong>タップ状態</strong>：行動済みを示す状態。DEFが半減する。</span></span>なら値の半分</strong>が適用されます。
+                </li>
+            </ul>
+        </div>
+    </details>
+    <details class="class-accordion">
+        <summary class="class-summary-card">
+            <h4 style="margin: 0;">アルカステラのスキルと役割（攻撃、支援、必殺技）</h4>
+            <span class="accordion-icon">+</span>
+        </summary>
+        <div class="class-details-body">
+            <p>アルカステラは、Lvに応じて以下の3種類のスキルと、特別なリーダースキルを持ちます。</p>
+
+            <h4 style="font-family: 'Shippori Mincho', serif;">1. 攻撃スキル</h4>
+            <p>
+                メインの攻撃手段。エーテルを消費し、発動後は<strong>タップ状態</strong>になります。
+            </p>
+            <ul>
+                <li><strong>使用回数:</strong> アンタップ状態であれば、1ターンに何度でも連打可能。</li>
+                <li><strong>制約:</strong> タップ状態では使用不可。</li>
+            </ul>
+
+            <h4 style="font-family: 'Shippori Mincho', serif;">2. 支援スキル</h4>
+            <p>
+                サポートスキル。エーテルを消費しますが、使用してもタップ状態にはなりません。
+            </p>
+            <ul>
+                <li><strong>使用回数:</strong> 1ターンに一度、各アルカステラごとに発動可能。</li>
+            </ul>
+
+            <h4 style="font-family: 'Shippori Mincho', serif;">3. アストラルコード (必殺技)</h4>
+            <p>
+                デッキの再構築時に使用権を獲得する強力な必殺技。
+            </p>
+            <ul>
+                <li><strong>コスト:</strong> 使用権を消費します。</li>
+                <li><strong>制約:</strong> 攻撃スキルと同様、<strong>タップ状態では使用できません。</strong>発動後はタップ状態になります。</li>
+            </ul>
+            
+            <h4 style="font-family: 'Shippori Mincho', serif;">4. リーダースキル (パッシブ)</h4>
+            <p>
+                リーダーに指定されたアルカステラのみが持つ、コスト不要のパッシブ効果です。
+            </p>
+            <ul>
+                <li><strong>効果:</strong> 発動条件を満たせば毎ターン効果を発揮します。（ATK永続上昇やドロー枚数増加など）</li>
+            </ul>
+        </div>
+    </details>
+    </div>
+    </section>
+    
+
+<h4 class="rule-subhead" style="margin-top: 40px;">スペルカードについて</h4>
+<details class="class-accordion">
+    <summary class="class-summary-card">
+        <img src="images/common/SpellCard.png" class="class-summary-img" alt="スペルカード">
+        
+        <div class="class-summary-text">
+            <h4>スペルカードの基本</h4>
+            </div>
+        
+        <span class="accordion-icon">+</span>
+    </summary>
+    
+    <div class="class-details-body">
+        <p>
+            <span class="glossary-tooltip">スペルカード<span class="tooltip-text"><strong>スペルカード</strong>：デッキの主要な構成要素（30枚）となるカード。</span></span>は、デッキの主要な構成要素（30枚）となるカードです。
+            カードにはクラスが割り当てられており、「<a href="classes.html">クラス一致の原則</a>」に従って使用します。
+        </p>
+        <ul>
+            <li><strong>クラス:</strong> 7つのクラスのいずれかに属します。（ニュートラルも含む）</li>
+            <li><strong>コストとタイミング:</strong> 前述のルールに従います。</li>
+            <li><strong>効果:</strong> 発動に成功すると、カードに記載された効果が発揮されます。</li>
+        </ul>
+    </div>
+</details>
+
+</main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes FAQ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /*
+         * FAQページのスタイル調整（既存のstyle.cssに追加するか、必要に応じてここに記述）
+         */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto; /* 中央寄せ */
+            padding: 20px;
+        }
+
+        /* 質問（summary）のスタイル */
+        .faq-item summary {
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 15px 10px;
+            cursor: pointer;
+            border-bottom: 2px solid #eee; /* 質問の下線 */
+            outline: none; /* フォーカス時の枠線を消す */
+            list-style: none; /* デフォルトのマーカー（三角など）を非表示 */
+            position: relative;
+        }
+        
+        /* カスタムの展開/折りたたみアイコン（+ / -）を追加する例 */
+        .faq-item summary::before {
+            content: "▶"; /* 閉じているとき */
+            margin-right: 10px;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .faq-item[open] summary::before {
+            content: "▼"; /* 開いているとき */
+            transform: rotate(0deg); /* 展開マークを90度回転させる場合など */
+        }
+        
+        /* 回答（pタグなど）のスタイル */
+        .faq-item p {
+            padding: 10px 20px 20px 20px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #007bff; /* アクセントカラー */
+            margin-top: 0;
+        }
+        
+        /* FAQタイトル */
+        .faq-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px double #ccc;
+            padding-bottom: 10px;
+        }
+
+        /* カテゴリ見出しのスタイル */
+        .faq-container h3 {
+            border-left: 8px solid #007bff; /* カテゴリアクセント */
+            padding: 5px 10px;
+            background-color: #eaf4ff; /* 薄い背景色 */
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* カテゴリ間の区切り線を非表示にする */
+        .faq-category-separator {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="faq-container">
+            <h2>よくある質問（FAQ）</h2>
+
+            
+            <h3 id="category-general">✨ ゲーム概要・世界観</h3>
+
+            <details class="faq-item">
+                <summary>Q. HorizonNotesとはどんなゲームですか？</summary>
+                <p>A. <strong>「アルカステラ」</strong>と呼ばれる星の精霊を導く、対戦型カードゲームRPGです。</p>
+                <p>プレイヤーは3体のアルカステラカードと30枚のスペルカードからなるデッキを構築し、アルカステラ同士が激突する<strong>「ステラバトル」</strong>に挑みます。</p>
+            </details>
+
+            
+            
+            <hr class="faq-category-separator">
+            
+            <h3 id="category-battle">⚔️ バトル・育成要素</h3>
+
+            <details class="faq-item">
+                <summary>Q. ルールが複雑で難しそう</summary>
+                <p>A. プレイヤーが行える行動は出来るだけUIで直感的に操作できるように開発したいと考えてます。</p>
+                <p>また、ストーリーモードがチュートリアルの役割も担っている想定なので、<br>
+                    ゲームを進めていけば自然に習得できるかと思います。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Q. ステラバトルに勝利すると何がもらえますか？</summary>
+                <p>A. ステラバトルに勝利すると、スペルカードのパックの購入に使えるゲーム内通貨<strong>「ルクス」</strong>を獲得できます。</p>
+                <p>また、バトルを重ねることで、あなたの<strong>アルカステラとの絆を深める</strong>こともできます。</p>
+            </details>
+            
+            <hr class="faq-category-separator">
+
+            <details class="faq-item">
+                <summary>Q. アルカステラの「新しい姿（進化）」はどうすれば手に入りますか？</summary>
+                <p>A. <strong>相棒との絆</strong>が深まることで、イベントが発生します。<br>
+                そのイベントクリア後に新しいスキルや新しい姿（Lvアップ）を入手することが出来ます。</p>
+            </details>
+
+            <hr class="faq-category-separator">
+
+            <details class="faq-item">
+                <summary>Q. ストーリー中の金策でカードゲームやるのダルい。（作業的な戦闘について）</summary>
+                <p>A. ご安心ください！<br>
+                本ゲームでは自動戦闘機能はもちろん、一般で言うモンスターとの戦闘は3ターンで決着がつく仕様です。<br>
+                戦闘の内容によって報酬が豪華になるかもしれません。
+                </p>
+            </details>
+            
+            <hr class="faq-category-separator">
+
+            <details class="faq-item">
+                <summary>Q. 一戦当たりの時間は？</summary>
+                <p>A. テストで手動による戦闘を試みたところ、一戦辺り1時間ほどの想定です。</p>
+                <p>もし、短く遊びたいという方にはターン制限を設けたカジュアルルールの導入も検討しているので、ご検討ください。</p>
+            </details>
+
+            <hr class="faq-category-separator">
+            
+            <h3 id="category-multi">🌐 マルチプレイ・プラットフォーム</h3>
+            
+            <details class="faq-item">
+                <summary>Q. 対人戦（マルチプレイ）は出来ますか？</summary>
+                <p>A. 現在、対人戦を前提とした開発を行っています。<br>
+                (挫折したらシングルプレイ限定になるかもしれません・・・)</p>
+            </details>
+
+            <hr class="faq-category-separator">
+
+            <details class="faq-item">
+                <summary>Q. 対応しているプラットフォームは？</summary>
+                <p>A. PCのみで考えています。</p>
+            </details>
+            
+            <hr class="faq-category-separator">
+            
+            <h3 id="category-purchase">💰 料金・リリース時期</h3>
+
+            <details class="faq-item">
+                <summary>Q. 課金は必要ですか？</summary>
+                <p>A. ゲーム内課金は設けない予定です。<br>
+                新しいアルカステラやスペルカードなどはストーリーモードでご自身で集めてもらう形になります。
+                </p>
+            </details>
+
+            <hr class="faq-category-separator">
+
+            <details class="faq-item">
+                <summary>Q. このゲームいくらですか？（販売価格について）</summary>
+                <p>A. まだ考えていないです。</p>
+                <p>もし、購入を考えている方がいるようであれば、皆さんと一緒に話し合って考えていきたいなと思っています。</p>
+            </details>
+
+            <hr class="faq-category-separator">
+
+            <details class="faq-item">
+                <summary>Q. いつ頃リリースしますか？</summary>
+                <p>A. 未定です。</p>
+                <p>チュートリアルや簡単な対戦が行える体験版を2027年の春頃に出せればと考えています。</p>
+            </details>
+            
+            <hr>
+            
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // --- ヘッダーを読み込む処理 ---
+        fetch('/_includes/header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('ヘッダーの読み込みに失敗しました:', error);
+            });
+
+        // --- フッターを読み込む処理 ---
+        fetch('/_includes/footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('フッターの読み込みに失敗しました:', error);
+            });
+    </script>
+
+</body>
+</html>

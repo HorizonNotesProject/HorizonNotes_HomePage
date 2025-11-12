@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ティファレトの調停 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>065_ティファレトの調停</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_065.png" alt="ティファレトの調停 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ティファレトの調停</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> セフィル・イェツィラー</div>
+                    <div class="skill-prop"><strong>コスト:</strong>2</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        《<span class="glossary-tooltip">セフィロト・コード<span class="tooltip-text">セフィロト・コード : 装備によりステータス上昇やパッシブ効果を得ます。<br>
+                            攻撃スキルを受けると破損判定が発生し、破壊されるリスクを伴います。</span></span>》<br>
+                        ATK : 0 DEF : 1<br>
+                        [破損耐性ナンバー]3,4※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                        <br>
+                        装備者が自身の破損判定が行われ《セフィロト・コード》が破壊されるとき、<br>
+                        代わりにこのカード１枚が破壊される。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>どんな諍（いさか）いも、最終的には天秤にかけられる。<br> 
+                        それは、力ではなく、美と調和の理（ことわり）に基づく、最も公平な裁定の基礎である。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

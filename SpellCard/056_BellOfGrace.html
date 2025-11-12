@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恩寵の鐘-グレイス・ベル- - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>056_恩寵の鐘-グレイス・ベル-</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_056.png" alt="恩寵の鐘-グレイス・ベル- カード">
+                <p class="rarity-text">レアリティ: レア (R)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">恩寵の鐘-グレイス・ベル-</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ホノリウス</div>
+                    <div class="skill-prop"><strong>コスト:</strong>3</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>エーテルエフェクト</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        《エーテルエフェクト》<br>
+                        このカードはチャージフェイズ中にエーテル変換した時のみ発動できる。<br>
+                        ※エーテルエフェクトは1ターンに1度しか発動できない。<br>
+                        
+                        あなたは山札から【<span class="glossary-tooltip">フォロワー<span class="tooltip-text">フォロワー : アルカステラと同じくステータスとスキルを持つユニットです。<br>
+                            フォロワーは、発動したプレイヤーのターン開始時に<br>
+                            そのカードのコストを再度支払う必要があります。<br>
+                            コストを支払えない場合、そのフォロワーはセメタリーに送られます。</span></span>】カードを１枚手札に加える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>月の光が満ちる夜、妖精たちの導きで鳴らされる「恩寵の鐘」。 <br>
+                        その清らかな音色は、森の奥深くに眠る大いなる祝福（めぐみ）の目を覚まさせるという。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

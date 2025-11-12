@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ファイナル・ウェポン - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>100_ファイナル・ウェポン</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_100.png" alt="ファイナル・ウェポン カード">
+                <p class="rarity-text">レアリティ: アルティメットレア (UR)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ファイナル・ウェポン</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ピカトリクス</div>
+                    <div class="skill-prop"><strong>コスト:</strong>5</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【アストラル・コード】【<span class="glossary-tooltip">絶対効果<span class="tooltip-text">絶対効果：この能力を持つスキルやスペルは、≪無効≫の効果を無視して適用されます。</span></span>】<br>
+                        《座標 : 6》<br>
+                        このターン中、あなたがピカトリクスクラスのスペルカードを<br>
+                        3枚以上発動していた場合のみ使用可能。<br>
+                        アルカステラ1体に 30点のダメージを与える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>爆炎の赤さえも塗りつぶす、純粋な破滅の青。<br>
+                        彼女が振り下ろす刃は、あまりにも無慈悲なフィナーレ。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

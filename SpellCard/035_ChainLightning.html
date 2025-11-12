@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チェーン・ライトニング - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>035_チェーン・ライトニング</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_035.png" alt="チェーン・ライトニング カード">
+                <p class="rarity-text">レアリティ: レア (R)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">チェーン・ライトニング</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> アウラ・コンポルタ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>0+</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>カウンター[スペルカード]</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">加重<span class="tooltip-text">加重：
+                        同ターンに同名カードを発動する度に、そのコストがxの値分増加します。<br>
+                        このコスト増加の値は、ターン終了時（エンドフェイズ）にリセットされます。</span></span>】<br>
+                        アルカステラ1体を選択し1点のダメージ。<br>
+                        その後、デッキまたはセメタリ―から【チェーン・ライトニング】を手札に加える。<br><br>
+                        《共鳴:5》敵味方ランダムなアルカステラに1点ダメージを<br>
+                        このターン、発動した【チェーン・ライトニング】の数だけ与える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>放たれた一筋の稲妻は、終わりではなく始まりの合図。<br> 
+                        それは次なる獲物を求めて枝分かれし、空が静寂を取り戻すまで止まることはない。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+            <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

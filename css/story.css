@@ -1,0 +1,62 @@
+/* ------------------------------------- */
+/* css/story.css の内容 (ストーリーページ専用) */
+/* ------------------------------------- */
+
+/* A. フェードイン設定を無効化し、ページを即時表示 */
+body {
+    opacity: 1 !important; /* ページを瞬時に表示 */
+    transition: none !important; /* アニメーションを無効化 */
+    background-color: #333; /* 背景色（フッターと合わせる） */
+}
+
+/* B. ストーリーページ専用の背景設定 */
+main {
+    min-height: 100vh; 
+    
+    background-image: url('/images/background/003.png'); 
+    background-repeat: no-repeat;
+    
+    /* 1. トリミングを許容し、余白を完全に消す (カバー設定に戻す) */
+    background-size: cover; 
+    
+    /* 2. 焦点位置を調整 (中央ではなく、中央より少し下に設定) */
+    background-position: center 60%; 
+    /* 50%が中央、60%は中央から下へ10%ずらした位置 */
+    
+    position: relative;
+    z-index: 1; 
+    padding-top: 80px; 
+}
+
+/* C. コンテンツを格納する半透明ボックス */
+.content-box {
+    max-width: 850px;
+    
+    /* 修正: 上側の余白を50pxから20pxに、左側を100pxから50pxに減らす */
+    margin: 20px 0 50px 50px; /* 上: 20px, 右: 0, 下: 50px, 左: 50px */
+    
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.75); 
+    border-radius: 8px;
+}
+
+/* D. 文字を見やすくするスタイル */
+.content-box h2 {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 0;
+    border-bottom: 2px solid #666; 
+    padding-bottom: 15px;
+    font-size: 1.6em; /* 見出しを調整 */
+}
+
+.content-box p {
+    color: #f0f0f0;
+    line-height: 1.8;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.content-box strong {
+    color: #a0d8ff; /* キーワードの強調色 */
+}

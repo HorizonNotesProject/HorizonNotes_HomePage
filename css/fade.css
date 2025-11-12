@@ -1,0 +1,15 @@
+/* 全てのアニメーション対象要素に共通の初期設定 */
+        .fade-in-item {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* JavaScriptで body に .loaded クラスが付与されたら演出を実行 */
+        body.loaded .fade-in-item {
+            opacity: 1;
+            }
+
+        /* 要素ごとの表示タイミングの調整 (delay-1, delay-2...) */
+        .delay-1 { transition-delay: 0.5s; } /* 0.5秒遅れて開始 */
+        .delay-2 { transition-delay: 1.0s; } /* 1.0秒遅れて開始 */
+        .delay-3 { transition-delay: 1.5s; } /* 1.5秒遅れて開始 */

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>連続魔術 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>108_連続魔術</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_108.png" alt="連続魔術 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">連続魔術</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> グリモワール</div>
+                    <div class="skill-prop"><strong>コスト:</strong>3</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">研鑽<span class="tooltip-text">研鑽：最大100まで蓄積可能。<br>
+                            スペルカード使用時に「選択効果」を累積させることができ、研鑽値100到達で使用可能になります。</span></span>:5】<br>
+                        手札に存在するグリモワールクラスのカードのコストを-2する。
+                        <br>
+                        《<span class="glossary-tooltip">選択<span class="tooltip-text">選択：あなたは以下の効果から一つ選び、大魔法＜グランド・アルカナ＞にストックする。</span></span>:》<br>
+                        ◦このターン、あなたが発動するスペルカードのコストをー１する。(1/3)<br>
+                        ◦相手のすべての対象にこのターン発動したグリモワールクラスのカードの回数分1点のダメージを与える。(1/3)<br>
+                        ◦カードを1枚ドローする(1/2)
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>術と術の狭間——。 <br>
+                        本来なら存在するはずのその一瞬を、彼女たちは決して見逃さない。 <br>
+                        連続魔術の極意は「連携」にある。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

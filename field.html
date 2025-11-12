@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    <h2>ルール (RULE)</h2>
+    <p>HorizonNotesの遊び方を紹介します。</p>
+
+<nav class="global-nav">
+    <ul>
+         <li><a href="rules.html">概要</a></li>
+         <li><a href="classes.html">7つのクラス</a></li> 
+         <li><a href="cards_alcastera.html">カードとアルカステラ</a></li>
+         <li><a href="field.html" class="active">フィールド</a></li> <li><a href="gameplay.html">ターンの流れ</a></li>
+         <li><a href="glossary.html">用語集</a></li>
+     </ul>
+</nav>
+
+
+<section id="field-layout">
+    <h3>4. フィールド（戦いの舞台）</h3>
+    <p>
+        HorizonNotesの戦いは、プレイヤーごとに用意された独自の盤面「フィールド」上で行われます。全てのエリアが、この図のように配置されます。
+    </p>
+
+    <div class="field-image-container">
+        <img src="images/common/Field.png" alt="HorizonNotes バトルフィールド全体のレイアウト図">
+    </div>
+
+    <h4 class="rule-subhead">フィールドエリア一覧</h4>
+    <p>全クラス共通で使用するエリア、および特定のクラスのみが使用する専用エリアを解説します。</p>
+
+    <div class="field-grid-container unified-grid">
+        
+        <div class="field-area-card common-area">
+            <h5>アルカステラエリア (各プレイヤー3枠)</h5>
+            <p>あなたの分身となる3体の<span class="glossary-tooltip">アルカステラ<span class="tooltip-text">アルカステラ：プレイヤーのユニット。キミの相棒である星の精霊。</span></span>を配置します。</p>
+        </div>
+        <div class="field-area-card common-area">
+            <h5>エーテルエリア</h5>
+            <p><span class="glossary-tooltip">エーテル<span class="tooltip-text"><strong>エーテル</strong>：スペル発動のコスト。カード自体が残量を保持する。</span></span>に変換されたスペルカードを置きます。カード自体が残量を保持します。</p>
+        </div>
+        <div class="field-area-card common-area">
+            <h5>デッキエリア</h5>
+            <p>あなたのスペルデッキ（山札）を置く場所です。</p>
+        </div>
+        <div class="field-area-card common-area">
+            <h5>セメタリー</h5>
+            <p>使用済み、または戦闘脱落したカードを置く場所です。デッキ再構築の際に山札に戻されます（墓地）。</p>
+        </div>
+        <div class="field-area-card common-area">
+            <h5>ボイド</h5>
+            <p>ゲームから完全に除外されたカードを置く場所です。（セメタリーとは異なり、再利用されません）</p>
+        </div>
+    
+        <div class="field-area-card common-area">
+         <h5>特殊カードエリア</h5>
+        <p>
+          スキルやスペルによって展開される、永続的なバフやデバフなどの特殊な効果を持ったカード群が配置されます。（遊戯王のフィールド魔法などに近い役割です）
+        </p>
+        </div>
+        
+        <div class="field-area-card dedicated-area">
+         <h5>フォロワーエリア <br>(各プレイヤー3枠)</h5> <p>「ホノリウス」クラスが、フォロワーを召喚し維持するために使用します。プレイヤーごとに<strong>3枠</strong>が用意されます。（詳細:<a href="classes.html">7つのクラス</a>）</p>
+        </div>
+        <div class="field-area-card dedicated-area">
+         <h5>装備エリア（セフィロト・コード）
+         <br>(各アルカステラ3枠)</h5>
+        <p>「セフィル・イェツィラー」クラスが、アルカステラに装備カードを装着するために使用します。<strong>各アルカステラにつき3枠</strong>の装備が可能です。（詳細:<a href="classes.html">7つのクラス</a>）</p>
+       </div>
+    </div>
+    
+
+    
+    </section>
+
+</main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

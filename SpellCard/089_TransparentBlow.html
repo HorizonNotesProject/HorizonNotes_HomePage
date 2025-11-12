@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>透明な一撃 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>089_透明な一撃</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_089.png" alt="透明な一撃 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">透明な一撃</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ピカトリクス</div>
+                    <div class="skill-prop"><strong>コスト:</strong>1</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>相手のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        次に支援スキルを発動したアルカステラはHPを3点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                        その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を受ける。<br>
+                        <br>
+                        《座標 : 6》<br>
+                        相手のアルカステラ1体に3点の【<span class="glossary-tooltip">消失ダメージ<span class="tooltip-text">消失ダメージ：【消失ダメージ】と書かれたダメージは、アルカステラのDEFや<br>
+                        その他の【装甲】といったダメージ軽減効果を一切受けずに適用されます。</span></span>】を与える。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>見えた時には、もう遅い。<br>
+                        その太刀筋は、水面を渡る風のように透明。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

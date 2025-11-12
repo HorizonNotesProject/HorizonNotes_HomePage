@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゴースト・ハンド - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>046_ゴースト・ハンド</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_046.png" alt="ゴースト・ハンド カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ゴースト・ハンド</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ホノリウス</div>
+                    <div class="skill-prop"><strong>コスト:</strong>2</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>自分のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        アルカステラに1d6のダメージ。<br>
+                        その後、セメタリ―からコスト3以下のホノリウスクラスカードをエーテル変換する。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>闇の帳（とばり）が下りる時、<br>
+                        無数の「死者の手」が次元の狭間から伸びてくる。<br>
+                         それは、生ある者の温もりを求めるのか、それとも…。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

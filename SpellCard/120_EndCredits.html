@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エンドロール - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>120_エンドロール</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_120.png" alt="エンドロール カード">
+                <p class="rarity-text">レアリティ: アルティメットレア (UR)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">エンドロール</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> グリモワール</div>
+                    <div class="skill-prop"><strong>コスト:</strong>13</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【アストラル・コード】<br>【<span class="glossary-tooltip">エーテル係数<span class="tooltip-text">エーテル係数：効果は【エーテル係数:x】と表記され、このキーワードが付与された効果は<br>
+                        エーテル変換された場合、xの値がコストになります。</span></span>:5】<br>
+                        以下の条件を満たしている場合、あなたはバトルに勝利する。<br>
+                        ・あなたは大魔法を10回発動している。<br>
+                        ・あなたの手札のカードはこのカード1枚のみである。<br>
+                        ・あなたの場にLv3アルカステラが存在する。<br>
+
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        共に語り合った二人の道は、どこで分かたれたのか。 <br>
+                        分岐点は、ほんの些細な解釈の違いだった。
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

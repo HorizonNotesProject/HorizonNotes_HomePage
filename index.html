@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kokoro&display=swap" rel="stylesheet">
+
+<style>
+/* ------------------------------------- */
+/* トップページ専用CSS（背景、文字色、アニメーション定義を統合） */
+/* ------------------------------------- */
+
+/* A. ページ全体アニメーションの起動設定 */
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-color: #333; /* フッターと合わせた背景色 */
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* B. 個別要素のフェードインアニメーションのルール */
+.fade-in-item {
+    opacity: 0;
+    transition: opacity 1.5s ease-out; /* 煙のような演出 */
+}
+body.loaded .fade-in-item {
+    opacity: 1;
+}
+.delay-1 { transition-delay: 0.5s; }
+.delay-2 { transition-delay: 1.0s; }
+.delay-3 { transition-delay: 1.5s; }
+
+/* C. トップページ専用の背景とレイアウト */
+main {
+    min-height: 80vh; 
+    background-image: url('/images/background/001.png'); /* 背景画像！ */
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center; 
+    position: relative;
+    z-index: 1; 
+}
+
+/* D. 文字スタイルと見やすさ設定 */
+main h2,
+main p {
+    color: #fff; /* 文字色を白に */
+    /* 文字の影（見やすさのための設定） */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    /* フォント設定 (既存の style.css になければ必要) */
+    font-family: 'M PLUS Rounded 1c', "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+main h2 {
+    font-size: 2.2em;
+}
+
+.catchphrase {
+    font-family: 'HanaMin B', serif; /* HanaMin Bのフォント */
+    font-size: 1.8em; 
+    font-weight: normal; 
+    display: block;
+}
+main p:not(.catchphrase) {
+    font-size: 1.05em;
+}
+</style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <h2 class="fade-in-item delay-1">トップページ</h2> 
+        <p class="fade-in-item delay-2 catchphrase">運命を書き換える、キミだけの記録（ノート）を。</p> 
+        <p class="fade-in-item delay-3">（お知らせ、ゲームの紹介、Twitterタイムラインなど）</p>
+
+        
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <script>
+// --- ヘッダー・フッター読み込み処理（既存コードをそのまま利用） ---
+fetch('/_includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        
+        // 【★追加】アニメーション起動の1行
+        document.body.classList.add('loaded');
+    })
+    .catch(error => {
+        console.error('ヘッダーの読み込みに失敗しました:', error);
+        // 【★追加】エラー時もコンテンツを見せるための1行
+        document.body.classList.add('loaded');
+    });
+
+fetch('/_includes/footer.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('フッターの読み込みに失敗しました:', error);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes ビジュアルギャラリー</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 簡易的なギャラリー用CSSの例（必要に応じてstyle.cssに統合してください） */
+        .gallery-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .folder-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .folder-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .folder-icon {
+            width: 100%;
+            height: 150px; /* フォルダのアイコン画像の高さの例 */
+            background-color: #f0f0f0; /* 仮の背景色 */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* --- モーダルウィンドウ関連のCSS --- */
+        .modal {
+            display: none; /* 初期状態では非表示 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="gallery-container">
+            <h2>✨ 気まぐれイラストギャラリー</h2>
+            <p>開発中に生まれた気まぐれなイラストや設定画などを公開しています。<br>
+                （ゲームに出てくるイラストは全部、生成AIで作成したものなのでいつか自分でイラスト制作に挑戦したいなぁ・・・）
+            </p>
+            
+            <ul class="folder-grid">
+                <li class="folder-item" data-category="arcastera">
+                    <div class="folder-icon">アルカステラ</div>
+                    <p>初期デザイン・ラフ</p>
+                </li>
+                <li class="folder-item" data-category="background">
+                    <div class="folder-icon">背景・風景</div>
+                    <p>世界のスケッチ</p>
+                </li>
+                <li class="folder-item" data-category="items">
+                    <div class="folder-icon">自作のイラスト<br>
+                        （いつやるか未定）</div>
+                    <p>練習</p>
+                </li>
+                <li class="folder-item" data-category="others">
+                    <div class="folder-icon">その他</div>
+                    <p>おまけ</p>
+                </li>
+            </ul>
+
+            <hr>
+
+            <section id="arcastera-images" class="image-grid" style="display:none;">
+                <h3>アルカステラ：初期デザイン・ラフ</h3>
+                <ul class="folder-grid">
+                    <li class="image-item" onclick="openModal('/gallery/a_001.png', '初期ヘリオス', '2025/11/11', '最初は「ヘリオス」を主人公の相棒にする予定でした。')">
+                        <img src="/gallery/a_001.png" alt="初期ヘリオス ヘリオス">
+                        <p>初期主人公</p>
+                    </li>
+                    <li class="image-item" onclick="openModal('/gallery/a_002.png', '初期HorizonNotes', '2025/11/11', '昔はこんな感じのカードを印刷して、TRPG形式で友人と遊んでました。')">
+                        <img src="/gallery/a_002.png" alt="HorizonNotes初期">
+                        <p>HorizonNotes初期</p>
+                    </li>
+                    </ul>
+            </section>
+
+            <section id="background-images" class="image-grid" style="display:none;">
+                <h3>背景・風景：世界のスケッチ</h3>
+                <li class="image-item" onclick="openModal('/gallery/b_001.png', '最初の草原', '2025/11/11', 'UE5でMAPを作る時の参考にしようと生成したイラストです。')">
+                        <img src="/gallery/b_001.png" alt="最初の草原">
+                        <p>最初の草原</p>
+                    </li>
+                </section>
+
+            <section id="others-images" class="image-grid" style="display:none;">
+            <h3>おまけ</h3>
+            <li class="image-item" onclick="openModal('/gallery/d_001.png', '寝てるポラリス', '2025/11/11', 'お気に入りのイラスト。おててはいつか手直しする。<br>ポラリスは辛い時も楽しい時も、<br>いつも一緒に体験してくれるそんなイメージで設定を考えました。<br>ドラえもんみたいな感じ。')">
+            <img src="/gallery/d_001.png" alt="寝てるポラリス">
+            <p>寝てるポラリス</p>
+
+            <li class="image-item" onclick="openModal('/gallery/d_002.png', 'モナコとヴィーナス', '2025/11/11', 'モナコは中学来の親友をイメージして作りました。<br>あと、TRPGで一番印象に残ったキャラクター。<br>ちなみに、元ネタの中の人もカードゲームめっちゃ強い。<br>今度、大型大会があるらしいから頑張って欲しい。')">
+            <img src="/gallery/d_002.png" alt="モナコとヴィーナス">
+            <p>モナコとヴィーナス</p>
+            </li>
+
+            <li class="image-item" onclick="openModal('/gallery/d_003.png', '初目とクロノス', '2025/11/11', '初目は中学来の親友その２をイメージして設定を考えました。<br>あと、TRPGで一番印象に残ったキャラクター。<br>ちなみに、仲の人はギャルゲーの達人でTRPGをやる時は大体ヒロインと良い感じになります。<br>中でも印象深いセリフが一つあるので、それはこのHorizonNotesの初目の決め台詞に使う予定です。')">
+            <img src="/gallery/d_003.png" alt="初目とクロノス">
+            <p>初目とクロノス</p>
+            </li>
+
+            <li class="image-item" onclick="openModal('/gallery/d_004.png', 'ヒカルとあかり', '2025/11/11', 'ヒカルは親友その３をイメージして設定を考えました。<br>妹のあかりは身内で回していた旧HorizonNotesの相棒のキャラがモチーフです。<br>本当は、相棒のマーズちゃんとのツーショットも生成したかったけどまた今度。<br>彼の存在もHorizonNotesの世界で良いアクセントになるので楽しみにしててください。')">
+            <img src="/gallery/d_004.png" alt="ヒカルとあかり">
+            <p>ヒカルとあかり</p>
+            </li>
+
+            <li class="image-item" onclick="openModal('/gallery/d_005.png', 'ソウルとプルート', '2025/11/11', 'ソウルは親友その４をイメージして設定を考えました。<br>名前の由来はリアルのカードゲームでの印象です。<br>デュエマの黒城。')">
+            <img src="/gallery/d_005.png" alt="ソウルとプルート">
+            <p>ソウルとプルート</p>
+            </li>
+
+            <li class="image-item" onclick="openModal('/gallery/d_006.png', 'マナとマーキュリー', '2025/11/11', 'マナは一番大切な人をイメージして設定を考えました。<br>名前の「常盤 マナ」の由来は「常」に盤上と共にあると言う意味から。<br>あと、その人が昔考えていたらしいキャラクターから性格を想像して作ったのがきっかけです。')">
+            <img src="/gallery/d_006.png" alt="マナとマーキュリー">
+            <p>マナとマーキュリー</p>
+            </li>
+
+            
+</section>
+            
+            </div>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <h4 id="modalTitle"></h4>
+            <p><strong>日付:</strong> <span id="modalDate"></span></p>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+    
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // 画像の詳細モーダルを開く関数
+        function openModal(imgSrc, title, date, description) {
+    document.getElementById('modalImage').src = imgSrc;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalDate').textContent = date;
+    document.getElementById('modalDescription').innerHTML = description; // ★★★ここを innerHTML に変更★★★
+    document.getElementById('imageModal').style.display = 'block';
+}
+
+        // モーダルを閉じる関数
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // フォルダクリックでカテゴリ画像を表示する処理
+        document.querySelectorAll('.folder-item').forEach(folder => {
+            folder.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                const targetId = category + '-images';
+
+                // 全ての画像セクションを非表示にする
+                document.querySelectorAll('.image-grid').forEach(grid => {
+                    grid.style.display = 'none';
+                });
+
+                // クリックされたカテゴリの画像セクションを表示する
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            });
+        });
+
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

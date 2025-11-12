@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビアーキー - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>135_ビアーキー</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_135.png" alt="ビアーキー カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">ビアーキー</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> クトノグラフ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>4</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>自分のターン&フォロワー</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                     【<span class="glossary-tooltip">フォロワー<span class="tooltip-text">フォロワー : アルカステラと同じくステータスとスキルを持つユニットです。<br>
+                            フォロワーは、発動したプレイヤーのターン開始時に<br>
+                            そのカードのコストを再度支払う必要があります。<br>
+                            コストを支払えない場合、そのフォロワーはセメタリーに送られます。</span></span>】<br>
+                        HP：20 / ATK：6 / DEF：6<br>
+                        <br>
+                        攻撃スキル : ソラへの飛翔<br>
+                        コスト : 0<br>
+                        タイミング : 自分のターン<br>
+                        対象に《ATK+1d6》ダメージ。<br>
+                        その後、このカードは【ボイドエリア】へ送り、<br>
+                        次のあなたのターン開始時にフィールドに戻す。<br>
+                        ※フォロワーエリアが使用できない場合は、次のあなたのターン開始時まで持ち越される。<br>
+                        <br>
+                        《残照》このカードが戦闘脱落した時、<br>
+                        このカードは【<span class="glossary-tooltip">残照<span class="tooltip-text">残照 : セメタリーに送られ、特定のカード効果の対象となるなど、フォロワーを失った後の展開に関わります。<br>
+                            <br>【カード情報】<br>
+                            コスト: 1<br>
+                            クラス: ニュートラル<br>
+                            効果: なし<br>
+                            復元: 「残照から元のカードに復元する効果」を発動しないと、元のフォロワーカードには戻せません。<br></span></span>】カードに変化する。
+                    
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        「虚空に甲高い鳴き声が響き渡る。見上げるな。<br>
+                        一度その姿を認識すれば、お前はもう『乗客』として選ばれてしまう。」
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

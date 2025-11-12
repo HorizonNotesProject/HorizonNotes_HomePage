@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽書『レフ＝ズリグ』 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>131_偽書『レフ＝ズリグ』</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_131.png" alt="偽書『レフ＝ズリグ』 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">偽書『レフ＝ズリグ』</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> クトノグラフ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>3</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">狂気<span class="tooltip-text">狂気：この値が《発狂》の閾値を超えると、発狂効果（デメリット）が誘発します。</span></span>
+                        :5】<br>
+                        《<span class="glossary-tooltip">セフィロト・コード<span class="tooltip-text">セフィロト・コード : 装備によりステータス上昇やパッシブ効果を得ます。<br>
+                            攻撃スキルを受けると破損判定が発生し、破壊されるリスクを伴います。</span></span>》<br>
+                        ATK : -3 DEF : -3<br>
+                        [破損耐性ナンバー]1※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                        発動時およびお互いのターン開始時、<br>
+                        あなたは山札から【無効】の効果を持つカード1枚を手札に加える。<br><br>
+
+                        《破損時効果》<br>
+                        あなたはエーテルを3点得る。<br>
+                        <br>
+                        《発狂:40》<br>
+                        あなたは手札をすべて捨てる。<br>
+
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        「原本はただの『記録』だった。<br>
+                        だがこの偽書は『意志』を持つ。<br>
+                        原本より遥かに、悪質で、危険な代物だ。」
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

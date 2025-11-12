@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記録喪失の霧 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>127_記録喪失の霧</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_127.png" alt="記録喪失の霧 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">記録喪失の霧</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> クトノグラフ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>2</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>相手のターン</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        【<span class="glossary-tooltip">狂気<span class="tooltip-text">狂気：この値が《発狂》の閾値を超えると、発狂効果（デメリット）が誘発します。</span></span>
+                        :3】<br>
+                        あなたは2点の《共鳴》を得る。<br>
+                        《共鳴:3》相手のアルカステラを1体選ぶ。<br>
+                        対象がスキル、スペルの効果でダメージを与えた場合、<br>
+                        このターンが終了する。<br>
+                        《共鳴:4》カードを１枚ドローする。<br>
+                        《共鳴:5》あなたの《共鳴値》は0になる。<br>
+                        <br>
+                        《発狂:60》<br>
+                        次のあなたのターンでドローできるカードの枚数は1枚少なくなる。<br>
+
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>
+                        「私は誰だ…？ ここはどこだ…？ <br>
+                        思考が、記憶が、この忌まわしい霧に溶けていく…！」
+                    </i></p>
+                </div>
+                </div> <hr>
+
+            <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+            </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

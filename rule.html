@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    <h2>ルール (RULE)</h2>
+    <p>HorizonNotesの遊び方を紹介します。</p>
+
+<nav class="global-nav">
+    <ul>
+         <li><a href="rule.html" class="active">概要</a></li>
+         <li><a href="classes.html">7つのクラス</a></li> 
+         <li><a href="cards_alcastera.html">カードとアルカステラ</a></li>
+         <li><a href="field.html">フィールド</a></li>
+         <li><a href="gameplay.html">ターンの流れ</a></li>
+         <li><a href="glossary.html">用語集</a></li>
+     </ul>
+</nav>
+
+    <section id="overview">
+        <h3>1. 3分でわかる概要</h3>
+    <details>
+<summary>勝利条件</summary>
+
+    <p>
+        このゲームの勝敗は、主に以下の3つの条件によって決まります。
+    </p>
+    <ul>
+        <li>
+            <strong>1. リーダーの撃破 (メイン)</strong><br>
+            相手の「リーダー<span class="glossary-tooltip">リーダーアルカステラ<span class="tooltip-text">アルカステラ：プレイヤーのユニット。キミの相棒である星の精霊。</span></span>」のHPを0にしたプレイヤーが勝利します。（最も基本的な勝利方法です）
+            <img src="images/common/LeaderWin.png" alt="勝利条件の挿絵①">
+    </li>
+        <li>
+            <strong>2. デッキの再構築 (敗北条件)</strong><br>
+            デッキ（山札）が0枚になった際に行われる「デッキの再構築」が8回目に達したプレイヤーは、その時点で<strong>敗北</strong>します。
+        </li>
+        <li>
+            <strong>3. 特殊効果</strong><br>
+            一部のカードが持つ「特殊勝利」または「特殊敗北」の効果が発動した場合、その内容に従って勝敗が決定します。
+        </li>
+    </ul>
+  </details>
+
+  <details>
+  <summary>デッキ構成</summary>
+  <p>このゲームでは、戦略の核となる「スペルカードデッキ」（30枚）と、あなたと共に戦う3枚の「アルカステラ」を準備します。</p>
+    
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. スペルデッキ (合計30枚)</h4>
+    <p>メインの山札となる「スペルカード」を30枚で構築します。</p>
+    <ul>
+        <li><strong>コモン (Common):</strong> 同名カード3枚まで</li>
+        <li><strong>レア (Rare):</strong> 同名カード2枚まで</li>
+        <li><strong>UR (Ultra Rare):</strong> デッキ全体で合計3枚まで</li>
+    </ul>
+    
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. アルカステラ (合計3枚)</h4>
+    <p>デッキとは別に、「アルカステラ」を3体選びます。
+    この3体は、バトル開始時に最初から場に配置されます。</p>
+    
+    <p><strong>リーダーの設定:</strong> 3体のうち1体を「リーダー」として指定します。
+    リーダーのHPが0になると敗北となります。</p>
+  </details>
+
+  <details>
+  <summary>エーテルの基本</summary>
+    <p><span class="glossary-tooltip">エーテル<span class="tooltip-text">エーテル：アルカステラの力の源。<br>スペルカードやアルカステラのスキルの発動に必要なコスト。</span></span>は、スペルカードをプレイするために必要な「コスト」です。<br>
+    このゲームのエーテルは「使い切り」であり、計画的な管理が勝利の鍵となります。</p>
+    
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. エーテル変換</h4>
+    <p>
+        「チャージフェイズ」中、お互いのプレイヤーが「パス」を宣言するまで、手札のカードを「エーテルエリア」に置く【エーテル変換】を行えます。
+    </p>
+    
+    <ul>
+        <li>
+            <strong>ターンプレイヤーから宣言:</strong><br>
+            まずターンプレイヤーが「手札のカードを1枚変換する」か「パスする」かを選びます。次に、相手プレイヤーが選びます。
+        </li>
+        <li>
+            <strong>パスするまで継続:</strong><br>
+            お互いが連続で「パス」を宣言するまで、この行動は交互に何度でも繰り返せます。手札が許す限り、一気にエーテルを貯めることも可能です。
+        </li>
+    </ul>
+
+    <p>
+        変換したカードのコストが、そのまま「エーテル残量」としてチャージされます。<br>
+        <strong>例：【コスト3】のカードを置くと、「残量3」のエーテルとして場に保持されます。</strong>
+    </p>
+    <p>
+        あなたが使えるエーテルの総量は、エーテルエリアにある全カードの「残量合計」＋スキル等で得たボーナスエーテルです。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. エーテルの支払い（消費）</h4>
+    <p>
+        スペルカードのコストを支払う時、エーテルエリアにあるカードの「残量」を消費します。
+    </p>
+    
+    <ul>
+        <li>
+            <strong>分散払いOK:</strong><br>
+            【コスト2】を支払う場合、「残量3のカードA」から2を支払うことも、「残量1のカードB」と「残量1のカードC」から1ずつ支払うことも可能です。
+        </li>
+        <li>
+            <strong>任意に選択:</strong><br>
+            どのカードの残量から、どれだけ支払うかはプレイヤーが自由に決定できます。
+        </li>
+        <li>
+            <strong>使い切り:</strong><br>
+            支払いの結果、「残量」が0になったカードは、エーテルエリアから<span class="glossary-tooltip">セメタリー<span class="tooltip-text">
+            <strong>セメタリー</strong>：使用済みカードのエリア。使い切ったエーテルカードが送られ、デッキ再構築の際に山札に戻る。
+        </span>
+    </span>（墓地）に送られます。
+        </li>
+    </ul>
+  </details>
+  <details>
+    <summary>デッキの再構築とアストラルコード</summary>
+    
+    <p>
+        このゲームには、デッキ（山札）が0枚になった時に発動する、特殊な「デッキの再構築」システムが存在します。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">1. デッキの再構築</h4>
+    <p>
+        山札が0枚になった瞬間、あなたのセメタリー（墓地）にある全てのカードがシャッフルされ、新たな山札として再セットされます。
+    </p>
+    <p>
+        この「再構築」が行われるたび、あなたは強力な「<span class="glossary-tooltip">アストラルコード<span class="tooltip-text"><strong>アストラルコード</strong>：デッキ再構築で得た使用権を消費して発動する必殺技。</span></span>」の使用権を得ます。
+    </p>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">2. アストラルコード（必殺技）</h4>
+    <ul>
+        <li>
+            <strong>使用権の獲得:</strong><br>
+            デッキが再構築されるたび、アストラルコードの「使用権」を1回獲得します。
+        </li>
+        <li>
+            <strong>累積はしない:</strong><br>
+            この使用権はストック（累積）できません。使用権を保持したまま再度デッキが再構築されても、使用権は1回のままです。
+        </li>
+        <li>
+            <strong>使用で消費:</strong><br>
+            アストラルコードを使用すると、使用権は失われます。
+        </li>
+    </ul>
+
+    <h4 style="font-family: 'Shippori Mincho', serif;">3. 敗北条件</h4>
+    <p>
+        この「デッキの再構築」はゲーム中カウントされます。<br>
+        <strong>8回目の再構築が行われたプレイヤーは、その時点で敗北となります。</strong>
+    </p>
+
+</details>
+    </section>
+
+<nav class="rule-navigation" style="margin-top: 30px;">
+    <h3 style="font-family: 'Shippori Mincho', serif;">
+        さらに詳しいルール
+    </h3>
+    <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 10px;">
+            <a href="classes.html" style="display: block; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                → 2. 7つのクラス
+            </a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="cards_alcastera.html" style="display: block; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                → 3. カードとアルカステラ
+            </a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="field.html" style="display: block; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                → 4. フィールド
+            </a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="gameplay.html" style="display: block; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                → 5. ターンの流れ
+            </a>
+        </li>
+        <li style="margin-bottom: 10px;">
+            <a href="glossary.html" style="display: block; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                → 6. 用語集
+            </a>
+        </li>
+    </ul>
+</nav>
+
+</main>
+
+        <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

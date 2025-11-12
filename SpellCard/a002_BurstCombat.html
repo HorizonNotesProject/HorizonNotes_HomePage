@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【武装展開 -バースト・コンバット-】一覧 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        /* カード一覧コンテナ */
+        .card-list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* カードリストのアイテム */
+        .card-list-item {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-list-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-list-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* 詳細表示の切り替え */
+        #card-list-view, #card-detail-view {
+            display: none;
+        }
+
+        .active-view {
+            display: block !important;
+        }
+
+        /* カード詳細ビューの調整 */
+        .card-detail-main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 詳細ページで使用されているクラス */
+        .spell-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* 画像と情報の2列レイアウト */
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .spell-layout-grid {
+                grid-template-columns: 1fr; /* スマホでは縦並び */
+            }
+        }
+        
+        /* 必須項目の調整（元のHTML構造に合わせる） */
+        .skill-box h4 { margin-top: 0; }
+        .skill-prop { margin-bottom: 5px; }
+        .skill-effect { 
+            border: 1px dashed #ddd; 
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /* グロッサリーツールチップの簡易スタイル (元のCSSがない場合を想定) */
+        .glossary-tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dotted #000;
+        }
+        .tooltip-text {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+            width: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 120%;
+            white-space: normal;
+        }
+        .glossary-tooltip:hover .tooltip-text {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div id="card-list-view" class="active-view">
+            <h2>【武装展開 -バースト・コンバット-】一覧 (5枚)</h2>
+            <hr>
+            <div id="card-list" class="card-list-container">
+                </div>
+        </div>
+
+        <div id="card-detail-view" class="card-detail-main">
+            <h2 id="detail-card-title"></h2>
+
+            <div class="spell-layout-grid">
+                
+                <div class="spell-card-image">
+                    <img id="detail-card-image" src="" alt="カード画像">
+                    <p id="detail-rarity-text" class="rarity-text"></p>
+                </div>
+
+                <div class="spell-info-box">
+                    <div class="skill-box">
+                        <h4 id="detail-skill-name"></h4>
+                        <div class="skill-prop"><strong>クラス:</strong> <span id="detail-class"></span></div>
+                        <div class="skill-prop"><strong>コスト:</strong> <span id="detail-cost"></span></div>
+                        <div class="skill-prop"><strong>タイミング:</strong> <span id="detail-timing"></span></div>
+                        <div class="skill-effect">
+                            <strong>効果:</strong><br>
+                            <div id="detail-effect"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flavor-text-box" style="grid-column: 1 / -1;">
+                    <hr>
+                    <p id="detail-flavor-text"></p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="back-button-wrapper">
+                <button id="back-to-list-button" class="back-button">← カード一覧へ戻る</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // --- カードデータ (13枚) ---
+        // カードデータは、元のHTMLの構造に合わせて、必要な情報を抽出しています。
+        const CARD_DATA = [
+            {
+                id: '001',
+                name: '千槍(せんそう)のグングニル',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a002_card_001.png',
+                class: '武装展開 -バースト・コンバット-',
+                cost: '-',
+                timing: '-',
+                effect: `
+                    <strong>《セフィロト・コード》</strong><br>
+                    <strong>ATK : 5 DEF : 0</strong><br>
+                    <strong>[破損耐性ナンバー]1,2,3,4,5</strong>※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                    このカードを装備したアルカステラが<strong>攻撃スキルを使用した際</strong>、以下の２つの効果を適用する。<br>
+                    ・対象の<strong>DEF,【装甲】の現在値を0にする</strong>。<br>
+                    ・ダメージに<strong>3d6追加する</strong>。<br><br>
+                    <strong>《破損時効果》</strong><br>
+                    <strong>相手のアルカステラ全体に5点のダメージ</strong>。<br>
+                    このカードは<strong>【消滅】する</strong>。
+                `,
+                flavor: `<i>星々が繰り返す無限の戦争。<br>
+                    そのすべてを記憶し、千の槍として顕現する神具。<br>
+                    その真名は、＜千槍のグングニル＞。</i>`
+            },
+            {
+                id: '002',
+                name: '神降(しんこう)のイージス】',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a002_card_002.png',
+                class: '武装展開 -バースト・コンバット-',
+                cost: '-',
+                timing: '-',
+                effect: `
+                <strong>《セフィロト・コード》</strong><br>
+                <strong>ATK : 0 DEF : 5</strong><br>
+                <strong>[破損耐性ナンバー]1,2,3,4,5,6</strong>※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                このカードは<strong>破損判定を最初に行う</strong>。<br>
+                このセフィロト・コードを装備したアルカステラが<strong>ダメージを受ける時</strong>、その<strong>ダメージの値を0にする</strong>。<br>
+                その後、<strong>破損条件をランダムで１つ失う</strong>。<br><br>
+                <strong>《破損時効果》</strong><br>
+                あなたのアルカステラ全体に<strong>３点の装甲を与える</strong>。<br>
+                このカードは<strong>【消滅】する</strong>。
+                `,
+                flavor: `<i>歴史が絶望に閉ざされた時、戦場に「神降」あり。<br>
+                    彼女が掲げるイージスは、銀河の闇を払う暁の光。<br>
+                    その輝きは、決して希望を失わない者の証。</i>`
+            },
+            {
+                id: '003',
+                name: '星泉のミーミル',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a002_card_003.png',
+                class: '武装展開 -バースト・コンバット-',
+                cost: '-',
+                timing: '-',
+                effect: `
+                <strong>《セフィロト・コード》</strong><br>
+                <strong>ATK : 2 DEF : 2</strong><br>
+                <strong>[破損耐性ナンバー]3,4,5</strong>※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                お互いのプレイヤーの<strong>メインフェイズ開始時</strong>、以下の二つの効果を発動する。<br>
+                ◦あなたは<strong>カードを1枚ドロー</strong>する。<br>
+                ◦あなたは<strong>2点のエーテルを獲得</strong>する。<br><br>
+                <strong>《破損時効果》</strong><br>
+                あなたは<strong>カードを3枚ドロー</strong>する。<br>
+                このカードは<strong>【消滅】する</strong>。
+                `,
+                flavor: `<i>果てしなき「聖戦」の記憶が、銀河を満たす。<br>
+                    溢れし光は剣となり、翼となりて、少女は終焉の空へと飛び立つ。</i>`
+            },
+            {
+                id: '004',
+                name: '叛英(はんえい)のウィガール',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a002_card_004.png',
+                class: '武装展開 -バースト・コンバット-',
+                cost: '-',
+                timing: '-',
+                effect: `
+                <strong>《セフィロト・コード》</strong><br>
+                <strong>ATK : 0 DEF : 12</strong><br>
+                <strong>[破損耐性ナンバー]1,2,3,4,5,6</strong>※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                あなたのターン開始時、このセフィロト・コードを装備しているアルカステラの<strong>HPを30点回復</strong>する。<br><br>
+                <strong>《破損時効果》</strong><br>
+                このセフィロト・コードを装備しているアルカステラがこのターン、HPが0になる時、<br>
+                <strong>HPを1にする</strong>。
+                `,
+                flavor: `<i>
+                    ウィガールよ。<br>
+                    お前の怒りが星を砕くまで、その炎は決して消えない。</i>`
+            },
+            {
+                id: '005',
+                name: '栄悠(えいゆう)のレーヴァティン',
+                rarity: 'アルティメットレア(UR)',
+                image: '../images/cards/a002_card_005.png',
+                class: '武装展開 -バースト・コンバット-',
+                cost: '-',
+                timing: '-',
+                effect: `
+                <strong>《セフィロト・コード》</strong><br>
+                <strong>ATK : 20 DEF : 0</strong><br>
+                <strong>[破損耐性ナンバー]1,2,3,4,5,6</strong>※破損判定の際にこの数字以外の出目が出た場合は破壊される。<br>
+                このカードを装備したアルカステラが攻撃スキルを使用した際、<strong>このカードを任意に破損する</strong>。<br><br>
+                <strong>《破損時効果》</strong><br>
+                このバトル中、あなたが破損した<strong>《セフィロト・コード》の数×2d6の【消失ダメージ】を対象１体に与える</strong>。
+                `,
+                flavor: `<i>『永遠』の時を戦い抜いた『英雄』たちの終着点。それこそが、この『栄悠』の剣。<br>
+                    星が最期に放つ光が闇を照らすように、<br>
+                    この身もまた、『戦友（とも）』の願いを乗せ、燃え尽きよう。<br>
+                    見届けよ、これが我が魂の全焼――栄悠のレーヴァティン！</i>`
+            },
+            
+        ];
+
+
+        // --- DOM要素の取得 ---
+        const cardListView = document.getElementById('card-list-view');
+        const cardDetailView = document.getElementById('card-detail-view');
+        const cardListContainer = document.getElementById('card-list');
+        const backToListButton = document.getElementById('back-to-list-button');
+
+        // --- 詳細表示用の要素 ---
+        const detailCardTitle = document.getElementById('detail-card-title');
+        const detailCardImage = document.getElementById('detail-card-image');
+        const detailRarityText = document.getElementById('detail-rarity-text');
+        const detailSkillName = document.getElementById('detail-skill-name');
+        const detailClass = document.getElementById('detail-class');
+        const detailCost = document.getElementById('detail-cost');
+        const detailTiming = document.getElementById('detail-timing');
+        const detailEffect = document.getElementById('detail-effect');
+        const detailFlavorText = document.getElementById('detail-flavor-text');
+
+
+        /**
+         * カード一覧を生成してHTMLに挿入する
+         */
+        function renderCardList() {
+            CARD_DATA.forEach(card => {
+                const listItem = document.createElement('div');
+                listItem.className = 'card-list-item';
+                listItem.dataset.cardId = card.id;
+                
+                // カード名と画像を表示
+                listItem.innerHTML = `
+                    <img src="${card.image}" alt="${card.name} カード" loading="lazy">
+                    <p>No.${card.id} ${card.name}</p>
+                    <p class="rarity-text">${card.rarity}</p>
+                `;
+
+                // クリックイベントを設定
+                listItem.addEventListener('click', () => {
+                    displayCardDetail(card.id);
+                });
+
+                cardListContainer.appendChild(listItem);
+            });
+        }
+
+        /**
+         * 指定されたカードIDの詳細を表示する
+         * @param {string} cardId - 表示するカードのID
+         */
+        function displayCardDetail(cardId) {
+            const card = CARD_DATA.find(c => c.id === cardId);
+            if (!card) return;
+
+            // データを詳細表示エリアに反映
+            detailCardTitle.textContent = `No.${card.id}_${card.name}`;
+            detailCardImage.src = card.image;
+            detailCardImage.alt = `${card.name} カード`;
+            detailRarityText.textContent = `レアリティ: ${card.rarity}`;
+            detailSkillName.innerHTML = `<span class="sk-attack">${card.name}</span>`; // sk-attackクラスを付与
+            detailClass.textContent = card.class;
+            detailCost.textContent = card.cost;
+            detailTiming.textContent = card.timing;
+            detailEffect.innerHTML = card.effect; // 効果はHTMLを含むためinnerHTML
+            detailFlavorText.innerHTML = card.flavor; // フレーバーテキストもHTMLを含む
+
+            // ビューの切り替え
+            cardListView.classList.remove('active-view');
+            cardDetailView.classList.add('active-view');
+            window.scrollTo(0, 0); // ページトップへ移動
+        }
+
+        /**
+         * カード一覧表示に戻る
+         */
+        function backToList() {
+            cardDetailView.classList.remove('active-view');
+            cardListView.classList.add('active-view');
+            window.scrollTo(0, 0);
+        }
+
+        // --- イベントリスナー ---
+        backToListButton.addEventListener('click', backToList);
+
+        // --- 初期化処理 ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCardList();
+            
+            // --- ヘッダー・フッターを読み込む処理 ---
+            // 既存のヘッダー・フッター読み込みスクリプトをそのまま残す
+            fetch('/_includes/header.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('ヘッダーの読み込みに失敗しました:', error);
+                });
+
+            fetch('/_includes/footer.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('フッターの読み込みに失敗しました:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>

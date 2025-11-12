@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運命の羅針盤 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>013_運命の羅針盤</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_013.png" alt="運命の羅針盤 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">運命の羅針盤</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> ニュートラル</div>
+                    <div class="skill-prop"><strong>コスト:</strong>4</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>エーテルエフェクト</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        《エーテルエフェクト》<br>
+                        このカードはチャージフェイズ中にエーテル変換した時のみ発動できる。<br>
+                        ※エーテルエフェクトは1ターンに1度しか発動できない。<br><br>
+                        あなたは山札の上から3枚を確認し、その内の1枚を手札に加える。<br>
+                        他のカードを好きな順番に並び替えデッキの上に戻す。<br>
+                        <br>
+                        ※山札がなく、カードがめくれない場合は<span class="glossary-tooltip">デッキの再構築<span class="tooltip-text">デッキの再構築：セメタリーのカードをシャッフルしてデッキに戻す。<br>
+                        その後、プレイヤーはアストラルコードの使用権を得る。</span></span>を行う。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>「星々が示すは、三筋の未来。<br>
+                     さあ、勇者よ。選びなさい。<br>
+                    あなたが今、進むべき道を。<br>
+                    …残る運命は、望む順に並べてあげましょう。」</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

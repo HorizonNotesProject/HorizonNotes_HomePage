@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>増幅する盾 - HorizonNotes</title>
+    
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    </head>
+<body>
+
+     <div id="header-placeholder"></div>
+
+<main class="card-detail-main">
+
+        <h2>027_増幅する盾</h2>
+
+        <div class="spell-layout-grid">
+            
+            <div class="spell-card-image">
+                <img src="../images/cards/card_027.png" alt="増幅する盾 カード">
+                <p class="rarity-text">レアリティ: コモン (C)</p>
+            </div>
+
+            <div class="spell-info-box">
+                <div class="skill-box">
+                    <h4><span class="sk-attack">増幅する盾</span></h4>
+                    <div class="skill-prop"><strong>クラス:</strong> アウラ・コンポルタ</div>
+                    <div class="skill-prop"><strong>コスト:</strong>2</div>
+                    <div class="skill-prop"><strong>タイミング:</strong>好きなタイミング</div>
+                    <div class="skill-effect">
+                        <strong>効果:</strong><br>
+                        アルカステラ1体【<span class="glossary-tooltip">装甲<span class="tooltip-text">装甲:x：ダメージを受ける時、タップ状態に関わらずそのダメージを軽減します。<br>
+                        また、この軽減はスペルカードや支援スキルによるダメージにも適用されます。<br>
+                        軽減した場合、軽減した値分だけxの値が減少します。（例：3ダメージ軽減した場合、xが3減少）</span></span>】+3を与える。<br><br>
+                        《共鳴:3》さらに共鳴数/2の値分【装甲】を与える。<br>
+                        《共鳴:6》エーテルを1点獲得する。
+                    </div>
+                </div>
+                
+                <div class="flavor-text-box">
+                    <p><i>声が重なるたび、その魔法の盾は一層また一層と輝きを増していく。</i></p>
+                </div>
+                </div> <hr>
+
+        <div class="back-button-wrapper">
+            <a href="../cards.html" class="back-button">← カード一覧へ戻る</a>
+        </div>
+
+    </main>
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>

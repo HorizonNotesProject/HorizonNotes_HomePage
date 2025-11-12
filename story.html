@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorizonNotes ストーリー</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/story.css"> 
+    
+    </head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="content-box">
+            
+            <h2>あなたが目覚めたのは、宇宙の果てを漂う巨大な箱舟 <br>
+                ──学園都市「ウルティマ・トゥーレ」。</h2>
+            
+            <p>そこは本来、100名の生徒と10名の教師しか存在しないはずの場所。<br>
+            しかし、あなたは想定外の<strong>“101人目の生徒”</strong>として、曖昧な記憶のままこの地を踏みます。<br>
+            この閉ざされた学園都市を覆うのは、回避不能な未来。<br>
+            一定時間の経過とともに訪れる絶対的な終焉、<strong>「アンゴルモア」</strong>の脅威です。</p>
+            
+            <p>なぜ終焉は訪れるのか？ その鍵は、かつて人類が下した<strong>“7つの究極の選択”</strong>と、<br>
+            そこから分岐した7つの並行世界に隠されていました。</p>
+            
+            <p>あなたを導くのは、相棒となる星の精霊「アルカステラ」の<strong>ポラリス</strong>。<br>
+            あなたはポラリスの力と共に、7つの異なる世界線（歴史）へと旅立ちます。</p>
+            
+            <p>そこで待つのは、異なる結末、そして真実を巡るカードバトル<strong>「ステラバトル」</strong>。<br>
+            7つの世界の果てで、あなたとポラリスが目撃する<strong>「アンゴルモア」</strong>の真実とは。</p>
+            
+            <p>そして、人類が下した選択の重みとは──。</p>
+        
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+    // --- ヘッダーを読み込む処理 ---
+    fetch('/_includes/header.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('ヘッダーの読み込みに失敗しました:', error);
+        });
+
+    // --- フッターを読み込む処理 ---
+    fetch('/_includes/footer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('フッターの読み込みに失敗しました:', error);
+        });
+</script>
+
+</body>
+</html>
