@@ -118,7 +118,7 @@
             <div class="spell-layout-grid">
                 
                 <div class="spell-card-image">
-                    <img id="detail-card-image" src="" alt="カード画像">
+                    <img id="detail-card-image" src="" alt="カード画像" loading="lazy">
                     <p id="detail-rarity-text" class="rarity-text"></p>
                 </div>
 
@@ -299,7 +299,7 @@
                 
                 // カード名と画像を表示
                 listItem.innerHTML = `
-                    <img src="${card.image}" alt="${card.name} カード" loading="lazy">
+                    <img src="${card.image}" alt="${card.name} カード" loading="lazy" loading="lazy">
                     <p>No.${card.id} ${card.name}</p>
                     <p class="rarity-text">${card.rarity}</p>
                 `;
