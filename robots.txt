@@ -1,0 +1,6 @@
+# 全てのクローラーにサイトの巡回を許可します
+User-agent: *
+Allow: /
+
+# サイトマップの場所を明示的にGoogleに教えます
+# Sitemap: https://horizonnotes.netlify.app/sitemap.xml
