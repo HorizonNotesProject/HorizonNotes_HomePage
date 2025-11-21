@@ -29,6 +29,11 @@ def generate_sitemap():
         # GitやVSCodeなどの管理フォルダは無視
         if any(part.startswith('.') for part in html_file.parts):
             continue
+
+        # _includes フォルダ（部品）は無視
+        if '_includes' in html_file.parts:
+            continue
+        
         # 実行スクリプト自体も無視
         if html_file.name.endswith('.py'):
             continue
