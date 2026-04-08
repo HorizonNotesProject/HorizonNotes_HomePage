@@ -28,31 +28,59 @@ body.loaded .fade-in-item {
 .delay-3 { transition-delay: 1.5s; }
 
 /* 背景画像とレイアウト */
-/* --- メインエリアの中央寄せ設定 --- */
+/* 他のすべての設定を無視して、中央に輝かせる最終奥義 */
 main {
     display: flex !important;
-    flex-direction: column !important; /* 縦に並べる */
-    justify-content: center !important; /* 上下中央 */
-    align-items: center !important;     /* 左右中央 */
-    min-height: 85vh !important;
-    text-align: center;
-    padding: 0 20px;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 85vh !important; /* 画面中央に持ってくる */
+    text-align: center !important;
 }
 
-/* タイトルを巨大化し、色とフォントを適用 */
+/* タイトルをグラデーションで輝かせる */
 main h2 {
-    font-size: 6.5rem !important; /* 迫力のあるサイズに */
-    color: #fff9e6 !important;    /* 夕陽に馴染む温かい白（シャンパンゴールド） */
-    font-family: 'Kokoro', serif !important; /* 読み込んだフォントを強制適用 */
-    margin-bottom: 20px;
-    
-    /* 背景の明るさに負けない、オレンジの光と黒い縁取りの二重影 */
-    text-shadow: 
-        0 0 20px rgba(255, 183, 76, 0.6), 
-        3px 3px 12px rgba(0, 0, 0, 0.9) !important;
-    
-    letter-spacing: 0.15em;
-    font-weight: bold;
+    font-size: 85px !important;
+    font-family: 'Kokoro', serif !important;
+    margin: 0 0 20px 0 !important;
+    letter-spacing: 0.15em !important;
+    line-height: 1.2 !important;
+
+    /* グラデーションテキスト（空色 → 金色） */
+    background: linear-gradient(
+        135deg,
+        #a8d8f0 0%,    /* 空の薄い水色 */
+        #ffffff 30%,   /* 光の白 */
+        #FFD700 60%,   /* 黄金 */
+        #FF8C00 100%   /* 夕焼けオレンジ */
+    ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+
+    /* 周囲に淡い光の滲み */
+    filter: drop-shadow(0 0 18px rgba(255, 200, 80, 0.85))
+            drop-shadow(3px 4px 8px rgba(0, 0, 0, 0.95)) !important;
+}
+
+/* キャッチコピー */
+.catchphrase {
+    font-size: 35px !important;
+    color: #ffffff !important;
+    font-family: 'HanaMin B', serif !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1) !important;
+    margin-bottom: 30px !important;
+}
+
+/* お知らせ */
+main p:not(.catchphrase) {
+    font-size: 18px !important;
+    color: #ffffff !important;
+    background: rgba(0, 0, 0, 0.5) !important; /* より濃い背景で文字を守る */
+    padding: 12px 35px !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
 /* キャッチコピー：運命を〜（白くクッキリ） */

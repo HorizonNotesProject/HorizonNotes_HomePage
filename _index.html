@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<!-- Google検索用 SEO メタタグ (一括追記) -->
+	<meta name="description" content="UE5で制作中のオリジナルカードゲーム「HorizonNotes」の公式サイトです。カード一覧、キャラクター情報、ルールを公開中。" />
+	<meta name="keywords" content="HorizonNotes, ホライゾンノーツ, UE5, カードゲーム, インディーゲーム, TCG, 公式サイト" />
+	<meta name="robots" content="index, follow" />
+	<link rel="canonical" href="https://horizonnotes.netlify.app/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>HorizonNotes トップページ</title>
+
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kokoro&display=swap" rel="stylesheet">
+
+    <!-- 1. サイトのタイトル -->
+    <meta property="og:title" content="HorizonNotes トップページ" />
+
+    <!-- 2. サイトの説明文 -->
+    <meta property="og:description" content="UE5で制作中のオリジナルカードゲーム「HorizonNotes」の公式サイトです。" />
+      
+    <!-- 3. このページのURL -->
+    <meta property="og:url" content="https://horizonnotes.netlify.app" />
+
+    <!-- 4. サムネイル画像のURL -->
+    <meta property="og:image" content="https://horizonnotes.netlify.app/gallery/b_001.png" />
+        
+    <!-- 5. X (Twitter) で表示される際のカードタイプ -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- 6. HTMLメタタグ（インデックス登録） -->
+         <meta name="google-site-verification" content="kBiLQT1yVpiIez5NZGlbvGZNKI6LzZ6CiZEbeSISpDg" />
+
+<style>
+/* --- 全体アニメーション設定（より確実に） --- */
+body { 
+    opacity: 0; 
+    transition: opacity 1.2s ease-in-out; 
+    background-color: #333; 
+    color: #fff; 
+}
+body.loaded { 
+    opacity: 1 !important; 
+}
+
+/* 各要素のフェードイン */
+.fade-in-item { 
+    opacity: 0; 
+    transform: translateY(20px); /* 下からふわっと浮き上がる演出追加 */
+    transition: opacity 1.5s ease-out, transform 1.2s ease-out; 
+}
+body.loaded .fade-in-item { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.8s; }
+.delay-3 { transition-delay: 1.3s; }
+
+/* --- メイン背景エリア（文字サイズ強化版） --- */
+main {
+    min-height: 85vh;
+    background: url('/images/background/001.png') no-repeat center center / cover;
+    padding: 60px 20px; /* 余白を広げてゆったりさせる */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 中央寄せ */
+    align-items: center;
+    text-align: center;
+}
+
+/* タイトルを巨大化 */
+main h2 {
+    font-size: 4.5rem !important; /* かなり大きく */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
+    letter-spacing: 0.1em;
+}
+
+/* キャッチコピーを強調 */
+.catchphrase {
+    font-size: 2.8rem !important; /* 読みやすく */
+    font-family: 'HanaMin B', serif;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* お知らせ部分 */
+main p:not(.catchphrase) {
+    font-size: 1.4rem !important;
+    background: rgba(0, 0, 0, 0.4); /* 文字の後ろを少し暗くして読みやすく */
+    padding: 5px 20px;
+    border-radius: 50px;
+}
+
+/* --- 【ここが解決策】フォロワーセクション --- */
+.follower-section {
+    background-color: #ffffff !important; /* 絶対に白 */
+    padding: 50px 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* カードの中身を「絶対に黒文字」にする */
+.note-card {
+    display: flex;
+    width: 500px;
+    height: 120px;
+    background: #fff !important;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none !important;
+    overflow: hidden;
+}
+
+#follower-name {
+    color: #1a1a1a !important; /* 真っ黒 */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: none !important; /* 影を消す */
+    margin-bottom: 5px;
+}
+
+#follower-desc {
+    color: #444 !important; /* 濃いグレー */
+    font-size: 0.85em;
+    text-shadow: none !important;
+    line-height: 1.4;
+}
+
+.note-domain { color: #999 !important; text-shadow: none !important; font-size: 0.7em; }
+
+/* 画像エリア */
+.note-card-image { width: 180px; height: 120px; background: #eee; }
+#follower-img { width: 100%; height: 100%; object-fit: cover; }
+
+.slider-arrow { color: #00a4e5; font-size: 3rem; background: none; border: none; cursor: pointer; }
+</style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+    <h2 class="fade-in-item delay-1">HorizonNotes</h2> 
+    <p class="fade-in-item delay-2 catchphrase">運命を書き換える、キミだけの記録（ノート）を。</p> 
+    <p class="fade-in-item delay-3">（お知らせ、ゲームの紹介、Twitterタイムラインなど）</p>
+</main>
+
+    <section class="follower-section">
+        <button id="prev-btn" class="slider-arrow">⇐</button>
+        
+        <a id="follower-link" href="#" target="_blank" rel="noopener noreferrer" class="note-card">
+            <div class="note-card-content">
+                <h3 id="follower-name">お名前</h3>
+                <p id="follower-desc">紹介文がここに入ります。</p>
+                <span class="note-domain">note.com</span>
+            </div>
+            <div class="note-card-image">
+                <img id="follower-img" src="" alt="アイコン">
+            </div>
+        </a>
+
+        <button id="next-btn" class="slider-arrow">⇒</button>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    
+    <script>
+// --- ヘッダー・フッター読み込み処理（既存コードをそのまま利用） ---
+fetch('/_includes/header.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        
+        // 【★追加】アニメーション起動の1行
+        document.body.classList.add('loaded');
+    })
+    .catch(error => {
+        console.error('ヘッダーの読み込みに失敗しました:', error);
+        // 【★追加】エラー時もコンテンツを見せるための1行
+        document.body.classList.add('loaded');
+    });
+
+fetch('/_includes/footer.html')
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('フッターの読み込みに失敗しました:', error);
+    });
+// --- フォロワースライダー処理 ---
+
+// ★ここに、Step 1でコピーしたGASのウェブアプリURLを貼り付けます
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwbPaDEhhnxZx8oP99ZcdedxL8D4_-l6Ue8CE2y0c73NSt8J63lN-9uSXQy5ko1yZQLRA/exec";
+
+let shuffledFollowers = [];
+let currentFollowerIndex = 0;
+
+// 配列をランダムにシャッフルする関数
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+function updateSlider() {
+    if (shuffledFollowers.length === 0) return;
+    const data = shuffledFollowers[currentFollowerIndex];
+    
+    // テキストの更新
+    document.getElementById('follower-name').textContent = data.name;
+    document.getElementById('follower-desc').textContent = data.desc;
+    document.getElementById('follower-link').href = data.url;
+    
+    // 画像の更新
+    const imgElement = document.getElementById('follower-img');
+    
+    // ★ 共通のデフォルト画像（ここに必ず存在する画像のURLを入れてください）
+    const defaultImg = "https://horizonnotes.netlify.app/gallery/Followr_Card.png"; 
+
+    // スプレッドシートの画像URLが空、または「undefined」という文字ならデフォルトを表示
+    if (!data.img || data.img === "undefined" || data.img === "") {
+        imgElement.src = defaultImg;
+    } else {
+        imgElement.src = data.img;
+    }
+    
+    // もし画像の読み込み自体に失敗（404等）したらデフォルトに差し替え
+    imgElement.onerror = function() {
+        this.src = defaultImg;
+    };
+}
+
+// 初期化とボタンの処理
+function initSlider(data) {
+    shuffledFollowers = shuffleArray(data); // 取得した1000人をシャッフル
+    updateSlider();
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentFollowerIndex = (currentFollowerIndex + 1) % shuffledFollowers.length;
+        updateSlider();
+    });
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        currentFollowerIndex = (currentFollowerIndex - 1 + shuffledFollowers.length) % shuffledFollowers.length;
+        updateSlider();
+    });
+}
+
+// スプレッドシートからデータを取得する処理
+async function fetchFollowersData() {
+    try {
+        const response = await fetch(GAS_URL);
+        if (!response.ok) throw new Error('ネットワークエラー');
+        
+        const data = await response.json();
+        
+        if (data && data.length > 0) {
+            initSlider(data);
+        }
+    } catch (error) {
+        console.error('フォロワーデータの読み込みに失敗しました:', error);
+    }
+}
+
+// 処理を開始
+fetchFollowersData();
+
+    
+</script>
+
+</body>
+</html>

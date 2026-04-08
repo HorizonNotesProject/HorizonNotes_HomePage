@@ -65,20 +65,36 @@ body.loaded .fade-in-item {
 main {
     min-height: 85vh;
     background: url('/images/background/001.png') no-repeat center center / cover;
-    padding: 60px 20px; /* 余白を広げてゆったりさせる */
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 中央寄せ */
+    justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-/* タイトルを巨大化 */
+/* タイトルをグラデーションで輝かせる */
 main h2 {
-    font-size: 4.5rem !important; /* かなり大きく */
+    font-size: 4.5rem !important;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
+
+    /* グラデーションテキスト（空色 → 白 → 金 → 夕焼け） */
+    background: linear-gradient(
+        135deg,
+        #a8d8f0 0%,
+        #ffffff 30%,
+        #FFD700 60%,
+        #FF8C00 100%
+    ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+
+    /* 発光エフェクト */
+    filter: drop-shadow(0 0 16px rgba(255, 200, 80, 0.9))
+            drop-shadow(3px 4px 8px rgba(0, 0, 0, 0.95)) !important;
 }
 
 /* キャッチコピーを強調 */
