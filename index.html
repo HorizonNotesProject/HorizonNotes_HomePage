@@ -36,23 +36,65 @@
          <meta name="google-site-verification" content="kBiLQT1yVpiIez5NZGlbvGZNKI6LzZ6CiZEbeSISpDg" />
 
 <style>
-/* --- 全体アニメーション設定 --- */
-body { opacity: 0; transition: opacity 1s; background-color: #333; color: #fff; }
-body.loaded { opacity: 1; }
-.fade-in-item { opacity: 0; transition: opacity 1.5s ease-out; }
-body.loaded .fade-in-item { opacity: 1; }
-.delay-1 { transition-delay: 0.5s; }
-.delay-2 { transition-delay: 1s; }
-.delay-3 { transition-delay: 1.5s; }
-
-/* --- メイン背景エリア --- */
-main {
-    min-height: 80vh;
-    background: url('/images/background/001.png') no-repeat center center / cover;
-    padding: 20px;
+/* --- 全体アニメーション設定（より確実に） --- */
+body { 
+    opacity: 0; 
+    transition: opacity 1.2s ease-in-out; 
+    background-color: #333; 
+    color: #fff; 
 }
-main h2, main p {
-    text-shadow: 2px 2px 4px #000;
+body.loaded { 
+    opacity: 1 !important; 
+}
+
+/* 各要素のフェードイン */
+.fade-in-item { 
+    opacity: 0; 
+    transform: translateY(20px); /* 下からふわっと浮き上がる演出追加 */
+    transition: opacity 1.5s ease-out, transform 1.2s ease-out; 
+}
+body.loaded .fade-in-item { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.8s; }
+.delay-3 { transition-delay: 1.3s; }
+
+/* --- メイン背景エリア（文字サイズ強化版） --- */
+main {
+    min-height: 85vh;
+    background: url('/images/background/001.png') no-repeat center center / cover;
+    padding: 60px 20px; /* 余白を広げてゆったりさせる */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 中央寄せ */
+    align-items: center;
+    text-align: center;
+}
+
+/* タイトルを巨大化 */
+main h2 {
+    font-size: 4.5rem !important; /* かなり大きく */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
+    letter-spacing: 0.1em;
+}
+
+/* キャッチコピーを強調 */
+.catchphrase {
+    font-size: 2.8rem !important; /* 読みやすく */
+    font-family: 'HanaMin B', serif;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* お知らせ部分 */
+main p:not(.catchphrase) {
+    font-size: 1.4rem !important;
+    background: rgba(0, 0, 0, 0.4); /* 文字の後ろを少し暗くして読みやすく */
+    padding: 5px 20px;
+    border-radius: 50px;
 }
 
 /* --- 【ここが解決策】フォロワーセクション --- */
@@ -107,13 +149,10 @@ main h2, main p {
     <div id="header-placeholder"></div>
 
     <main>
-        <h2 class="fade-in-item delay-1">トップページ</h2> 
-        <p class="fade-in-item delay-2 catchphrase">運命を書き換える、キミだけの記録（ノート）を。</p> 
-        <p class="fade-in-item delay-3">（お知らせ、ゲームの紹介、Twitterタイムラインなど）</p>
-
-        
-
-    </main>
+    <h2 class="fade-in-item delay-1">HorizonNotes</h2> 
+    <p class="fade-in-item delay-2 catchphrase">運命を書き換える、キミだけの記録（ノート）を。</p> 
+    <p class="fade-in-item delay-3">（お知らせ、ゲームの紹介、Twitterタイムラインなど）</p>
+</main>
 
     <section class="follower-section">
         <button id="prev-btn" class="slider-arrow">⇐</button>
