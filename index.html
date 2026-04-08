@@ -36,66 +36,70 @@
          <meta name="google-site-verification" content="kBiLQT1yVpiIez5NZGlbvGZNKI6LzZ6CiZEbeSISpDg" />
 
 <style>
-/* ------------------------------------- */
-/* トップページ専用CSS（背景、文字色、アニメーション定義を統合） */
-/* ------------------------------------- */
-
-/* A. ページ全体アニメーションの起動設定 */
-body {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    background-color: #333; /* フッターと合わせた背景色 */
-}
-body.loaded {
-    opacity: 1;
-}
-
-/* B. 個別要素のフェードインアニメーションのルール */
-.fade-in-item {
-    opacity: 0;
-    transition: opacity 1.5s ease-out; /* 煙のような演出 */
-}
-body.loaded .fade-in-item {
-    opacity: 1;
-}
+/* --- 全体アニメーション設定 --- */
+body { opacity: 0; transition: opacity 1s; background-color: #333; color: #fff; }
+body.loaded { opacity: 1; }
+.fade-in-item { opacity: 0; transition: opacity 1.5s ease-out; }
+body.loaded .fade-in-item { opacity: 1; }
 .delay-1 { transition-delay: 0.5s; }
-.delay-2 { transition-delay: 1.0s; }
+.delay-2 { transition-delay: 1s; }
 .delay-3 { transition-delay: 1.5s; }
 
-/* C. トップページ専用の背景とレイアウト */
+/* --- メイン背景エリア --- */
 main {
-    min-height: 80vh; 
-    background-image: url('/images/background/001.png'); /* 背景画像！ */
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center center; 
-    position: relative;
-    z-index: 1; 
+    min-height: 80vh;
+    background: url('/images/background/001.png') no-repeat center center / cover;
+    padding: 20px;
+}
+main h2, main p {
+    text-shadow: 2px 2px 4px #000;
 }
 
-/* D. 文字スタイルと見やすさ設定 */
-main h2,
-main p {
-    color: #fff; /* 文字色を白に */
-    /* 文字の影（見やすさのための設定） */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    /* フォント設定 (既存の style.css になければ必要) */
-    font-family: 'M PLUS Rounded 1c', "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+/* --- 【ここが解決策】フォロワーセクション --- */
+.follower-section {
+    background-color: #ffffff !important; /* 絶対に白 */
+    padding: 50px 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
-main h2 {
-    font-size: 2.2em;
+/* カードの中身を「絶対に黒文字」にする */
+.note-card {
+    display: flex;
+    width: 500px;
+    height: 120px;
+    background: #fff !important;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none !important;
+    overflow: hidden;
 }
 
-.catchphrase {
-    font-family: 'HanaMin B', serif; /* HanaMin Bのフォント */
-    font-size: 1.8em; 
-    font-weight: normal; 
-    display: block;
+#follower-name {
+    color: #1a1a1a !important; /* 真っ黒 */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: none !important; /* 影を消す */
+    margin-bottom: 5px;
 }
-main p:not(.catchphrase) {
-    font-size: 1.05em;
+
+#follower-desc {
+    color: #444 !important; /* 濃いグレー */
+    font-size: 0.85em;
+    text-shadow: none !important;
+    line-height: 1.4;
 }
+
+.note-domain { color: #999 !important; text-shadow: none !important; font-size: 0.7em; }
+
+/* 画像エリア */
+.note-card-image { width: 180px; height: 120px; background: #eee; }
+#follower-img { width: 100%; height: 100%; object-fit: cover; }
+
+.slider-arrow { color: #00a4e5; font-size: 3rem; background: none; border: none; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -110,6 +114,23 @@ main p:not(.catchphrase) {
         
 
     </main>
+
+    <section class="follower-section">
+        <button id="prev-btn" class="slider-arrow">⇐</button>
+        
+        <a id="follower-link" href="#" target="_blank" rel="noopener noreferrer" class="note-card">
+            <div class="note-card-content">
+                <h3 id="follower-name">お名前</h3>
+                <p id="follower-desc">紹介文がここに入ります。</p>
+                <span class="note-domain">note.com</span>
+            </div>
+            <div class="note-card-image">
+                <img id="follower-img" src="" alt="アイコン">
+            </div>
+        </a>
+
+        <button id="next-btn" class="slider-arrow">⇒</button>
+    </section>
 
     <div id="footer-placeholder"></div>
     
@@ -143,6 +164,86 @@ fetch('/_includes/footer.html')
     .catch(error => {
         console.error('フッターの読み込みに失敗しました:', error);
     });
+// --- フォロワースライダー処理 ---
+
+// ★ここに、Step 1でコピーしたGASのウェブアプリURLを貼り付けます
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwbPaDEhhnxZx8oP99ZcdedxL8D4_-l6Ue8CE2y0c73NSt8J63lN-9uSXQy5ko1yZQLRA/exec";
+
+let shuffledFollowers = [];
+let currentFollowerIndex = 0;
+
+// 配列をランダムにシャッフルする関数
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+function updateSlider() {
+    if (shuffledFollowers.length === 0) return;
+    const data = shuffledFollowers[currentFollowerIndex];
+    
+    // テキストの更新
+    document.getElementById('follower-name').textContent = data.name;
+    document.getElementById('follower-desc').textContent = data.desc;
+    document.getElementById('follower-link').href = data.url;
+    
+    // 画像の更新
+    const imgElement = document.getElementById('follower-img');
+    
+    // ★ 共通のデフォルト画像（ここに必ず存在する画像のURLを入れてください）
+    const defaultImg = "https://horizonnotes.netlify.app/gallery/Followr_Card.png"; 
+
+    // スプレッドシートの画像URLが空、または「undefined」という文字ならデフォルトを表示
+    if (!data.img || data.img === "undefined" || data.img === "") {
+        imgElement.src = defaultImg;
+    } else {
+        imgElement.src = data.img;
+    }
+    
+    // もし画像の読み込み自体に失敗（404等）したらデフォルトに差し替え
+    imgElement.onerror = function() {
+        this.src = defaultImg;
+    };
+}
+
+// 初期化とボタンの処理
+function initSlider(data) {
+    shuffledFollowers = shuffleArray(data); // 取得した1000人をシャッフル
+    updateSlider();
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentFollowerIndex = (currentFollowerIndex + 1) % shuffledFollowers.length;
+        updateSlider();
+    });
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        currentFollowerIndex = (currentFollowerIndex - 1 + shuffledFollowers.length) % shuffledFollowers.length;
+        updateSlider();
+    });
+}
+
+// スプレッドシートからデータを取得する処理
+async function fetchFollowersData() {
+    try {
+        const response = await fetch(GAS_URL);
+        if (!response.ok) throw new Error('ネットワークエラー');
+        
+        const data = await response.json();
+        
+        if (data && data.length > 0) {
+            initSlider(data);
+        }
+    } catch (error) {
+        console.error('フォロワーデータの読み込みに失敗しました:', error);
+    }
+}
+
+// 処理を開始
+fetchFollowersData();
 
     
 </script>

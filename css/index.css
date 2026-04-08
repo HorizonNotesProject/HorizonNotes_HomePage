@@ -65,3 +65,69 @@ main p:not(.catchphrase) {
     font-size: 1.05em;
 }
 
+/* ------------------------------------- */
+/* フォロワーエリア専用：強制リセットスタイル */
+/* ------------------------------------- */
+
+/* エリア全体の背景を強制的に白にする */
+.follower-section {
+    background-color: #ffffff !important; 
+    padding: 60px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* カード本体 */
+.note-card {
+    display: flex !important;
+    width: 550px !important;
+    height: 130px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e2e2 !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+/* 文字色の強制上書き（白文字設定を無効化） */
+#follower-name, 
+#follower-desc, 
+.note-domain {
+    color: #333333 !important; /* 黒に近いグレー */
+    text-shadow: none !important; /* 影を消す */
+    font-family: sans-serif !important;
+    text-align: left !important;
+}
+
+#follower-name {
+    font-size: 1.1em !important;
+    font-weight: bold !important;
+    margin: 0 0 5px 0 !important;
+}
+
+#follower-desc {
+    color: #666666 !important;
+    font-size: 0.85em !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+/* 画像エリア */
+.note-card-image {
+    width: 180px !important;
+    height: 130px !important;
+    background-color: #f0f0f0 !important; /* 画像がない時の色 */
+}
+
+#follower-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
